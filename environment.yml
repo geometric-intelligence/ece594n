@@ -1,0 +1,9 @@
+name: ece594n
+channels:
+  - conda-forge
+dependencies:
+  - jupyter_contrib_nbextensions
+  - jupyter_nbextensions_configurator
+  - numpy
+  - pip
+  - rise
