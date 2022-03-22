@@ -7,7 +7,7 @@ This is the GitHub repository for the course:
 ECE 594N: Geometric Machine Learning for Biomedical Imaging and Shape Analysis at UC Santa Barbara, Spring 2022.
 
 - Instructor: [Prof. Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [BioShape Lab](https://bioshape.ece.ucsb.edu/), UC Santa Barbara.
-- Lectures: Tuesdays, Thursdays 4 PM - 5.30 PM in location TBD.
+- Lectures: Tuesdays, Thursdays 4 PM - 5.30 PM in Phelps 1431.
 
 You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
 
