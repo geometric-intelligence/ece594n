@@ -30,3 +30,4 @@ Send the title of your project, and names of its team members, through slack to 
 # Remarks
 
 - It is OK to reproduce the results of published papers, e.g. recoding them with Geomstats.
+- Here are 2 examples of a great projects (from a different class, i.e. a different topic): [Shadow Removal](https://github.com/bioshape-lab/ece278a/tree/main/projects/Shadow-Removal) and [Single Image Dehazing](https://github.com/bioshape-lab/ece278a/tree/main/projects/Single_Image_dehazing).
