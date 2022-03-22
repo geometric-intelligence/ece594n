@@ -5,7 +5,7 @@ Goal: Get intuition on Differential Geometry by visualizing manifolds.
 - Deadline: Thursday 04/21/2022.
 - Team of 2-3 students.
 
-# Register your team
+## Register your team
 
 First come, first serve. Send a message on slack to register your team.
 
@@ -20,7 +20,7 @@ First come, first serve. Send a message on slack to register your team.
 - [ ] Manifold of beta distributions: TBD.
 - [ ] Manifold of categorical distributions: TBD.
 
-# Guidelines
+## Guidelines
 
 - Create a new folder in this folder with the name of your manifold.
 - In this new folder:
@@ -30,7 +30,7 @@ First come, first serve. Send a message on slack to register your team.
 - Make sure to indicate which teammate did which part of the work.
 - You can submit code to this repository anytime until the deadline.
 
-# Code Structure 
+## Code Structure 
 
 Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Geomstats.
 
@@ -50,8 +50,10 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
   - Show how your visualization can be used.
 
 
-Additional remarks:
+## Additional remarks
+
 - Your code should be documented with docstrings, see [here for docstring guidelines](https://github.com/geomstats/geomstats/blob/master/docs/contributing.rst#writing-docstrings).
 - You do not have to implement all of the methods listed above. You can implement methods not listed.
 - Your functions should work with only matplotlib.
 - You can add options for your functions to be interactive, using plotly or bokeh in addition to matplotlib.
+- Here is an [example of a visualization project by Elodie Maignant](https://github.com/geomstats/geomstats/blob/master/notebooks/usecase_visualizations_in_kendall_shape_spaces.ipynb).
