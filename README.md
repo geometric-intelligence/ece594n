@@ -25,7 +25,7 @@ You can access and run the lecture slides and lab notebooks by clicking on the B
 
 Advances in biomedical imaging techniques have enabled us to access the shapes of a variety of structures: organs, cells, proteins. Since biological shapes are related to physiological functions, shape data may hold the key to unlock outstanding mysteries in biomedicine — specifically when combined with genomics and transcriptomics data.
 
-<img src="https://raw.githubusercontent.com/bioshape-lab/ece594n/master/fig_readme.png" height="120px" width="120px" align="left">
+<img src="https://raw.githubusercontent.com/bioshape-lab/ece594n/master/fig_readme.png" align="left">
 
 Machine learning is poised to play a major role in analyzing this new wealth of imaging information and testing novel biomedical hypotheses.
 In this class you will learn how to perform geometric machine learning on biomedical images and shapes. The course will cover basics of geometric machine learning and delve into specific methods for shape analysis of proteins, cells and organs. This course will feature guest lectures from invited speakers.
