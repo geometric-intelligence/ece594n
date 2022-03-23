@@ -40,6 +40,7 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
     - `plot`: draws the manifold (e.g. cone for SPD matrices)
     - `plot_grid`: draws the manifold with a geodesic grid.
     - `plot_rendering`: draws the manifold with regularly sampled data.
+    - `plot_tangent_space`: draws the tangent space to the manifold at a point.
     - `scatter`: plot a point cloud. Inherits matplotlib.scatter parameters.
     
     - `plot_geodesic` allows to visualise a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
