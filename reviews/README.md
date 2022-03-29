@@ -7,6 +7,7 @@ Goal: Read and review published papers in Geometric Machine Learning.
 
 ## Register
 
+Topics will be available for registration on April 15th.
 
 ## Guidelines
 
