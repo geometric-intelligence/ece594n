@@ -9,6 +9,24 @@ Goal: Put your skills in practice to tackle a project of your choice: perform ge
 
 Send the title of your project, and names of its team members, through slack to be registered.
 
+### Presentations on 05/31:
+
+- TBD
+- TBD
+- TBD
+- TBD
+- TBD
+- TBD
+
+### Presentations on 06/02:
+
+- TBD
+- TBD
+- TBD
+- TBD
+- TBD
+- TBD
+
 # Guidelines
 
 - Create a new folder in this folder with the name of your project.
