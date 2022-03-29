@@ -19,3 +19,8 @@ Goal: Determine if it is easy to reproduce the findings of a research paper on b
   - Record the time it took you to do tasks.
   - If you do not get the same figures as the paper, this is fine.
 - Present in class on Thursday 05/03/2022 (5 min per team).
+
+# Grading Criteria
+
+- You will not be graded on whether you can reproduce the results or not.
+- You will be graded on your assessment of whether it is easy or hard to reproduce the results of a research paper.
