@@ -48,13 +48,14 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
     − `plot_vector_field` allows to visualise vectors fields. Takes points and tangent vecs as parameters.
     
 − In your notebook `[your-manifold].ipynb`:
-  - Show how your visualization can be used.
+  - Describe your manifold and how it is used in real-world applications.
+  - Show how your visualization can be used by plotting the inputs and outputs of operations such as exp, log, geodesics.
 
 
 ## Additional remarks
 
 - Your code should be documented with docstrings, see [here for docstring guidelines](https://github.com/geomstats/geomstats/blob/master/docs/contributing.rst#writing-docstrings).
 - You do not have to implement all of the methods listed above. You can implement methods not listed.
-- Your functions should work with only matplotlib.
+- Your visualization functions should work with only matplotlib.
 - You can add options for your functions to be interactive, using plotly or bokeh in addition to matplotlib.
 - Here is an [example of a visualization project by Elodie Maignant](https://github.com/geomstats/geomstats/blob/master/notebooks/usecase_visualizations_in_kendall_shape_spaces.ipynb).
