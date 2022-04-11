@@ -10,8 +10,8 @@ Goal: Get intuition on Differential Geometry by visualizing manifolds.
 First come, first serve. Send a message on slack to register your team.
 
 - [ ] Stiefel manifold: TBD.
-- [ ] Grassmanian manifold: TBD.
-- [ ] Manifold of symmetric positive definite (SPD) matrices: TBD.
+- [ ] Grassmanian manifold: Gabriella Torres, Breanna Takacs, Becky Martin and Sam Rosen.
+- [ ] Manifold of symmetric positive definite (SPD) matrices: Christos Zangos and XXX.
 - [ ] Hyberbolic spaces: TBD.
 - [ ] Special Euclidean group: TBD.
 - [ ] Special Orthogonal group: TBD.
