@@ -2,7 +2,7 @@
 
 Goal: Get intuition on Differential Geometry by visualizing manifolds.
 
-- Deadline: Thursday 04/21/2022.
+- Deadline: Thursday 04/21/2022: Presentation in class (5 min per team).
 - Team of 2-4 students.
 
 ## Register your team
