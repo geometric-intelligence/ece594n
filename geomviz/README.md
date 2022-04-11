@@ -12,7 +12,7 @@ First come, first serve. Send a message on slack to register your team.
 - [ ] Stiefel manifold: TBD.
 - [X] Grassmanian manifold: Gabriella Torres, Breanna Takacs, Becky Martin and Sam Rosen.
 - [ ] Manifold of symmetric positive definite (SPD) matrices: Christos Zangos and XXX.
-- [ ] Hyberbolic spaces: Alireza Parsay and XXX.
+- [X] Hyberbolic spaces: Alireza Parsay and Jax Burd.
 - [ ] Special Euclidean group: TBD.
 - [ ] Special Orthogonal group: TBD.
 - [ ] Heisenberg group: TBD.
