@@ -13,11 +13,11 @@ First come, first serve. Send a message on slack to register your team.
 - [X] Grassmanian manifold: Gabriella Torres, Breanna Takacs, Becky Martin and Sam Rosen.
 - [ ] Manifold of symmetric positive definite (SPD) matrices: Christos Zangos and XXX.
 - [X] Hyberbolic spaces: Alireza Parsay and Jax Burd.
-- [ ] Special Euclidean group: TBD.
+- [X] Special Euclidean group: Swetha Pillai and Ryan Guajardo.
 - [ ] Special Orthogonal group: TBD.
 - [ ] Heisenberg group: TBD.
 - [ ] Discrete curves: TBD.
-- [ ] Manifold of beta distributions: TBD.
+- [X] Manifold of beta distributions: Yiliang chen and Sunpeng Duan.
 - [ ] Manifold of categorical distributions: TBD.
 
 ## Guidelines
