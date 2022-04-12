@@ -59,4 +59,4 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
 - You do not have to implement all of the methods listed above. You can implement methods not listed.
 - Your visualization functions should work with only matplotlib.
 - You can add options for your functions to be interactive, using plotly or bokeh in addition to matplotlib.
-- Here is an [example of a visualization project by Elodie Maignant](https://github.com/geomstats/geomstats/blob/master/notebooks/usecase_visualizations_in_kendall_shape_spaces.ipynb).
+- Here is an [example of a visualization project by Elodie Maignant](https://github.com/geomstats/geomstats/blob/master/notebooks/16_real_world_applications__visualizations_in_kendall_shape_spaces.ipynb).
