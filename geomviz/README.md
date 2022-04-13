@@ -30,6 +30,11 @@ First come, first serve. Send a message on slack to register your team.
 - Make sure to indicate which teammate did which part of the work.
 - You can submit code to this repository anytime until the deadline.
 
+## Remarks
+
+- Higher-dimensional manifolds: (i) do not plot them or (ii) find a "trick" to plot them
+- Note that some visualizations are already available in Geomstats for some manifolds listed above.
+
 ## Code Structure 
 
 Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Geomstats.
