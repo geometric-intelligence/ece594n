@@ -62,10 +62,13 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
     
     − `plot_vector_field` allows to visualise vectors fields. Takes points and tangent vecs as parameters.
     
-− In your notebook `[your-manifold].ipynb`:
-  - Give the mathematical definition of your manifold.
-  - Explain how your manifold is used in real-world applications.
-  - Showcase your visualization can be used by plotting the inputs and outputs of operations such as exp, log, geodesics.
+− In your notebook `[your-manifold].ipynb`, respect the following outline:
+  - 1. Introduction.
+  - 2. Mathematical definition of [your manifold].
+  - 3. Uses of [your manifold] in real-world applications.
+  - 4. Visualization of elementary operations on [your manifold]
+    - Showcase your visualization can be used by plotting the inputs and outputs of operations such as exp, log, geodesics.
+  - 5. Conclusion and references
 
 
 ## Additional remarks
