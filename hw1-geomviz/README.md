@@ -18,16 +18,18 @@ First come, first serve. Send a message on slack to register your team.
 - [ ] Heisenberg group: TBD.
 - [ ] Discrete curves: TBD.
 - [X] Manifold of beta distributions: Yiliang chen and Sunpeng Duan.
-- [ ] Manifold of categorical distributions: TBD.
+- [X] Manifold of categorical distributions: Ian Wu, Steven Lin, Haoming Chen 
 
 ## Guidelines
 
+- [Git clone](https://github.com/git-guides/git-clone) this GitHub repository.
 - Create a new folder in this folder with the name of your manifold.
 - In this new folder:
   - Add a python file named `[your-manifold].py`, e.g. `grassmanian.py`
     - This file will have the core functions for your project (details below).
   - Add a Jupyter notebook named `[your-manifold].ipynb` that represents the bulk of your project.
 - Make sure to indicate which teammate did which part of the work.
+- Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to this GitHub repository.
 - You can submit code to this repository anytime until the deadline.
 
 ## Remarks
