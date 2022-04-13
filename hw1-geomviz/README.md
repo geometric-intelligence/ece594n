@@ -40,7 +40,7 @@ First come, first serve. Send a message on slack to register your team.
 - Some visualizations are already implemented in [geomstats/visualization.py](https://github.com/geomstats/geomstats/blob/master/geomstats/visualization.py) for some manifolds.
   - Search if your manifold has some visualization implemented and think about how to improve it.
   - You can use what is already implemented.
-- The folders of (examples)[https://github.com/geomstats/geomstats/tree/master/examples] and (notebooks)[https://github.com/geomstats/geomstats/tree/master/notebooks] show you examples on how to use the operations on your manifold.
+- The folders of [examples](https://github.com/geomstats/geomstats/tree/master/examples) and [notebooks](https://github.com/geomstats/geomstats/tree/master/notebooks) show you examples on how to use the operations on your manifold.
   - Search for your manifold in these files to get ideas.
 - Higher-dimensional manifolds: (i) do not plot them or (ii) find a "trick" to plot them
 - Note that some visualizations are already available in Geomstats for some manifolds listed above.
