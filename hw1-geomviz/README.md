@@ -14,7 +14,6 @@ First come, first serve. Send a message on slack to register your team.
 - [X] Manifold of symmetric positive definite (SPD) matrices: Christos Zangos and Vincent Benenati.
 - [X] Hyberbolic spaces: Alireza Parsay and Jax Burd.
 - [X] Special Euclidean group: Swetha Pillai and Ryan Guajardo.
-- [ ] Special Orthogonal group: TBD.
 - [ ] Heisenberg group: TBD.
 - [ ] Discrete curves: TBD.
 - [X] Manifold of beta distributions: Yiliang chen and Sunpeng Duan.
