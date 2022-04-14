@@ -77,3 +77,16 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
 - Your visualization functions should work with only matplotlib.
 - You can add options for your functions to be interactive, using plotly or bokeh in addition to matplotlib.
 - Here is an [example of a visualization project by Elodie Maignant](https://github.com/geomstats/geomstats/blob/master/notebooks/16_real_world_applications__visualizations_in_kendall_shape_spaces.ipynb).
+
+
+## Grading Criteria
+
+- The notebook respects the guidelines in this Readme, and in particular: the code is clean and documented. 10%
+- The notebook gives the correct mathematical definition of the manifold. 10%
+- The notebook gives 5+ interesting real-world uses of the manifold, with references. 10%
+- The notebook uses existing `geomstats` operations (log, exp, geodesics, parallel transport) on the manifold. 20%
+- The notebook uses existing `geomstats` [visualization tools](https://github.com/geomstats/geomstats/blob/master/geomstats/visualization.py) to show the results of the elementary operations. 20% 
+  - If there are no tools in [visualization tools](https://github.com/geomstats/geomstats/blob/master/geomstats/visualization.py) for your manifold, mention it and this criterion is not taken into account.
+- The notebook implements custom visualization tools to show the results of the elementary operations. 20%
+- The presentation in class is clear and helps give intuition about the manifold. 10%
+
