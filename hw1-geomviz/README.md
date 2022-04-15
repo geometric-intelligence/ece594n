@@ -15,7 +15,7 @@ First come, first serve. Send a message on slack to register your team.
 - [ ] Hyberbolic spaces: Alireza Parsay.
 - [X] Special Euclidean group: Swetha Pillai and Ryan Guajardo.
 - [ ] Heisenberg group: TBD.
-- [ ] Discrete curves: Jax Burd.
+- [X] Discrete curves: Jax Burd and Abhijith Atreya.
 - [X] Manifold of beta distributions: Yiliang chen and Sunpeng Duan.
 - [X] Manifold of categorical distributions: Ian Wu, Steven Lin, Haoming Chen 
 
