@@ -10,6 +10,7 @@ class CategoricalDistributionsManifold:
         self.ax = None
         self.elev, self.azim = None, None
         self.metric = CategoricalMetric(dim = self.dim)
+        self.dist = CategoricalDistributions(dim = self.dim)
     def plot(self):
         min_limit = 0
         max_limit = 1
@@ -31,16 +32,11 @@ class CategoricalDistributionsManifold:
             poly3d = [[tupleList[vertices[ix][iy]] for iy in range(len(vertices[0]))] for ix in range(len(vertices))]
             self.ax.add_collection3d(Poly3DCollection(poly3d, edgecolors='k', facecolors='w', linewidths=3, alpha=0.2))
 
-            for point in self.points:
-                self.ax.scatter(point[0], point[1], point[2])
-
         elif self.dim == 2:
             X = np.linspace(start = min_limit, stop = max_limit, num = 101, endpoint = True)
             Y = 1 - X
             # self.ax.fill_between(X, Y)
             self.ax.plot(X, Y)
-            for point in self.points:
-                self.ax.scatter(point[0], point[1])
 
 
     def set_view(self, elev = 30.0, azim = 20.0):
@@ -50,8 +46,21 @@ class CategoricalDistributionsManifold:
             self.elev, self.azim = elev, azim
             self.ax.view_init(elev, azim)
 
+
     def set_points(self, points):
         self.points = points
+
+
+    def scatter(self, n_samples, **scatter_kwargs):
+        self.set_points(self.dist.random_point(n_samples=n_samples))
+        self.plot()
+        if self.dim == 3:
+            for point in self.points:
+                self.ax.scatter(point[0], point[1], point[2], **scatter_kwargs)
+        elif self.dim == 2: 
+            for point in self.points:
+                self.ax.scatter(point[0], point[1], **scatter_kwargs)
+        self.clear_points()
 
     def plot_geodesic(self, initial_point, end_point = None, tangent_vector = None):
         self.plot()
@@ -60,14 +69,58 @@ class CategoricalDistributionsManifold:
         if self.dim == 3:
             for i in range(num_samples):
                 point = geodesic(i/num_samples)
-                self.ax.scatter(point[0], point[1], point[2], color='blue')
+                self.ax.scatter(point[0], point[1], point[2], color='blue', s = 2)
             self.ax.scatter(geodesic(0)[0], geodesic(0)[1], geodesic(0)[2], color='red', s = 30)
+            if tangent_vector is not None:
+                normalized_tangent_vector = tangent_vector/np.sum(np.power(tangent_vector, 2))
+                self.ax.quiver(
+                    initial_point[0],
+                    initial_point[1],
+                    initial_point[2],
+                    normalized_tangent_vector[0],
+                    normalized_tangent_vector[1],
+                    normalized_tangent_vector[2],
+                    color = 'red',
+                    length = 0.1,
+                    normalize = True
+                )
         elif self.dim == 2:
             for i in range(num_samples):
                 point = geodesic(i/num_samples)
-                self.ax.scatter(point[0], point[1], color='blue', s = 5)
+                self.ax.scatter(point[0], point[1], color='blue', s = 2)
             self.ax.scatter(geodesic(0)[0], geodesic(0)[1], color='red', s = 30)
+            if tangent_vector is not None:
+                normalized_tangent_vector = tangent_vector/np.sum(np.power(tangent_vector, 2))
+                self.ax.quiver(
+                    initial_point[0],
+                    initial_point[1],
+                    normalized_tangent_vector[0],
+                    normalized_tangent_vector[1],
+                    color = 'red',
+                    angles = 'xy',
+                    scale_units = 'xy',
+                    scale = 10,
+                )
 
+    def plot_grid(self):
+        self.plot()
+        points = [
+        np.array([0.5,0,0.5]),
+        np.array([0,0.5,0.5]),
+        np.array([0.5,0.5,0]),
+        np.array([0.25,0,0.75]),
+        np.array([0,0.25,0.75]),
+        np.array([0.75,0,0.25]),
+        np.array([0,0.75,0.25]),
+        ]
+
+        num_samples = 100
+        curves = [(0,1),(0,2),(1,2),(3,2),(4,2),(3,4),(5,2),(6,2),(5,6)]
+        for curve in curves:
+            geodesic = self.metric.geodesic(initial_point=points[curve[0]], end_point= points[curve[1]])
+            for i in range(num_samples):
+                point = geodesic(i/num_samples)
+                self.ax.scatter(point[0], point[1], color='black', s = 1)
 
     def clear_points(self):
         self.points = []
