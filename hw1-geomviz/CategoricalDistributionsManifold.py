@@ -1,4 +1,5 @@
 from cmath import nan
+from tokenize import endpats
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
 import numpy as np
@@ -100,6 +101,49 @@ class CategoricalDistributionsManifold:
                     scale_units = 'xy',
                     scale = 10,
                 )
+
+
+    def plot_log(self, end_point, base_point):
+        tangent_vec = self.metric.log(point=end_point,base_point=base_point)
+        self.plot_helper(end_point=end_point,base_point=base_point, tangent_vec=tangent_vec)
+
+
+    def plot_exp(self, tangent_vec, base_point):
+        end_point = self.metric.exp(tangent_vec=tangent_vec,base_point=base_point)
+        self.plot_helper(end_point=end_point,base_point=base_point, tangent_vec=tangent_vec)
+
+    def plot_helper(self,end_point, base_point, tangent_vec):
+        self.plot()
+        if self.dim == 2:
+            self.ax.scatter(base_point[0], base_point[1], color='red', s = 30)
+            self.ax.scatter(end_point[0], end_point[1], color='blue', s = 30)
+            self.ax.quiver(
+                base_point[0],
+                base_point[1],
+                tangent_vec[0],
+                tangent_vec[1],
+                color = 'red',
+                angles = 'xy',
+                scale_units = 'xy',
+                scale = 5,
+                )
+        elif self.dim == 3:
+            self.ax.scatter(base_point[0], base_point[1], base_point[2], color='red', s = 30)
+            self.ax.scatter(end_point[0], end_point[1], end_point[3], color='blue', s = 30)
+            self.ax.quiver(
+                base_point[0],
+                base_point[1],
+                base_point[2],
+                tangent_vec[0],
+                tangent_vec[1],
+                tangent_vec[2],
+                color = 'red',
+                length = 0.1,
+                normalize = True
+                )
+
+
+
 
     def plot_grid(self):
         self.plot()
