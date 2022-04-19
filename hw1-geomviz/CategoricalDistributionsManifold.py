@@ -30,13 +30,12 @@ class CategoricalDistributionsManifold:
             vertices = [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]]
             tupleList = list(zip(x, y, z))
             poly3d = [[tupleList[vertices[ix][iy]] for iy in range(len(vertices[0]))] for ix in range(len(vertices))]
-            self.ax.add_collection3d(Poly3DCollection(poly3d, edgecolors='k', facecolors='w', linewidths=3, alpha=0.2))
+            self.ax.add_collection3d(Poly3DCollection(poly3d, edgecolors='k', facecolors=(0.9, 0.9, 0.9, 1.0), linewidths=3, alpha=0.2))
 
         elif self.dim == 2:
             X = np.linspace(start = min_limit, stop = max_limit, num = 101, endpoint = True)
             Y = 1 - X
-            # self.ax.fill_between(X, Y)
-            self.ax.plot(X, Y)
+            self.ax.fill_between(X, Y, color = (0.9, 0.9, 0.9, 1.0))
 
 
     def set_view(self, elev = 30.0, azim = 20.0):
