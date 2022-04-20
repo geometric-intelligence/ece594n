@@ -2,6 +2,11 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import colorsys
+import math
+
+from matplotlib.tri import Triangulation
+
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 # def plot(points):
 #     fig = plt.figure()
@@ -102,6 +107,155 @@ import colorsys
 
 #     return (np.cos(x + 2 * y) + 1) / 2
 
+def plot_hsv():
+
+    #Modified from: https://stackoverflow.com/questions/55298164/3d-plot-of-the-cone-using-matplotlib
+    n_angles = 80
+
+    n_radii = 40
+
+
+    # An array of radii
+
+    # Does not include radius r=0, this is to eliminate duplicate points
+
+    radii = np.linspace(0.0, 1.0, n_radii)
+
+
+    # An array of angles
+
+    angles = np.linspace(0, 2*np.pi, n_angles, endpoint=False)
+
+
+    # Repeat all angles for each radius
+
+    angles = np.repeat(angles[..., np.newaxis], n_radii, axis=1)
+
+
+    # Convert polar (radii, angles) coords to cartesian (x, y) coords
+
+    # (0, 0) is added here. There are no duplicate points in the (x, y) plane
+
+
+    x = np.append(0, (radii*np.cos(angles)).flatten())
+
+    y = np.append(0, (radii*np.sin(angles)).flatten())
+
+
+    # # Pringle surface
+
+    # z = 1+-np.sqrt(x**2+y**2)*2
+    z = np.full_like(x, 1)
+
+    # print(x.shape, y.shape, angles.shape, radii.shape, z.shape)
+
+    # # NOTE: This assumes that there is a nice projection of the surface into the x/y-plane!
+    tri = Triangulation(x, y)
+
+    triangle_vertices = np.array([np.array([[x[T[0]], y[T[0]], z[T[0]]],
+
+                                            [x[T[1]], y[T[1]], z[T[1]]],
+
+                                            [x[T[2]], y[T[2]], z[T[2]]]]) for T in tri.triangles])
+
+
+    x2 = np.append(0, (radii*np.cos(angles)).flatten())
+
+    y2 = np.append(0, (radii*np.sin(angles)).flatten())
+
+
+    # Pringle surface
+    z2 = np.sqrt(x**2+y**2)
+
+
+    # NOTE: This assumes that there is a nice projection of the surface into the x/y-plane!
+    tri2 = Triangulation(x2, y2)
+
+    triangle_vertices2 = np.array([np.array([[x2[T[0]], y2[T[0]], z2[T[0]]],
+
+                                            [x2[T[1]], y2[T[1]], z2[T[1]]],
+
+                                            [x2[T[2]], y2[T[2]], z2[T[2]]]]) for T in tri2.triangles])
+
+    triangle_vertices = np.concatenate([triangle_vertices, triangle_vertices2])
+
+    midpoints = np.average(triangle_vertices, axis=1)
+
+    facecolors = [find_color_for_point(pt) for pt in midpoints]  # smooth gradient
+    # facecolors = [np.random.random(3) for pt in midpoints]  # random colors
+
+
+    coll = Poly3DCollection(
+        triangle_vertices, facecolors=facecolors, edgecolors=None)
+
+
+    fig = plt.figure()
+
+    ax = fig.gca(projection='3d')
+
+    ax.add_collection(coll)
+
+    ax.set_xlim(-1, 1)
+
+    ax.set_ylim(-1, 1)
+
+    ax.set_zlim(0, 1)
+
+    ax.elev = 25
+
+    # rotate the axes and update
+    for angle in range(0, 36):
+        ax.view_init(25, angle*10)
+        plt.draw()
+        plt.pause(.001)
+
+    # plt.show()
+
+
+# def find_color_for_point(pt):
+
+#     c_x, c_y, c_z = pt
+
+#     angle = np.arctan2(c_x, c_y)*180/np.pi
+
+#     if (angle < 0):
+#         angle = angle + 360
+
+#     if c_z < 0:
+
+#         l = 0.5 - abs(c_z)/2
+#         #l=0
+#     if c_z == 0:
+#         l = 0.5
+#     if c_z > 0:
+#         l = (1 - (1-c_z)/2)
+
+#     if c_z > 0.97:
+
+#         l = (1 - (1-c_z)/2)
+
+#     col = colorsys.hls_to_rgb(angle/360, l, 1)
+
+#     return col
+
+def find_color_for_point(pt):
+
+    c_x, c_y, c_z = pt
+
+    angle = np.arctan2(c_x, c_y)*180/np.pi
+
+    if (angle < 0):
+        angle = angle + 360
+
+    hue = angle/360
+    saturation = math.sqrt(c_x**2+c_y**2)
+    value = c_z
+    color = colorsys.hsv_to_rgb(hue, saturation, value)
+
+    return color
+
+
+
 
 def plot5():
     fig = plt.figure()
@@ -164,6 +318,7 @@ if __name__=="__main__":
     # ellipses = visualization.Ellipses()
 
     # ellipses.draw_points(points=randomPoints)
-    symmetric_positive_definite.plot5()
+    # symmetric_positive_definite.plot5()
 
+    symmetric_positive_definite.plot_hsv()
 
