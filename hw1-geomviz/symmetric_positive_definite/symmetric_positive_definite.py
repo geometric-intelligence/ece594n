@@ -1,9 +1,12 @@
+from calendar import c
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import colorsys
 import math
-
+from matplotlib.patches import Ellipse
+import mpl_toolkits.mplot3d.art3d as art3d
+from geomstats.visualization import Ellipses
 from matplotlib.tri import Triangulation
 
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
@@ -107,7 +110,32 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 #     return (np.cos(x + 2 * y) + 1) / 2
 
-def plot_hsv():
+def cuboid_data(o, size=(1,1,1)):
+    X = [[[0, 1, 0], [0, 0, 0], [1, 0, 0], [1, 1, 0]],
+         [[0, 0, 0], [0, 0, 1], [1, 0, 1], [1, 0, 0]],
+         [[1, 0, 1], [1, 0, 0], [1, 1, 0], [1, 1, 1]],
+         [[0, 0, 1], [0, 0, 0], [0, 1, 0], [0, 1, 1]],
+         [[0, 1, 0], [0, 1, 1], [1, 1, 1], [1, 1, 0]],
+         [[0, 1, 1], [0, 0, 1], [1, 0, 1], [1, 1, 1]]]
+    X = np.array(X).astype(float)
+    X -= 0.5
+    for i in range(3):
+        X[:,:,i] *= size[i]
+    X += np.array(o)
+    return X
+
+
+def plotCubeAt(positions,sizes=None,colors=None, **kwargs):
+    if not isinstance(colors,(list,np.ndarray)): colors=["C0"]*len(positions)
+    if not isinstance(sizes,(list,np.ndarray)): sizes=[(1,1,1)]*len(positions)
+    g = []
+    for p,s,c in zip(positions,sizes,colors):
+        g.append( cuboid_data(p, size=s) )
+    return Poly3DCollection(np.concatenate(g),  
+                            facecolors=np.repeat(colors,6, axis=0), **kwargs)
+
+
+def plot_hsv(animate=True):
 
     #Modified from: https://stackoverflow.com/questions/55298164/3d-plot-of-the-cone-using-matplotlib
     n_angles = 80
@@ -186,32 +214,67 @@ def plot_hsv():
 
 
     coll = Poly3DCollection(
-        triangle_vertices, facecolors=facecolors, edgecolors=None)
+        triangle_vertices, facecolors=facecolors, edgecolors=None,  alpha=0.8, zorder=-1)
 
 
     fig = plt.figure()
 
     ax = fig.gca(projection='3d')
 
+
+   
+    
     ax.add_collection(coll)
 
-    ax.set_xlim(-1, 1)
 
-    ax.set_ylim(-1, 1)
+    ax.set_xlim(-1.5, 1.5)
 
-    ax.set_zlim(0, 1)
+    ax.set_ylim(-1.5, 1.5)
+
+    ax.set_zlim(-0.5, 1.5)
 
     ax.elev = 25
+  
 
-    # rotate the axes and update
-    for angle in range(0, 36):
-        ax.view_init(25, angle*10)
-        plt.draw()
-        plt.pause(.001)
+    while animate:
+        # rotate the axes and update
+        for angle in range(0, 36):
+            ax.view_init(25, angle*10)
+            plt.draw()
+            plt.pause(.001)
 
-    # plt.show()
+   
+
+    # positions = np.array([[0, 0,  .5]])
+    # pc = plotCubeAt(positions, sizes=[(.1,.1,.1*.5)]*len(positions), edgecolor="k",  alpha=0.4, zorder=-2)
+    # ax.add_collection3d(pc)
+    ## ax.add_collection(pc)
+
+    # p = Circle((0, 0), 0.5, alpha = 0.8, facecolor ="k",zorder=10)
+    # p = Ellipse((0,0), width = , height=, angle = , alpha = 0.8, facecolor ="k",zorder=10)
+    testPoint=(0.5,0.5,1)
+    # test = np.array([[1, 0],[0, 1]])
+    test = xyz_to_spd(testPoint)
+    spdSpace = Ellipses()
+    x,y = spdSpace.compute_coordinates(test)
+    z = np.full_like(x, testPoint[2])
+    ax.plot(x/100+testPoint[0], y/100+testPoint[1], z, alpha = 0.8, zorder=10, color = find_color_for_point(testPoint))
+    # ax.add_patch(p)
+    # art3d.pathpatch_2d_to_3d(p, z=1.0, zdir="z")
+
+    plt.show()
 
 
+def xyz_to_spd(point):
+    x,y,z = point
+    #let a = z
+    #let x = b
+    #let y = c
+    
+    # a+b c
+    # c a-b
+    
+    return np.array([[z+x, y],[y, z-x]])
 # def find_color_for_point(pt):
 
 #     c_x, c_y, c_z = pt
@@ -257,6 +320,8 @@ def find_color_for_point(pt):
 
 
 
+
+
 def plot5():
     fig = plt.figure()
     ax = fig.add_subplot(111,projection='3d')
@@ -283,7 +348,7 @@ def plot5():
 
     ax.set_zlim(0,1)
 
-    plt.show()
+   
 
 def plot_grid():
     pass
@@ -291,8 +356,10 @@ def plot_grid():
 def plot_rendering():
     pass
 
-def plot_tangent_space():
-    pass
+def plot_tangent_space(point):
+    x, y, z = point
+    plot_hsv(False)
+    
 
 def scatter():
     pass
@@ -320,5 +387,18 @@ if __name__=="__main__":
     # ellipses.draw_points(points=randomPoints)
     # symmetric_positive_definite.plot5()
 
-    symmetric_positive_definite.plot_hsv()
+    symmetric_positive_definite.plot_hsv(False)
+    # plt.show()
+    
+    # fig = plt.figure()
+    # ax = fig.gca(projection='3d')
+    # pc = plotCubeAt(np.array([2.0,2.0,2.0]), edgecolor="k")
+    # ax.add_collection3d(pc)
 
+    # ax.set_xlim(-10, 10)
+
+    # ax.set_ylim(-10, 10)
+
+    # ax.set_zlim(-10, 10)
+
+    # plt.show()
