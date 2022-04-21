@@ -188,7 +188,7 @@ class SymmetricPositiveDefiniteVizualization:
             facecolors = "0.9"  # grey
 
         coll = Poly3DCollection(
-            triangle_vertices, facecolors=facecolors, edgecolors=None,  alpha=0.9, zorder=-10)
+            triangle_vertices, facecolors=facecolors, edgecolors=None,  alpha=0.5, zorder=-10)
         self.artist = coll
         self.fig = plt.figure()
    
@@ -291,8 +291,10 @@ class SymmetricPositiveDefiniteVizualization:
 
         return color
 
-    def plot_grid():
-        pass
+    def plot_grid(self):
+        self.plot_geodesic(startPointXYZ = (0, 0, 0.5), endPointXYZ = (0, 0, 0.6), n_geodesic_samples = 30)
+        self.plot_geodesic(startPointXYZ = (0, 0, 0.5), endPointXYZ = (0, 0.1, 0.5), n_geodesic_samples = 30)
+        self.plot_geodesic(startPointXYZ = (0, 0, 0.5), endPointXYZ = (0.1,0,0.5), n_geodesic_samples = 30)
     
     def plot_rendering_top(self, n_radii, n_angles):
         """Plots the ellipses (representations of the SPD matrices) on the tp of the cone manifold
@@ -461,10 +463,11 @@ if __name__=="__main__":
 
     viz = SymmetricPositiveDefiniteVizualization(1)
 
-    viz.plot()
+    viz.plot(currZ=0.3)
+    viz.plot_grid()
     # viz.plot_geodesic()
-    viz.plot_tangent_space(point=(0,0,1))
-    viz.plot_exp()
+    # viz.plot_tangent_space(point=(0,0,1))
+    # viz.plot_exp()
     
     # viz.plot_exp()
     
