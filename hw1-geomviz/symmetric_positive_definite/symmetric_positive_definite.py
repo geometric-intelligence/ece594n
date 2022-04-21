@@ -38,6 +38,10 @@ class SymmetricPositiveDefiniteVizualization:
                     Takes as input n (int) – Integer representing the shape of the matrices: n x n
                     By default n is set to 2 to in order for the visualization to be feasible.
                     
+       metric: Compute the affine-invariant exponential map.Compute the Riemannian exponential at point 
+               base_point of tangent vector tangent_vec wrt the metric
+               defined in inner_product. This gives a symmetric positive definite matrix
+                    
        See Also
        --------
        
@@ -46,6 +50,9 @@ class SymmetricPositiveDefiniteVizualization:
             
        geomstats.visualization.Ellipses
             Class used to plot points on the manifold SPD(2)
+            
+       geomstats.geometry.spd_matrices.SPDMetricAffine
+            Class for the affine-invariant metric on the SPD manifold.
         
         
        References
