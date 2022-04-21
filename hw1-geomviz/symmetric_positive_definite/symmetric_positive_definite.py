@@ -16,6 +16,45 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 
 class SymmetricPositiveDefiniteVizualization:
+    """This class provides all the essential methods for the
+       visualization of the manifold of the Symmetric Positive 
+       Definite matrices.
+       
+       Parameters
+       ----------
+       maxZ: int
+          The scaling factor of the manifold
+       
+       Attributes
+       ----------
+       currZ: int
+              The scaling factor of the manifold
+       
+       spdPointViz: Class used to plot points on the manifold SPD(2).
+                    Elements S of the manifold of 2D Symmetric Positive 
+                    Definite matrices can be conveniently represented by ellipses.
+       
+       spdManifold: Class for the manifold of symmetric positive definite (SPD) matrices.
+                    Takes as input n (int) – Integer representing the shape of the matrices: n x n
+                    By default n is set to 2 to in order for the visualization to be feasible.
+                    
+       See Also
+       --------
+       
+       geomstats.geometry.spd_matrices.SPDMatrices
+            Class for the manifold of symmetric positive definite (SPD) matrices
+            
+       geomstats.visualization.Ellipses
+            Class used to plot points on the manifold SPD(2)
+        
+        
+       References
+       ----------
+       [1] Miolane, Nina, et al. "Geomstats: a Python package for Riemannian geometry 
+           in machine learning." Journal of Machine Learning Research 21.223 (2020): 1-9.
+       
+    """
+    
     
     def __init__(self, maxZ = 1):
         self.maxZ = float(maxZ)
@@ -41,6 +80,29 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def plotCubeAt(self, positions,sizes=None,colors=None, **kwargs):
+        """Plots a cube relative to specific coordinates.   
+
+        Parameters
+        ----------
+        positions : array-like, size [1,3]
+            Cordinates of the specific point           
+        sizes : list of tuples
+            Size of the cube-shaped tangent space     
+        colors: string, optional (default=None)
+            Specifies the color of the cube     
+        
+            
+        Returns
+        -------
+            Figure plot
+            
+        See also
+        -------
+        
+        matplotlib.collections.PolyCollection
+
+
+        """
         if not isinstance(colors,(list,np.ndarray)): colors=["C0"]*len(positions)
         if not isinstance(sizes,(list,np.ndarray)): sizes=[(1,1,1)]*len(positions)
         g = []
@@ -51,6 +113,23 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def plot(self,  n_angles = 80, n_radii = 40, currZ=None, hsv=False):
+        """Plots the 3D cone.   
+
+        Parameters
+        ----------
+        n_angles : int
+            Number of angles in polar coordinates            
+        n_radii : int
+            Number of radii in polar coordinates     
+        currZ: int, optional (default=None)
+            Scaling factor     
+        hsv: bool, optional (default=False) 
+            Adds smooth gradient representation to the cone when set to True
+            
+        Returns
+        -------
+            Figure plot
+        """
         
         if currZ == None:
             self.currZ = self.maxZ
@@ -143,6 +222,15 @@ class SymmetricPositiveDefiniteVizualization:
 
     @staticmethod
     def xyz_to_spd(point):
+       """Converts cartesian coordinates to coordinates on the manifold coordinate system
+       Parameters
+       ----------
+       point : tuple-like of size = 3
+       
+       Returns
+       -------
+       array-like, shape [2,2]   
+       """
         x,y,z = point
         #let a = z
         #let x = b
@@ -157,6 +245,15 @@ class SymmetricPositiveDefiniteVizualization:
     
     @staticmethod
     def spd_to_xyz(matrix):
+        """Converts coordinates on the manifold coordinate system to cartesian coordinates 
+        Parameters
+        ----------
+        point : tuple-like of size = 3
+        
+        Returns
+        -------
+        tuple-like of size = 3
+        """
         z = (matrix[0,0] + matrix[1,1])/2.0
         x = matrix[0,0]-z
         y = matrix[0,1]
@@ -166,6 +263,17 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def find_color_for_point(self, point):
+        
+       """Convert the color from HSV coordinates to RGB coordinates.
+
+       Parameters
+       ----------
+       point : tuple-like of size = 3
+
+       Returns
+       -------
+       color: tuple-like of size = 3     
+       """
         x, y, z = point
 
         #convert radians to degrees
@@ -187,6 +295,19 @@ class SymmetricPositiveDefiniteVizualization:
         pass
     
     def plot_rendering_top(self, n_radii, n_angles):
+       """Plots the ellipses (representations of the SPD matrices) on the tp of the cone manifold
+
+       Parameters
+       ----------
+       n_angles : int
+            Number of angles in polar coordinates            
+       n_radii : int
+           Number of radii in polar coordinates  
+
+       Returns
+       -------
+       Figure plot    
+       """
         # Does not include radius r=0, this is to eliminate duplicate points
         # z_plane = self.maxZ
         z_plane = self.currZ
