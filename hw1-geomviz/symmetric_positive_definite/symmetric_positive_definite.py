@@ -76,6 +76,22 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def plotCubeAt(self, positions,sizes=None,colors=None, **kwargs):
+        """Plots a cube relative to specific coordinates.   
+
+        Parameters
+        ----------
+        positions : array-like, size [1,3]
+            Cordinates of the specific point           
+        sizes : list of tuples
+            Size of the cube-shaped tangent space     
+        colors: string, optional (default=None)
+            Specifies the color of the cube     
+        
+            
+        Returns
+        -------
+            Figure plot
+        """
         if not isinstance(colors,(list,np.ndarray)): colors=["C0"]*len(positions)
         if not isinstance(sizes,(list,np.ndarray)): sizes=[(1,1,1)]*len(positions)
         g = []
