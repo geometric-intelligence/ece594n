@@ -38,6 +38,10 @@ class SymmetricPositiveDefiniteVizualization:
                     Takes as input n (int) – Integer representing the shape of the matrices: n x n
                     By default n is set to 2 to in order for the visualization to be feasible.
                     
+       metric: Compute the affine-invariant exponential map.Compute the Riemannian exponential at point 
+               base_point of tangent vector tangent_vec wrt the metric
+               defined in inner_product. This gives a symmetric positive definite matrix
+                    
        See Also
        --------
        
@@ -46,6 +50,9 @@ class SymmetricPositiveDefiniteVizualization:
             
        geomstats.visualization.Ellipses
             Class used to plot points on the manifold SPD(2)
+            
+       geomstats.geometry.spd_matrices.SPDMetricAffine
+            Class for the affine-invariant metric on the SPD manifold.
         
         
        References
@@ -352,6 +359,16 @@ class SymmetricPositiveDefiniteVizualization:
         
 
     def plot_tangent_space(self, point):
+        """Plots the tangent space of the SPD manifold given a specific set of coordinates on the manifold
+        Parameters
+        ----------
+        point : tuple-like, size 3
+            Coordinates of the point based on which the tangent space will be plotted             
+          
+        Returns
+        -------
+        Figure plot    
+        """
         x, y, z = point
 
         positions = np.array([[x, y,  z]])
@@ -431,8 +448,21 @@ class SymmetricPositiveDefiniteVizualization:
         self.ax.legend()
 
     def plot_geodesic(self, startPointXYZ = (0,0,1), endPointXYZ = (0.25,0.25,0.5), n_geodesic_samples = 30):
-        """
-        allows to visualise a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
+        
+        """Allows the visualization of a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
+
+        Parameters
+        ----------
+        startPointXYZ : tuple-like, size 3
+            Initial point of the geodesic            
+        endPointXYZ : tuple-like, size 3
+            End point of the geodesic  
+        n_geodesic_sample: int
+            Number of samples for discretization
+            
+        Returns
+        -------
+        Figure plot   
         """  
         tangent_matrix = self.metric.log(SymmetricPositiveDefiniteVizualization.xyz_to_spd(endPointXYZ), base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
 
