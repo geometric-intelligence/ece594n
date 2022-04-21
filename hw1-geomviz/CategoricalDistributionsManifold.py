@@ -371,20 +371,7 @@ class CategoricalDistributionsManifold:
         
         """
         self.plot()
-        if self.dim == 2:
-            self.ax.scatter(base_point[0], base_point[1], color='red', s = 30)
-            self.ax.scatter(end_point[0], end_point[1], color='blue', s = 30)
-            self.ax.quiver(
-                base_point[0],
-                base_point[1],
-                tangent_vec[0],
-                tangent_vec[1],
-                color = 'red',
-                angles = 'xy',
-                scale_units = 'xy',
-                scale = 5,
-                )
-        elif self.dim == 3:
+        if self.dim == 3:
             self.ax.scatter(base_point[0], base_point[1], base_point[2], color='red', s = 30)
             self.ax.scatter(end_point[0], end_point[1], end_point[2], color='blue', s = 30)
             self.ax.quiver(
@@ -397,6 +384,19 @@ class CategoricalDistributionsManifold:
                 color = 'red',
                 length = 0.1,
                 normalize = True
+                )
+        elif self.dim == 2:
+            self.ax.scatter(base_point[0], base_point[1], color='red', s = 30)
+            self.ax.scatter(end_point[0], end_point[1], color='blue', s = 30)
+            self.ax.quiver(
+                base_point[0],
+                base_point[1],
+                tangent_vec[0],
+                tangent_vec[1],
+                color = 'red',
+                angles = 'xy',
+                scale_units = 'xy',
+                scale = 5,
                 )
 
 
