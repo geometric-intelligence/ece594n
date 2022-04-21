@@ -222,15 +222,15 @@ class SymmetricPositiveDefiniteVizualization:
 
     @staticmethod
     def xyz_to_spd(point):
-       """Converts cartesian coordinates to coordinates on the manifold coordinate system
-       Parameters
-       ----------
-       point : tuple-like of size = 3
-       
-       Returns
-       -------
-       array-like, shape [2,2]   
-       """
+        """Converts cartesian coordinates to coordinates on the manifold coordinate system
+        Parameters
+        ----------
+        point : tuple-like of size = 3
+        
+        Returns
+        -------
+        array-like, shape [2,2]   
+        """
         x,y,z = point
         #let a = z
         #let x = b
@@ -264,16 +264,16 @@ class SymmetricPositiveDefiniteVizualization:
 
     def find_color_for_point(self, point):
         
-       """Convert the color from HSV coordinates to RGB coordinates.
+        """Convert the color from HSV coordinates to RGB coordinates.
 
-       Parameters
-       ----------
-       point : tuple-like of size = 3
+        Parameters
+        ----------
+        point : tuple-like of size = 3
 
-       Returns
-       -------
-       color: tuple-like of size = 3     
-       """
+        Returns
+        -------
+        color: tuple-like of size = 3     
+        """
         x, y, z = point
 
         #convert radians to degrees
@@ -282,7 +282,7 @@ class SymmetricPositiveDefiniteVizualization:
         #normalize degrees to [0, 360]
         if (angle < 0):
             angle = angle + 360
-        
+
         hue = angle/360
         saturation = math.sqrt(x**2+y**2)/self.maxZ
         value = z/self.maxZ
@@ -295,21 +295,22 @@ class SymmetricPositiveDefiniteVizualization:
         pass
     
     def plot_rendering_top(self, n_radii, n_angles):
-       """Plots the ellipses (representations of the SPD matrices) on the tp of the cone manifold
+        """Plots the ellipses (representations of the SPD matrices) on the tp of the cone manifold
 
-       Parameters
-       ----------
-       n_angles : int
+        Parameters
+        ----------
+        n_angles : int
             Number of angles in polar coordinates            
-       n_radii : int
-           Number of radii in polar coordinates  
+        n_radii : int
+            Number of radii in polar coordinates  
 
-       Returns
-       -------
-       Figure plot    
-       """
+        Returns
+        -------
+        Figure plot    
+        """
         # Does not include radius r=0, this is to eliminate duplicate points
         # z_plane = self.maxZ
+        
         z_plane = self.currZ
         radii = np.linspace(z_plane, 0, n_radii, endpoint=False)
 
