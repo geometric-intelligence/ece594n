@@ -1,4 +1,5 @@
 from calendar import c
+from unittest import result
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,8 +7,10 @@ import colorsys
 import math
 import mpl_toolkits.mplot3d.art3d as art3d
 from geomstats.visualization import Ellipses
+from geomstats.geometry.spd_matrices import *
 from matplotlib.tri import Triangulation
 from matplotlib.animation import FuncAnimation
+from geomstats.geometry.spd_matrices import SPDMatrices
 
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
@@ -20,6 +23,7 @@ class SymmetricPositiveDefiniteVizualization:
         self.ax = None
         self.spdPointViz = Ellipses()
         self.spdManifold = SPDMatrices(2)
+        self.metric = SPDMetricAffine(2)
 
     def cuboid_data(self, o, size=(1,1,1)):
         X = [[[0, 1, 0], [0, 0, 0], [1, 0, 0], [1, 1, 0]],
@@ -102,10 +106,10 @@ class SymmetricPositiveDefiniteVizualization:
         if hsv:
             facecolors = [self.find_color_for_point(pt) for pt in midpoints]  # smooth gradient
         else:
-            facecolors = "0.75"  # grey
+            facecolors = "0.9"  # grey
 
         coll = Poly3DCollection(
-            triangle_vertices, facecolors=facecolors, edgecolors=None,  alpha=0.7, zorder=-10)
+            triangle_vertices, facecolors=facecolors, edgecolors=None,  alpha=0.9, zorder=-10)
         self.artist = coll
         self.fig = plt.figure()
    
@@ -119,7 +123,23 @@ class SymmetricPositiveDefiniteVizualization:
         self.ax.set_ylabel("Y")
         self.ax.set_zlabel("Z")
         self.ax.elev = 26
-        
+    
+    @staticmethod
+    def elms_to_xyz(point):
+        elm0,elm1,elm2 = point
+        z = (elm0+elm2)/2
+        y = elm1
+        x = elm0-z     
+        return (x,y,z)
+
+    @staticmethod
+    def xyz_to_elms(point):
+        x,y,z = point
+        elm0 = z+x
+        elm1 = y
+        elm2 = z-x
+        return (elm0, elm1, elm2)
+
 
     @staticmethod
     def xyz_to_spd(point):
@@ -136,10 +156,10 @@ class SymmetricPositiveDefiniteVizualization:
         return np.array([[z+x, y],[y, z-x]])
     
     @staticmethod
-    def spd_to_xyz(point):
-        z = (point[0,0] + point[1,1])/2.0
-        x = point[0,0]-z
-        y = point[0,1]
+    def spd_to_xyz(matrix):
+        z = (matrix[0,0] + matrix[1,1])/2.0
+        x = matrix[0,0]-z
+        y = matrix[0,1]
         
         
         return (x,y,z)
@@ -219,43 +239,73 @@ class SymmetricPositiveDefiniteVizualization:
     def scatter():
         pass
 
-    def plot_geodesic(self, startPoint, endPoint):
-        """
-        allows to visualise a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
-        """
-       
-        # sphere = Hypersphere(dim=2)
-        # point = np.array([-0.65726771, -0.02678122, 0.7531812])
-        # vector = np.array([1, 0, 0.8])
-        # tangent_vector = sphere.to_tangent(vector, base_point=point)
-        # result = sphere.metric.exp(tangent_vector, base_point=point)
-        baseMatrix = np.array([[1,0],[0,1]])
-        point = self.spdManifold.projection(baseMatrix)
-        print(point)
 
-        finalMatrix = np.array([[1+0.5, 0.5],[0.5, 1-0.5]])
-        # vector = self.spdManifold.to_vector(finalMatrix)
-        tangent_matrix = self.spdManifold.random_tangent_vec(base_point=point)
+    def plot_exp(self, startPointXYZ =  (0,0,1), tangentVectorXYZ=(0.5,0.5,-0.25)):
+        
+        # tangent_matrix = self.spdManifold.random_tangent_vec(base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
+        tangent_matrix = SymmetricPositiveDefiniteVizualization.xyz_to_spd(tangentVectorXYZ)
+
         print("Tangent Matrix")
         print(tangent_matrix)
-        tangent_vector = SymmetricPositiveDefiniteVizualization.spd_to_xyz(tangent_matrix)
-        tangent
-        # point = np.array([0,0,1])
-        # vector = np.array([0.5,0.5,0])
-        # tangent_vector = self.spdManifold.to_tangent(vector, base_point=point)
-        # result = self.spdManifold.metric.exp(tangent_vector, base_point=point)
 
-        vectorBasePoint = self.spdManifold.to_vector(point)
-        print(vectorBasePoint)
-        vectorBasePoint = SymmetricPositiveDefiniteVizualization.spd_to_xyz(point)
-        # plt.plot(vectorBasePoint, ax=self.ax, label="Point")
-        self.ax.scatter3D(vectorBasePoint[0], vectorBasePoint[1], vectorBasePoint[2])
-        self.ax.quiver(vectorBasePoint[0], vectorBasePoint[1], vectorBasePoint[2], tangent_vector[0], tangent_vector[1], tangent_vector[2])
-        # arrow = self.ax.Arrow3D(point, vector=tangent_vector) 
-        # arrow.draw(self.ax, color="C0", label="Tangent Vector")
-        # plt.plot(result, ax=self.ax, s=100, alpha=0.8, label="Exp", color="black")
+
+        tangent_vector = SymmetricPositiveDefiniteVizualization.spd_to_xyz(tangent_matrix)
+        self.ax.scatter3D(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], label="Start Point")
+        self.ax.quiver(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], tangentVectorXYZ[0], tangentVectorXYZ[1], tangentVectorXYZ[2], label="Tangent Vector")
         
 
+        # resultMatrix = self.spdManifold.metric.exp(tangent_matrix, base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
+        resultMatrix = self.metric.exp(tangent_matrix, base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
+
+        print("Result")
+        print(resultMatrix)
+        resultXYZ = SymmetricPositiveDefiniteVizualization.spd_to_xyz(resultMatrix)
+        self.ax.scatter3D(resultXYZ[0],resultXYZ[1],resultXYZ[2], label="Result: Point")
+        self.ax.legend()
+
+    
+    
+    def plot_log(self, startPointXYZ = (0,0,1), endPointXYZ = (0.25,0.25,0.5)):
+        tangent_matrix = self.metric.log(SymmetricPositiveDefiniteVizualization.xyz_to_spd(endPointXYZ), base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
+
+        # print("Tangent Matrix")
+        # print(tangent_matrix)
+
+        tangent_vector = SymmetricPositiveDefiniteVizualization.spd_to_xyz(tangent_matrix)
+        
+        self.ax.scatter3D(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], label="Start Point")
+        self.ax.scatter3D(endPointXYZ[0], endPointXYZ[1], endPointXYZ[2], label="End Point")
+        self.ax.quiver(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], tangent_vector[0], tangent_vector[1], tangent_vector[2], label="Result: Tangent Vector")
+        self.ax.legend()
+
+    def plot_geodesic(self, startPointXYZ = (0,0,1), endPointXYZ = (0.25,0.25,0.5), n_geodesic_samples = 30):
+        """
+        allows to visualise a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
+        """  
+        tangent_matrix = self.metric.log(SymmetricPositiveDefiniteVizualization.xyz_to_spd(endPointXYZ), base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
+
+        # print("Tangent Matrix")
+        # print(tangent_matrix)
+
+        tangent_vector = SymmetricPositiveDefiniteVizualization.spd_to_xyz(tangent_matrix)
+        
+        self.ax.scatter3D(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], label="Start Point")
+        self.ax.scatter3D(endPointXYZ[0], endPointXYZ[1], endPointXYZ[2], label="End Point")
+        self.ax.quiver(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], tangent_vector[0], tangent_vector[1], tangent_vector[2], label="Tangent Vector")
+        
+        result = self.metric.geodesic(initial_tangent_vec=tangent_matrix, initial_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
+        
+        points_on_geodesic_spd = result(np.linspace(0.0, 1.0, n_geodesic_samples))
+        
+        geodesicXYZ = np.zeros((n_geodesic_samples,3))
+        pointColors = []
+        for index, matrix in enumerate(points_on_geodesic_spd):
+            geodesicXYZ[index,:] = SymmetricPositiveDefiniteVizualization.spd_to_xyz(matrix)
+            pointColors.append(self.find_color_for_point(geodesicXYZ[index,:]))
+
+        
+        self.ax.scatter3D(geodesicXYZ[1:-1,0], geodesicXYZ[1:-1,1],geodesicXYZ[1:-1,2], alpha=1, edgecolors="black",  color=pointColors[1:-1], label="Discrete Geodesic", zorder=100)        
+        self.ax.legend()
 
     def plot_vector_field():
         pass
@@ -290,7 +340,12 @@ if __name__=="__main__":
     viz = SymmetricPositiveDefiniteVizualization(1)
 
     viz.plot()
-    viz.plot_geodesic(0,0)
+    # viz.plot_geodesic()
+    viz.plot_tangent_space(point=(0,0,1))
+    viz.plot_exp()
+    
+    # viz.plot_exp()
+    
     plt.show()
     # viz.plot(hsv=True)
     # plt.show(block=False)
