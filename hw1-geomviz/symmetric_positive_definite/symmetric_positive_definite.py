@@ -140,6 +140,15 @@ class SymmetricPositiveDefiniteVizualization:
 
     @staticmethod
     def xyz_to_spd(point):
+       """Converts cartesian coordinates to coordinates on the manifold coordinate system
+       Parameters
+       ----------
+       point : tuple-like of size = 3
+       
+       Returns
+       -------
+       array-like, shape [2,2]   
+       """
         x,y,z = point
         #let a = z
         #let x = b
@@ -154,6 +163,15 @@ class SymmetricPositiveDefiniteVizualization:
     
     @staticmethod
     def spd_to_xyz(point):
+       """Convertscoordinates on the manifold coordinate system to cartesian coordinates 
+       Parameters
+       ----------
+       point : tuple-like of size = 3
+       
+       Returns
+       -------
+       tuple-like of size = 3
+       """
         z = (point[0,0] + point[1,1])/2.0
         x = point[0,0]-z
         y = point[0,1]
