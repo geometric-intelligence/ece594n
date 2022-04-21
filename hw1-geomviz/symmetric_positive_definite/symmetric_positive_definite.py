@@ -299,6 +299,12 @@ class SymmetricPositiveDefiniteVizualization:
         return color
 
     def plot_grid(self):
+        """Plots the geodesic grid
+        
+        Returns
+        -------
+            Figure plot    
+        """
         self.plot_geodesic(startPointXYZ = (0, 0, 0.5), endPointXYZ = (0, 0, 0.6), n_geodesic_samples = 30)
         self.plot_geodesic(startPointXYZ = (0, 0, 0.5), endPointXYZ = (0, 0.1, 0.5), n_geodesic_samples = 30)
         self.plot_geodesic(startPointXYZ = (0, 0, 0.5), endPointXYZ = (0.1,0,0.5), n_geodesic_samples = 30)
@@ -346,9 +352,18 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def plot_rendering(self, n_radii=5, n_angles=16):
-        '''
-        draws the manifold with regularly sampled data.
-        '''
+        """Draws the manifold with regularly sampled data
+        Parameters
+        ----------
+        n_radii : int
+            Number of radii in polar coordinates  
+        n_angles: int
+            Number of angles in polar coordinates
+        Returns
+        -------
+         Figure plot    
+        """
+        
         
         self.ax.elev = 90
 
