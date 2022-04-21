@@ -235,19 +235,25 @@ class SymmetricPositiveDefiniteVizualization:
 
         finalMatrix = np.array([[1+0.5, 0.5],[0.5, 1-0.5]])
         # vector = self.spdManifold.to_vector(finalMatrix)
-        tangent_vector = self.spdManifold.random_tangent_vec(base_point=point)
-        print(tangent_vector)
+        tangent_matrix = self.spdManifold.random_tangent_vec(base_point=point)
+        print("Tangent Matrix")
+        print(tangent_matrix)
+        tangent_vector = SymmetricPositiveDefiniteVizualization.spd_to_xyz(tangent_matrix)
+        tangent
         # point = np.array([0,0,1])
         # vector = np.array([0.5,0.5,0])
         # tangent_vector = self.spdManifold.to_tangent(vector, base_point=point)
-        result = self.spdManifold.metric.exp(tangent_vector, base_point=point)
+        # result = self.spdManifold.metric.exp(tangent_vector, base_point=point)
 
         vectorBasePoint = self.spdManifold.to_vector(point)
         print(vectorBasePoint)
-        plt.plot(vectorBasePoint, ax=self.ax, label="Point")
-        arrow = plt.Arrow3D(point, vector=tangent_vector) 
-        arrow.draw(self.ax, color="C0", label="Tangent Vector")
-        plt.plot(result, ax=self.ax, s=100, alpha=0.8, label="Exp", color="black")
+        vectorBasePoint = SymmetricPositiveDefiniteVizualization.spd_to_xyz(point)
+        # plt.plot(vectorBasePoint, ax=self.ax, label="Point")
+        self.ax.scatter3D(vectorBasePoint[0], vectorBasePoint[1], vectorBasePoint[2])
+        self.ax.quiver(vectorBasePoint[0], vectorBasePoint[1], vectorBasePoint[2], tangent_vector[0], tangent_vector[1], tangent_vector[2])
+        # arrow = self.ax.Arrow3D(point, vector=tangent_vector) 
+        # arrow.draw(self.ax, color="C0", label="Tangent Vector")
+        # plt.plot(result, ax=self.ax, s=100, alpha=0.8, label="Exp", color="black")
         
 
 
