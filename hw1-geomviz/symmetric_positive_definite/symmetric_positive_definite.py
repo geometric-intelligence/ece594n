@@ -438,8 +438,21 @@ class SymmetricPositiveDefiniteVizualization:
         self.ax.legend()
 
     def plot_geodesic(self, startPointXYZ = (0,0,1), endPointXYZ = (0.25,0.25,0.5), n_geodesic_samples = 30):
-        """
-        allows to visualise a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
+        
+        """Allows the visualization of a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
+
+        Parameters
+        ----------
+        startPointXYZ : tuple-like, size 3
+            Initial point of the geodesic            
+        endPointXYZ : tuple-like, size 3
+            End point of the geodesic  
+        n_geodesic_sample: int
+            Number of samples for discretization
+            
+        Returns
+        -------
+        Figure plot   
         """  
         tangent_matrix = self.metric.log(SymmetricPositiveDefiniteVizualization.xyz_to_spd(endPointXYZ), base_point=SymmetricPositiveDefiniteVizualization.xyz_to_spd(startPointXYZ))
 
