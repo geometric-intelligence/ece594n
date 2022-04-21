@@ -359,6 +359,16 @@ class SymmetricPositiveDefiniteVizualization:
         
 
     def plot_tangent_space(self, point):
+        """Plots the tangent space of the SPD manifold given a specific set of coordinates on the manifold
+        Parameters
+        ----------
+        point : tuple-like, size 3
+            Coordinates of the point based on which the tangent space will be plotted             
+          
+        Returns
+        -------
+        Figure plot    
+        """
         x, y, z = point
 
         positions = np.array([[x, y,  z]])
