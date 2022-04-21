@@ -13,6 +13,44 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 
 class SymmetricPositiveDefiniteVizualization:
+    """This class provides all the essential methods for the
+       visualization of the Symmetric Positive Definite manifold.
+       
+       Parameters
+       ----------
+       maxZ: int
+          The scaling factor of the manifold
+       
+       Attributes
+       ----------
+       currZ: int
+              The scaling factor of the manifold
+       
+       spdPointViz: Class used to plot points on the manifold SPD(2).
+                    Elements S of the manifold of 2D Symmetric Positive 
+                    Definite matrices can be conveniently represented by ellipses.
+       
+       spdManifold: Class for the manifold of symmetric positive definite (SPD) matrices.
+                    Takes as input n (int) – Integer representing the shape of the matrices: n x n
+                    By default n is set to 2 to in order for the visualization to be feasible.
+                    
+       See Also
+       --------
+       
+       geomstats.geometry.spd_matrices.SPDMatrices
+            Class for the manifold of symmetric positive definite (SPD) matrices
+            
+       geomstats.visualization.Ellipses
+            Class used to plot points on the manifold SPD(2)
+        
+        
+       References
+       ----------
+       [1] Miolane, Nina, et al. "Geomstats: a Python package for Riemannian geometry 
+           in machine learning." Journal of Machine Learning Research 21.223 (2020): 1-9.
+       
+    """
+    
     
     def __init__(self, maxZ = 1):
         self.maxZ = float(maxZ)
@@ -55,9 +93,9 @@ class SymmetricPositiveDefiniteVizualization:
             Number of angles in polar coordinates            
         n_radii : int
             Number of radii in polar coordinates     
-        currZ: Ignored
+        currZ: int, optional (default=None)
             Scaling factor     
-        hsv: bool 
+        hsv: bool, optional (default=False) 
             Adds smooth gradient representation to the cone when set to True
             
         Returns
