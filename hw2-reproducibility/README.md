@@ -15,7 +15,7 @@ Goal: Determine if it is easy to reproduce the findings of a research paper on b
   - Add the Jupyter notebook that represents your analysis' report.
   - Make sure to indicate which teammate did which part of the work.
   - You can submit code to this repository anytime until the deadline.
-- Write report on whether it was easy to reproduce the results.
+- The Jupyter notebook should indicate whether it was easy to reproduce the results.
   - Record the time it took you to do tasks.
   - If you do not get the same figures as the paper, this is fine.
 - Present in class on Thursday 05/03/2022 (5 min per team).
