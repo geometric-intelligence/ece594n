@@ -372,12 +372,12 @@ class SymmetricPositiveDefiniteVizualization:
         -------
         Figure plot    
         """
-        list_of_samples=[]
+        list_of_transf_samples=[]
         samples=self.spdManifold.random_point(n_samples=n_samples)
         for i in samples:
-            transf_sample=list(spd_to_xyz(i))
+            transf_sample=list(SymmetricPositiveDefiniteVizualization.spd_to_xyz(i))
             list_of_transf_samples.append(transf_sample)
-        #fig = plt.figure()
+        fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
         list_of_transf_samples=np.array(list_of_transf_samples)
 
@@ -385,8 +385,11 @@ class SymmetricPositiveDefiniteVizualization:
         xs = list_of_transf_samples[:,0]
         ys = list_of_transf_samples[:,1]
         zs = list_of_transf_samples[:,2]
-        self.ax.scatter(xs, ys, zs, marker='o')
-        
+        ax.scatter(xs, ys, zs, marker='o')
+        ax.set_xlabel("X")
+        ax.set_ylabel("Y")
+        ax.set_zlabel("Z")
+        return fig
 
 
     def plot_exp(self, startPointXYZ =  (0,0,1), tangentVectorXYZ=(0.5,0.5,-0.25)):
@@ -398,10 +401,7 @@ class SymmetricPositiveDefiniteVizualization:
         print(tangent_matrix)
 
 
-        tangent_vector = SymmetricPositiveDefiniteVizualization.
-        
-        
-        (tangent_matrix)
+    
         self.ax.scatter3D(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], label="Start Point")
         self.ax.quiver(startPointXYZ[0], startPointXYZ[1], startPointXYZ[2], tangentVectorXYZ[0], tangentVectorXYZ[1], tangentVectorXYZ[2], label="Tangent Vector")
         
@@ -492,10 +492,10 @@ if __name__=="__main__":
     viz = SymmetricPositiveDefiniteVizualization(1)
 
     viz.plot(currZ=0.3)
-    viz.plot_grid()
+    # viz.plot_grid()
     # viz.plot_geodesic()
     # viz.plot_tangent_space(point=(0,0,1))
-    # viz.plot_exp()
+    viz.scatter()
     
     # viz.plot_exp()
     
