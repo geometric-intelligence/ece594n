@@ -163,7 +163,7 @@ class SymmetricPositiveDefiniteVizualization:
     
     @staticmethod
     def spd_to_xyz(point):
-       """Convertscoordinates on the manifold coordinate system to cartesian coordinates 
+       """Converts coordinates on the manifold coordinate system to cartesian coordinates 
        Parameters
        ----------
        point : tuple-like of size = 3
@@ -213,6 +213,19 @@ class SymmetricPositiveDefiniteVizualization:
         pass
     
     def plot_rendering_top(self, n_radii, n_angles):
+       """Plots the ellipses (representations of the SPD matrices) on the tp of the cone manifold
+
+       Parameters
+       ----------
+       n_angles : int
+            Number of angles in polar coordinates            
+       n_radii : int
+           Number of radii in polar coordinates  
+
+       Returns
+       -------
+       Figure plot    
+       """
         # Does not include radius r=0, this is to eliminate duplicate points
         # z_plane = self.maxZ
         z_plane = self.currZ
