@@ -78,7 +78,7 @@ def projection_to_two_d(projections, points):
 def projection_to_three_d(projections, points):
     
     
-     """Takes Grassmannian generated projection matrix and converts it to a plotable 3D point.
+    """Takes Grassmannian generated projection matrix and converts it to a plotable 3D point.
     
     INPUT: Array of 3x3 projection matricies or a single projection matrix
     
@@ -90,6 +90,7 @@ def projection_to_three_d(projections, points):
     storage = []
     
     vector = np.random.rand(3,1)
+    
     if points==1:
         vector = np.matmul(projections, vector)/np.linalg.norm(np.matmul(projections, vector))
         
@@ -102,7 +103,7 @@ def projection_to_three_d(projections, points):
 
 def two_d_to_projection(vector):
     
-     """Takes 2D point on manifold and gets its corresponding projection.
+    """Takes 2D point on manifold and gets its corresponding projection.
     
     INPUT: Point on manifold as a 2x1 vector
     
