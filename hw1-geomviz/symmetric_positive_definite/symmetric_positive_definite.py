@@ -146,6 +146,17 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def find_color_for_point(self, point):
+        
+       """Convert the color from HSV coordinates to RGB coordinates.
+
+       Parameters
+       ----------
+       point : tuple-like of size = 3
+
+       Returns
+       -------
+       color: tuple-like of size = 3     
+       """
         x, y, z = point
 
         #convert radians to degrees
