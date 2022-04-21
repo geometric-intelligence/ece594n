@@ -91,6 +91,13 @@ class SymmetricPositiveDefiniteVizualization:
         Returns
         -------
             Figure plot
+            
+        See also
+        -------
+        
+        matplotlib.collections.PolyCollection
+
+
         """
         if not isinstance(colors,(list,np.ndarray)): colors=["C0"]*len(positions)
         if not isinstance(sizes,(list,np.ndarray)): sizes=[(1,1,1)]*len(positions)
