@@ -378,7 +378,7 @@ class SymmetricPositiveDefiniteVizualization:
             transf_sample=list(spd_to_xyz(i))
             list_of_transf_samples.append(transf_sample)
         #fig = plt.figure()
-        ax = fig.add_subplot(projection='3d')
+        #ax = fig.add_subplot(projection='3d')
         list_of_transf_samples=np.array(list_of_transf_samples)
 
 
