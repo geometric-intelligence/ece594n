@@ -171,26 +171,18 @@ class CategoricalDistributionsManifold:
         This method internally calls the plot method. 
         """
         self.set_points(self.dist.random_point(n_samples=n_samples))
-        # self.plot()
-        
         if self.dim == 3:
-            # for point in self.points:
-            #     self.ax.scatter(point[0], point[1], point[2], **scatter_kwargs)
-            # fig = px.scatter_3d(df,x = 0, 
-            #                         y = 1, 
-            #                         z = 2,
-            #                         color = 3,
-            #                         opacity = 0.5)
+            # Plot 3D Mesh with Sample Scatter Points in Plotly
             df = pd.DataFrame(self.points, columns = ['x1', 'x2','x3','x4'])
-            fig1 = px.scatter_3d(df,x = 'x1', 
+            scatter = px.scatter_3d(df,x = 'x1', 
                                     y = 'x2', 
                                     z = 'x3',
                                     color = 'x4',
-                                    title = '3D Scatterplot for 5 Samples',
+                                    title = f'3D Scatterplot for {n_samples} Samples',
                                     opacity = 0.5)
-            fig1.update_traces(marker_size = 3)
+            scatter.update_traces(marker_size = 3)
 
-            fig2 = go.Figure(data=[
+            mesh = go.Figure(data=[
                                 go.Mesh3d(
                                     x = [0, 1, 0, 0],
                                     y = [0, 0, 1, 0],
@@ -213,20 +205,20 @@ class CategoricalDistributionsManifold:
                                     hovertemplate=None
                                 )
                             ])
-            fig2.update_traces(
+            mesh.update_traces(
                hovertemplate=None,
                hoverinfo='skip'
             )
-            fig3 = go.Figure(data=fig1.data+fig2.data)
-            fig3.update_layout(title_text='3 Dimension Categorical Manifold with 5 Samples')
-            fig3.show()
+            fig = go.Figure(data=scatter.data+mesh.data)
+            fig.update_layout(title_text=f'3D Scatterplot for {n_samples} Samples')
+            fig.show()
                 
                 
         elif self.dim == 2: 
             self.plot()
             for point in self.points:
                 self.ax.scatter(point[0], point[1], **scatter_kwargs)
-            self.ax.set_title('2 Dimension Categorical Manifold with 5 Samples')
+            self.ax.set_title(f'2 Dimension Categorical Manifold with {n_samples} Samples')
         self.clear_points()
 
 
@@ -288,15 +280,15 @@ class CategoricalDistributionsManifold:
                 point = geodesic(i/num_samples)
                 geodesic_points[i] = point
             df = pd.DataFrame(geodesic_points, columns = ['x1', 'x2','x3','x4'])
-            fig1 = px.scatter_3d(df,x = 'x1', 
+            geodesic_plot = px.scatter_3d(df,x = 'x1', 
                                     y = 'x2', 
                                     z = 'x3',
                                     color = 'x4',
-                                    title = '3D Scatterplot for 5 Samples',
+                                    title = '3D Scatterplot for Geodesic',
                                     opacity = 0.5)
-            fig1.update_traces(marker_size = 2)
+            geodesic_plot.update_traces(marker_size = 2)
 
-            fig2 = go.Figure(data=[
+            mesh = go.Figure(data=[
                                 go.Mesh3d(
                                     x = [0, 1, 0, 0],
                                     y = [0, 0, 1, 0],
@@ -317,7 +309,7 @@ class CategoricalDistributionsManifold:
                                     opacity=0.25
                                 )
                             ])
-            fig2.update_traces(
+            mesh.update_traces(
                hovertemplate=None,
                hoverinfo='skip'
             )
@@ -342,22 +334,11 @@ class CategoricalDistributionsManifold:
             arr1 = np.array([normalized_tangent_vector[0]])
             arr2 = np.array([normalized_tangent_vector[1]])
             arr3 = np.array([normalized_tangent_vector[2]])
-            # print(arr1)
-            fig3 = go.Figure(data=go.Cone(x=pt1, y=pt2, z=pt3, u=arr1, v=arr2, w=arr3, sizeref=0.2))
-            # arr = np.transpose([initial_point[0],initial_point[1],initial_point[2],initial_point[3]])
-            arr = [ initial_point[0] ,initial_point[1],initial_point[2],initial_point[3]]
-            print(arr)
-            # df = pd.DataFrame(arr, columns = ['x1', 'x2','x3','x4'])
-            # print(df)
-            # fig4 = px.scatter_3d(df,x = 'x1', 
-            #                         y = 'x2', 
-            #                         z = 'x3',
-            #                         color = 'x4',
-            #                         opacity = 0.5)
-            # fig4.update_traces(marker_size = 6)
-            fig5 = go.Figure(data=fig1.data + fig2.data + fig3.data).update(layout=dict(title=dict(x=0.5)))
-            fig5.update_layout(title_text='3 Dimension Categorical Manifold with Geodesic')
-            fig5.show()
+            cone = go.Figure(data=go.Cone(x=pt1, y=pt2, z=pt3, u=arr1, v=arr2, w=arr3, sizeref=0.2))
+
+            fig = go.Figure(data=geodesic_plot.data + mesh.data + cone.data).update(layout=dict(title=dict(x=0.5)))
+            fig.update_layout(title_text='3 Dimension Categorical Manifold with Geodesic')
+            fig.show()
         
         elif self.dim == 2:
             for i in range(num_samples):
@@ -449,6 +430,7 @@ class CategoricalDistributionsManifold:
         self.plot()
         self.ax.set_title(f'{operation} Operation with {self.dim} Dimension Categorical Manifold')
         if self.dim == 3:
+            # Plot in Matplotlib
             self.ax.scatter(base_point[0], base_point[1], base_point[2], color='red', s = 30)
             self.ax.scatter(end_point[0], end_point[1], end_point[2], color='blue', s = 30)
             self.ax.quiver(
@@ -463,9 +445,8 @@ class CategoricalDistributionsManifold:
                 normalize = True
                 )
             
-            # Drawing in Plotly
-
-            fig1 = go.Figure(data=[
+            # Plot in Plotly
+            mesh = go.Figure(data=[
                                 go.Mesh3d(
                                     x = [0, 1, 0, 0],
                                     y = [0, 0, 1, 0],
@@ -496,25 +477,20 @@ class CategoricalDistributionsManifold:
             arr1 = np.array([normalized_tangent_vector[0]])
             arr2 = np.array([normalized_tangent_vector[1]])
             arr3 = np.array([normalized_tangent_vector[2]])
-            # print(arr1)
-            fig2 = go.Figure(data=go.Cone(x=pt1, y=pt2, z=pt3, u=arr1, v=arr2, w=arr3, sizeref=0.1))
+            cone = go.Figure(data=go.Cone(x=pt1, y=pt2, z=pt3, u=arr1, v=arr2, w=arr3, sizeref=0.1))
             
-            # arr = np.transpose([initial_point[0],initial_point[1],initial_point[2],initial_point[3]])
-            arr = [[ end_point[0] ,end_point[1],end_point[2],1]]
-            print(arr)
+            arr = [[ end_point[0] ,end_point[1],end_point[2],end_point[3]]]
             df = pd.DataFrame(arr, columns = ['x1', 'x2','x3','x4'])
             print(df)
-            fig3 = px.scatter_3d(df,x = 'x1', 
+            point = px.scatter_3d(df,x = 'x1', 
                                     y = 'x2', 
                                     z = 'x3',
                                     color = 'x4',
                                     opacity = 0.5)
-            fig3.update_traces(marker_size = 6)
-            fig5 = go.Figure(data=fig1.data + fig2.data + fig3.data).update(layout=dict(title=dict(x=0.5)))
-            fig5.update_layout(title_text=f'{operation} Operation with {self.dim} Dimension Categorical Manifold')
-            fig5.show()
-            
-            
+            point.update_traces(marker_size = 6)
+            fig = go.Figure(data=mesh.data + cone.data + point.data).update(layout=dict(title=dict(x=0.5)))
+            fig.update_layout(title_text=f'{operation} Operation with {self.dim} Dimension Categorical Manifold')
+            fig.show()
                 
         elif self.dim == 2:
             self.ax.scatter(base_point[0], base_point[1], color='red', s = 30)
