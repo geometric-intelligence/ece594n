@@ -2,7 +2,15 @@ from cmath import nan
 from tokenize import endpats
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
+import chart_studio.plotly as py
+import plotly.graph_objects as go
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import plotly.express as px
+init_notebook_mode(connected=True)
+import cufflinks as cf
+cf.go_offline()
 import numpy as np
+import pandas as pd
 from geomstats.information_geometry.categorical import CategoricalDistributions, CategoricalMetric
 class CategoricalDistributionsManifold:
     r""" Class for visualizing the manifold of categorical distributions.
@@ -119,11 +127,52 @@ class CategoricalDistributionsManifold:
         This method internally calls the plot method. 
         """
         self.set_points(self.dist.random_point(n_samples=n_samples))
-        self.plot()
+        # self.plot()
+        
         if self.dim == 3:
-            for point in self.points:
-                self.ax.scatter(point[0], point[1], point[2], **scatter_kwargs)
+            # for point in self.points:
+                # self.ax.scatter(point[0], point[1], point[2], **scatter_kwargs)
+            # fig = px.scatter_3d(df,x = 0, 
+            #                         y = 1, 
+            #                         z = 2,
+            #                         color = 3,
+            #                         opacity = 0.5)
+            df = pd.DataFrame(self.points, columns = ['x1', 'x2','x3','x4'])
+            fig1 = px.scatter_3d(df,x = 'x1', 
+                                    y = 'x2', 
+                                    z = 'x3',
+                                    color = 'x4',
+                                    title = '3D Scatterplot for 5 Samples',
+                                    opacity = 0.5)
+            fig1.update_traces(marker_size = 6)
+
+            fig2 = go.Figure(data=[
+                                go.Mesh3d(
+                                    x = [0, 1, 0, 0],
+                                    y = [0, 0, 1, 0],
+                                    z = [0, 0, 0, 1],
+                                    colorbar_title='z',
+                                    colorscale=[[0, 'gold'],
+                                                [0.5, 'mediumturquoise'],
+                                                [1, 'magenta']],
+                                    # Intensity of each vertex, which will be interpolated and color-coded
+                                    intensity=[0, 0.33, 0.66, 1],
+                                    # i, j and k give the vertices of triangles
+                                    # here we represent the 4 triangles of the tetrahedron surface
+                                    i=[0, 0, 0, 1],
+                                    j=[1, 2, 3, 2],
+                                    k=[2, 3, 1, 3],
+                                    name='y',
+                                    showscale=False,
+                                    opacity=0.25
+                                )
+                            ])
+            fig3 = go.Figure(data=fig2.data+fig1.data)
+            fig3.show()
+                
+                
         elif self.dim == 2: 
+            self.plot()
             for point in self.points:
                 self.ax.scatter(point[0], point[1], **scatter_kwargs)
         self.clear_points()
@@ -179,6 +228,61 @@ class CategoricalDistributionsManifold:
                     length = 0.1,
                     normalize = True
                 )
+        geodesic = self.metric.geodesic(initial_point=initial_point, end_point = end_point, initial_tangent_vec = tangent_vector)
+        num_samples = 100
+        geodesic_points = np.zeros(shape=(100,4))
+        if self.dim == 3:
+            for i in range(num_samples):
+                point = geodesic(i/num_samples)
+                geodesic_points[i] = point
+            df = pd.DataFrame(geodesic_points, columns = ['x1', 'x2','x3','x4'])
+            fig1 = px.scatter_3d(df,x = 'x1', 
+                                    y = 'x2', 
+                                    z = 'x3',
+                                    color = 'x4',
+                                    title = '3D Scatterplot for 5 Samples',
+                                    opacity = 0.5)
+            fig1.update_traces(marker_size = 3)
+
+            fig2 = go.Figure(data=[
+                                go.Mesh3d(
+                                    x = [0, 1, 0, 0],
+                                    y = [0, 0, 1, 0],
+                                    z = [0, 0, 0, 1],
+                                    colorbar_title='z',
+                                    colorscale=[[0, 'gold'],
+                                                [0.5, 'mediumturquoise'],
+                                                [1, 'magenta']],
+                                    # Intensity of each vertex, which will be interpolated and color-coded
+                                    intensity=[0, 0.33, 0.66, 1],
+                                    # i, j and k give the vertices of triangles
+                                    # here we represent the 4 triangles of the tetrahedron surface
+                                    i=[0, 0, 0, 1],
+                                    j=[1, 2, 3, 2],
+                                    k=[2, 3, 1, 3],
+                                    name='y',
+                                    showscale=False,
+                                    opacity=0.25
+                                )
+                            ])
+            
+            # if tangent_vector is not None:
+            normalized_tangent_vector = tangent_vector/np.sum(np.power(tangent_vector, 2))
+        #         self.ax.quiver(
+        #             initial_point[0],
+        #             initial_point[1],
+        #             initial_point[2],
+        #             normalized_tangent_vector[0],
+        #             normalized_tangent_vector[1],
+        #             normalized_tangent_vector[2],
+        #             color = 'red',
+        #             length = 0.1,
+        #             normalize = True
+        #         )
+            # fig3 = go.Figure(data=go.Cone(x=initial_point[0], y=initial_point[1], z=initial_point[2], u=normalized_tangent_vector[0], v=normalized_tangent_vector[1], w=normalized_tangent_vector[2]))
+            fig4 = go.Figure(data=fig1.data + fig2.data)
+            fig4.show()
+        
         elif self.dim == 2:
             for i in range(num_samples):
                 point = geodesic(i/num_samples)
@@ -282,7 +386,7 @@ class CategoricalDistributionsManifold:
                 )
         elif self.dim == 3:
             self.ax.scatter(base_point[0], base_point[1], base_point[2], color='red', s = 30)
-            self.ax.scatter(end_point[0], end_point[1], end_point[3], color='blue', s = 30)
+            self.ax.scatter(end_point[0], end_point[1], end_point[2], color='blue', s = 30)
             self.ax.quiver(
                 base_point[0],
                 base_point[1],
