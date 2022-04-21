@@ -16,6 +16,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 class SymmetricPositiveDefiniteVizualization:
     def __init__(self, maxZ = 1):
         self.maxZ = float(maxZ)
+        self.currZ = self.maxZ
         self.ax = None
         self.spdSpace = Ellipses()
 
@@ -51,7 +52,11 @@ class SymmetricPositiveDefiniteVizualization:
         return self.ax
 
 
-    def plot(self, hsv=True):
+    def plot(self, currZ=None, hsv=False):
+        if currZ == None:
+            self.currZ = self.maxZ
+        else:
+            self.currZ = currZ
 
         #Modified from: https://stackoverflow.com/questions/55298164/3d-plot-of-the-cone-using-matplotlib
         n_angles = 80
@@ -62,7 +67,7 @@ class SymmetricPositiveDefiniteVizualization:
         # An array of radii
 
         # Does not include radius r=0, this is to eliminate duplicate points
-        radii = np.linspace(0.0, self.maxZ, n_radii)
+        radii = np.linspace(0.0, self.currZ, n_radii)
 
 
         # An array of angles
@@ -84,7 +89,7 @@ class SymmetricPositiveDefiniteVizualization:
 
 
         # # Pringle surface
-        z = np.full_like(x, self.maxZ)
+        z = np.full_like(x, self.currZ)
 
         # print(x.shape, y.shape, angles.shape, radii.shape, z.shape)
 
@@ -140,13 +145,20 @@ class SymmetricPositiveDefiniteVizualization:
         self.ax.add_collection(coll)
 
 
+        # self.ax.set_xlim(-self.currZ*1.25, self.currZ*1.25)
+
+        # self.ax.set_ylim(-self.currZ*1.25, self.currZ*1.25)
+
+        # self.ax.set_zlim(-self.currZ*.25, self.currZ*1.25)
+
+
         self.ax.set_xlim(-self.maxZ*1.25, self.maxZ*1.25)
 
         self.ax.set_ylim(-self.maxZ*1.25, self.maxZ*1.25)
 
         self.ax.set_zlim(-self.maxZ*.25, self.maxZ*1.25)
 
-        self.ax.elev = 25
+        self.ax.elev = 90
         
 
     @staticmethod
@@ -185,7 +197,9 @@ class SymmetricPositiveDefiniteVizualization:
     
     def plot_rendering_top(self, n_radii, n_angles):
         # Does not include radius r=0, this is to eliminate duplicate points
-        radii = np.linspace(self.maxZ, 0, n_radii, endpoint=False)
+        # z_plane = self.maxZ
+        z_plane = self.currZ
+        radii = np.linspace(z_plane, 0, n_radii, endpoint=False)
 
         # An array of angles
         angles = np.linspace(0, 2*np.pi, n_angles, endpoint=False)
@@ -202,10 +216,11 @@ class SymmetricPositiveDefiniteVizualization:
 
         for x_tmp, y_tmp in zip(x,y):
             print("X: {} Y:{}".format(x_tmp, y_tmp))
-            sampled_xyz = (x_tmp, y_tmp, 1)
+            sampled_xyz = (x_tmp, y_tmp, z_plane)
             sampled_spd = SymmetricPositiveDefiniteVizualization.xyz_to_spd(sampled_xyz)
+            print(sampled_spd)
             ellipse_x, ellipse_y = self.spdSpace.compute_coordinates(sampled_spd)
-            ellipse_z = np.full_like(ellipse_x, 1)
+            ellipse_z = np.full_like(ellipse_x, z_plane)
             self.ax.plot(ellipse_x/(n_radii*n_angles*0.25)+sampled_xyz[0], ellipse_y/(n_radii*n_angles*0.25)+sampled_xyz[1], sampled_xyz[2], alpha = 0.8, zorder=10, color = self.find_color_for_point(sampled_xyz))
 
 
@@ -221,11 +236,9 @@ class SymmetricPositiveDefiniteVizualization:
         self.plot_rendering_top(5, 16)
 
         #plot side points
-        # testPoint=(0.5,0.5,1)
-        # test = SymmetricPositiveDefiniteVizualization.xyz_to_spd(testPoint)
-        # x,y = self.spdSpace.compute_coordinates(test)
-        # z = np.full_like(x, testPoint[2])
-        # self.ax.plot(x/10+testPoint[0], y/10+testPoint[1], z, alpha = 0.8, zorder=10, color = self.find_color_for_point(testPoint))
+        self.plot_rendering_side()
+
+        
         
 
     def plot_tangent_space(self, point):
@@ -267,15 +280,24 @@ if __name__=="__main__":
 
     viz = SymmetricPositiveDefiniteVizualization(1)
 
-    viz.plot(False)
-    # viz.plot_tangent_space((0,0,1))
+    viz.plot()
     viz.plot_rendering(None)
+    plt.show(block=False)
+
+    input("Press Enter to continue...")
+    
+    viz.plot(currZ=0.5)
+    viz.plot_rendering(None)
+    plt.show(block=False)
+    input("Press Enter to exit...")
+    # viz.plot_tangent_space((0,0,1))
+    
 
     # anim = FuncAnimation(viz.fig, viz.animate, frames=36, interval=2.5)
 
     # viz.plot_tangent_space((0.5,0.5,1))
     # viz.
-    plt.show()
+    
     
     
     
