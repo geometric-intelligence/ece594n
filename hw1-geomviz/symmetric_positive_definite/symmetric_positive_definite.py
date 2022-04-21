@@ -14,7 +14,8 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 class SymmetricPositiveDefiniteVizualization:
     """This class provides all the essential methods for the
-       visualization of the Symmetric Positive Definite manifold.
+       visualization of the manifold of the Symmetric Positive 
+       Definite matrices.
        
        Parameters
        ----------
