@@ -47,6 +47,23 @@ class SymmetricPositiveDefiniteVizualization:
 
 
     def plot(self,  n_angles = 80, n_radii = 40, currZ=None, hsv=False):
+        """Plots the 3D cone.   
+
+        Parameters
+        ----------
+        n_angles : int
+            Number of angles in polar coordinates            
+        n_radii : int
+            Number of radii in polar coordinates     
+        currZ: Ignored
+            Scaling factor     
+        hsv: bool 
+            Adds smooth gradient representation to the cone when set to True
+            
+        Returns
+        -------
+            Figure plot
+        """
         
         if currZ == None:
             self.currZ = self.maxZ
