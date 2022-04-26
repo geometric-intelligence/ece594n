@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 333 163" style="enable-background:new 0 0 333 163;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#010101;stroke-miterlimit:10;}
+	.st1{fill:#010101;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:12px;}
+	.st4{fill:#818285;}
+	.st5{fill:none;}
+	.st6{fill:none;stroke:#EB0D8C;stroke-miterlimit:10;}
+	.st7{fill:#EB0D8C;}
+	.st8{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
+	.st9{fill:#EC008C;}
+	.st10{font-family:'MyriadPro-Regular';}
+</style>
+<path class="st0" d="M5.9,110c5-12.7,15.4-34.3,33.8-48c20-14.8,55.2-24.5,74.5,5c9.4,14.5,11.6,33.1,12.2,44
+	c-7.1-2.8-32-11.4-56.9,8c-10.6,8.2-17.8,18.9-22.3,27c-2.6-6.3-9.2-20.3-21.7-29C17.7,111.5,10.5,110.2,5.9,110z"/>
+<text transform="matrix(1 0 0 1 36.8412 11.034)" class="st1 st2 st3">Surface space</text>
+<circle class="st4" cx="63.4" cy="68.5" r="4"/>
+<text transform="matrix(1 0 0 1 57.7079 85.6226)" class="st1 st2 st3">f(s)</text>
+<g>
+	<line class="st5" x1="63.4" y1="33.5" x2="63.3" y2="65.8"/>
+	<g>
+		<line class="st6" x1="63.4" y1="36.5" x2="63.3" y2="65.8"/>
+		<g>
+			<path class="st7" d="M63.4,33.5c-0.5,1.4-1.4,3.2-2.4,4.3l2.4-0.9l2.4,0.9C64.8,36.7,63.9,34.9,63.4,33.5z"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 36.3807 47.5265)" class="st7 st2 st3">n(s)</text>
+<g>
+	<g>
+		<line class="st8" x1="178.4" y1="87.1" x2="139.9" y2="87.4"/>
+		<g>
+			<path d="M190.4,87c-5.7-2.1-12.8-5.6-17.2-9.4l3.5,9.5l-3.4,9.5C177.7,92.8,184.8,89.1,190.4,87z"/>
+		</g>
+	</g>
+</g>
+<path class="st0" d="M200,104.8c4-11.5,16.2-42.2,43.2-59.3c17.8-11.3,34.4-11.8,42.9-12C305,33.1,320,39,329,43.5
+	c-3.1,4.8-8.5,14.6-10.9,29c-2.8,16.6,0,30,1.6,36c-24.8-22-54.2-22.7-71.7-4c-10.8,11.6-14.4,27.7-15.7,36.3
+	c-2-6.3-7.2-20.3-16.9-29C209.2,106.3,203.6,105,200,104.8z"/>
+<path class="st0" d="M294.5,131.5"/>
+<circle class="st9" cx="253.1" cy="68" r="4"/>
+<text transform="matrix(1 0 0 1 264.4257 70.0267)" class="st9 st10 st3">q(s)</text>
+<text transform="matrix(1 0 0 1 237.1752 12.6496)" class="st10 st3">SNRF space</text>
+</svg>
