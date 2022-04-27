@@ -2,7 +2,7 @@
 
 Goal: Determine if it is easy to reproduce the findings of a research paper on biomedical shape analysis.
 
-- Deadline: Thursday 05/03/2022.
+- Deadline: Tuesday 05/03/2022.
 - Teams of 2-3 students.
 - Research paper: Cell states beyond transcriptomics (https://pubmed.ncbi.nlm.nih.gov/34043964/).
 
