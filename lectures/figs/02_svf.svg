@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 275 127" style="enable-background:new 0 0 275 127;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'MyriadPro-Regular';}
+	.st1{font-size:12px;}
+	.st2{fill:none;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:none;stroke:#A7A9AC;stroke-width:4;stroke-miterlimit:10;stroke-dasharray:6,2;}
+	.st5{fill:#2E3192;}
+	.st6{opacity:0.7;fill:#F1F2F2;stroke:#A7A9AC;stroke-width:2;stroke-miterlimit:10;}
+	.st7{fill:#ED1C24;}
+	.st8{fill:#21409A;}
+	.st9{fill:none;stroke:#ED1C24;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<text transform="matrix(1 0 0 1 204.3212 111.8537)" class="st0 st1"> </text>
+<text transform="matrix(1 0 0 1 204.3212 111.8537)" class="st0 st1"> </text>
+<rect x="-1" y="-3" class="st2" width="309" height="116"/>
+<g>
+	<g>
+		<defs>
+			
+				<rect id="SVGID_1_" x="0.4" y="-57.3" transform="matrix(0.7728 -0.6346 0.6346 0.7728 -14.9985 91.287)" width="239.1" height="247.7"/>
+		</defs>
+		<clipPath id="SVGID_00000079458282428436671800000007203174420658587577_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		
+			<g transform="matrix(1 -2.980232e-08 0 1 0 3.814697e-06)" style="clip-path:url(#SVGID_00000079458282428436671800000007203174420658587577_);">
+			
+				<image style="overflow:visible;" width="395" height="381" xlink:href="2B3346AE952CC58C.png"  transform="matrix(0.4678 -0.3842 0.4126 0.5024 -51 46.7631)">
+			</image>
+		</g>
+	</g>
+	<rect x="13" y="47" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -41.0894 39.8015)" class="st3" width="29" height="45"/>
+	<path class="st4" d="M172,50c-6-7-20-21-32-27c-12.1-6-24.6-6-33-6"/>
+	<circle class="st5" cx="172" cy="54" r="6"/>
+</g>
+<polygon class="st6" points="46.4,28 72.6,6.5 167.9,6.5 146.1,28 "/>
+<circle class="st7" cx="107" cy="17" r="6"/>
+<text transform="matrix(1 0 0 1 135.1035 116.0981)" class="st0 st1">Diff(D)</text>
+<text transform="matrix(1 0 0 1 4.1754 17.1943)" class="st0 st1">TeDiff(D)</text>
+<text transform="matrix(1 0 0 1 90.0205 18.6934)" class="st7 st0 st1">e</text>
+<text transform="matrix(1 0 0 1 210.0674 54.7773)"><tspan x="0" y="0" class="st8 st0 st1">phi = Exp(</tspan><tspan x="50.2" y="0" class="st7 st0 st1">v</tspan><tspan x="56" y="0" class="st8 st0 st1">)</tspan></text>
+<g>
+	<g>
+		<line class="st9" x1="107" y1="17" x2="133.3" y2="17"/>
+		<g>
+			<path class="st7" d="M142.4,17c-4.3,1.6-9.5,4.3-12.8,7.1l2.6-7.1l-2.6-7.1C132.8,12.7,138.1,15.4,142.4,17z"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 144.3408 15)" class="st7 st0 st1">v</text>
+</svg>
