@@ -96,7 +96,7 @@ III. Conclusion
 - [ ] Hinkle, J., Muralidharan, P., Fletcher, P. T., & Joshi, S. (2012, October). Polynomial regression on Riemannian manifolds. In *European conference on computer vision*
  (pp. 1-14). Springer, Berlin, Heidelberg.
 - [ ] Kim, Kwang-Rae, Ian L. Dryden, Huiling Le, and Katie E. Severn (Dec. 2020). “Smoothing Splines on Riemannian Manifolds, with Applications to 3D Shape Space”. en. In: Journal of the Royal Statistical Society: Series B (Statistical Methodology).
-- [ ] Gousenbourger, P. Y., Massart, E., & Absil, P. A. (2019). Data fitting on manifolds with composite Bézier-like curves and blended cubic splines. *Journal of Mathematical Imaging and Vision*, *61*(5), 645-671.
+- [x] **Assigned to Jax Burd.** Gousenbourger, P. Y., Massart, E., & Absil, P. A. (2019). Data fitting on manifolds with composite Bézier-like curves and blended cubic splines. *Journal of Mathematical Imaging and Vision*, *61*(5), 645-671.
 - [ ] Hinkle, J., Fletcher, P. T., & Joshi, S. (2014). Intrinsic polynomials for regression on Riemannian manifolds. *Journal of Mathematical Imaging and Vision*, *50*(1), 32-52.
 - [ ] Steinke, F., Hein, M., & Schölkopf, B. (2010). Nonparametric regression between general Riemannian manifolds. *SIAM Journal on Imaging Sciences*, *3*(3), 527-563.
 - [ ] Singh, N., Vialard, F. X., & Niethammer, M. (2015). Splines for diffeomorphisms. *Medical image analysis*, *25*(1), 56-71.
