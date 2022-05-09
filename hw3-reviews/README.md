@@ -32,9 +32,8 @@ III. Conclusion
 
 ## Topics for Bio Students
 
-- [x] “Proteins representations - protein sequences or protein shapes”
+- [x] **Assigned to Rebecca Martin.** “Proteins representations - protein sequences or protein shapes”
     - What are meaningful representations of proteins that can best answer questions in biology using Machine Learning?
-    - Assigned to Rebecca Martin.
 - [ ] “Cells representations - cell genetics or cell morphologies”
     - What are meaningful representations of cells that can best answer questions in biology using Machine Learning?
 - [ ] “Brain representations with brain shapes”
