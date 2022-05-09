@@ -119,4 +119,4 @@ III. Conclusion
 - [ ] Masci, J., Boscaini, D., Bronstein, M., & Vandergheynst, P. (2015). Geodesic convolutional neural networks on riemannian manifolds. In *Proceedings of the IEEE international conferenc*
 - [ ] Cohen, T., Weiler, M., Kicanaoglu, B., & Welling, M. (2019, May). Gauge equivariant convolutional networks and the icosahedral CNN. In *International conference on Machine learning*(pp. 1321-1330). PMLR.
 - [ ] Cohen, T. S., Geiger, M., Köhler, J., & Welling, M. (2018). Spherical cnns. *arXiv preprint arXiv:1801.10130.*
-- [ ] Thomas, N., Smidt, T., Kearnes, S., Yang, L., Li, L., Kohlhoff, K., & Riley, P. (2018). Tensor field networks: Rotation-and translation-equivariant neural networks for 3d point clouds. *arXiv preprint arXiv:1802.08219*
+- [x] **Assigned to Xinling Yu.** Thomas, N., Smidt, T., Kearnes, S., Yang, L., Li, L., Kohlhoff, K., & Riley, P. (2018). Tensor field networks: Rotation-and translation-equivariant neural networks for 3d point clouds. *arXiv preprint arXiv:1802.08219*
