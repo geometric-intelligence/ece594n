@@ -5,6 +5,8 @@ Goal: Put your skills in practice to tackle a project of your choice: perform ge
 - Deadline for project reports and for presentations in class: Tuesday 05/31/2022 and Thursday 06/02/2022.
 - Teams of 2-3 students (5min per student during presentation).
 
+**Examples**: You can find [here](https://github.com/geomstats/geomstats/tree/master/notebooks), within the "real world applications" notebooks, examples of potential projects.
+
 # Register
 
 Send the title of your project, and names of its team members, through slack to be registered.
