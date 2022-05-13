@@ -67,6 +67,7 @@ III. Conclusion
         - Demonstrating the effects of different hyperparameter choices
         - Analyzing computational cost
 
+**Examples:** You can find [here](https://github.com/geomstats/challenge-iclr-2022) examples of implementations of geometric learning research paper, for an international challenge. Some were contributed by master students!
 
 ## Papers for ECE students
 
