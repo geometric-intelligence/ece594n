@@ -36,9 +36,11 @@ III. Conclusion
     - What are meaningful representations of proteins that can best answer questions in biology using Machine Learning?
 - [ ] “Cells representations - cell genetics or cell morphologies”
     - What are meaningful representations of cells that can best answer questions in biology using Machine Learning?
+- [ ] "Shapes of cancer"
+    - "What can cancer cell shapes, and their nuclei shapes, tell us about cancer?"
 - [ ] “Brain representations with brain shapes”
     - Which conditions or pathologies are the most correlated with brain shapes?
-- [ ] “Heart representations with heart shapes”
+- [x] **Assigned to Gabriela Villalpando Torres.** “Heart representations with heart shapes”
     - Which conditions or pathologies are the most correlated with heart shapes?
 
 ## Guidelines for ECE Students
@@ -78,7 +80,8 @@ III. Conclusion
 
 **Manifold / Sub-Manifold Learning**
 
-- [ ] Goh, A., Vidal, R.: Clustering and dimensionality reduction on riemannian manifolds. In: CVPR. IEEE Computer Society (2008)
+- [x] **Assigned to 
+Abhijith Atreya.** Goh, A., Vidal, R.: Clustering and dimensionality reduction on riemannian manifolds. In: CVPR. IEEE Computer Society (2008)
 - [ ] Hauberg, S. (2015). Principal curves on Riemannian manifolds. *IEEE transactions on pattern analysis and machine intelligence*, *38*(9), 1915-1921.
 - [ ] Lin, T., & Zha, H. (2008). Riemannian manifold learning. *IEEE Transactions on Pattern Analysis and Machine Intelligence*, *30*(5), 796-809.
 - [ ] Huckemann, Stephan, Thomas Hotz, and Axel Munk (2010). “Intrinsic Shape Analysis: Geodesic PCA for Riemannian Manifolds modulo Isometric Lie Group Actions”. In: Statistica Sinica 20.1, pp. 1–58.
@@ -91,7 +94,7 @@ III. Conclusion
 
 **Embeddings**
 
-- [ ] Nickel, Maximillian and Douwe Kiela (2017). “Poincaré Embeddings for Learning Hierarchical Representations”. In: Advances in Neural Information Processing Systems 30. Ed. by I Guyon, U V Luxburg, S Bengio, H Wallach, R Fergus, et al. Curran Associates, Inc.
+- [x] **Assigned to Vincent Benenati.** Nickel, Maximillian and Douwe Kiela (2017). “Poincaré Embeddings for Learning Hierarchical Representations”. In: Advances in Neural Information Processing Systems 30. Ed. by I Guyon, U V Luxburg, S Bengio, H Wallach, R Fergus, et al. Curran Associates, Inc.
 
 ### Regression / Interpolation / Extrapolation
 
@@ -121,6 +124,6 @@ III. Conclusion
 ### Deep Learning (*)
 
 - [ ] Masci, J., Boscaini, D., Bronstein, M., & Vandergheynst, P. (2015). Geodesic convolutional neural networks on riemannian manifolds. In *Proceedings of the IEEE international conferenc*
-- [ ] Cohen, T., Weiler, M., Kicanaoglu, B., & Welling, M. (2019, May). Gauge equivariant convolutional networks and the icosahedral CNN. In *International conference on Machine learning*(pp. 1321-1330). PMLR.
-- [ ] Cohen, T. S., Geiger, M., Köhler, J., & Welling, M. (2018). Spherical cnns. *arXiv preprint arXiv:1801.10130.*
+- [x] **Assigned to zheng xu.** Cohen, T., Weiler, M., Kicanaoglu, B., & Welling, M. (2019, May). Gauge equivariant convolutional networks and the icosahedral CNN. In *International conference on Machine learning*(pp. 1321-1330). PMLR.
+- [x] **Assigned to Zhiyuan Ren.** Cohen, T. S., Geiger, M., Köhler, J., & Welling, M. (2018). Spherical cnns. *arXiv preprint arXiv:1801.10130.*
 - [x] **Assigned to Xinling Yu.** Thomas, N., Smidt, T., Kearnes, S., Yang, L., Li, L., Kohlhoff, K., & Riley, P. (2018). Tensor field networks: Rotation-and translation-equivariant neural networks for 3d point clouds. *arXiv preprint arXiv:1802.08219*
