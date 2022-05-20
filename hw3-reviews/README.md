@@ -82,7 +82,7 @@ III. Conclusion
 
 - [x] **Assigned to 
 Abhijith Atreya.** Goh, A., Vidal, R.: Clustering and dimensionality reduction on riemannian manifolds. In: CVPR. IEEE Computer Society (2008)
-- [ ] Hauberg, S. (2015). Principal curves on Riemannian manifolds. *IEEE transactions on pattern analysis and machine intelligence*, *38*(9), 1915-1921.
+- [x] **Assigned to Steven Lin** Hauberg, S. (2015). Principal curves on Riemannian manifolds. *IEEE transactions on pattern analysis and machine intelligence*, *38*(9), 1915-1921.
 - [ ] Lin, T., & Zha, H. (2008). Riemannian manifold learning. *IEEE Transactions on Pattern Analysis and Machine Intelligence*, *30*(5), 796-809.
 - [ ] Huckemann, Stephan, Thomas Hotz, and Axel Munk (2010). “Intrinsic Shape Analysis: Geodesic PCA for Riemannian Manifolds modulo Isometric Lie Group Actions”. In: Statistica Sinica 20.1, pp. 1–58.
 - [ ] Zhang, M., Fletcher, P.T.: Probabilistic principal geodesic analysis. In: Advances in Neural Information Processing Systems. pp. 1178–1186 (2013)
@@ -99,7 +99,7 @@ Abhijith Atreya.** Goh, A., Vidal, R.: Clustering and dimensionality reduction o
 ### Regression / Interpolation / Extrapolation
 
 - [ ] Gawlik, Evan S. and Melvin Leok (June 2018). “Interpolation on Symmetric Spaces Via the Generalized Polar Decomposition”. en. In: Foundations of Computational Mathematics 18.3, pp. 757–788. issn: 1615-3375, 1615-3383. doi: 10.1007/s10208- 017-9353-0.
-- [ ] Hinkle, J., Muralidharan, P., Fletcher, P. T., & Joshi, S. (2012, October). Polynomial regression on Riemannian manifolds. In *European conference on computer vision*
+- [x] **Assigned to Swetha Pillai.** Hinkle, J., Muralidharan, P., Fletcher, P. T., & Joshi, S. (2012, October). Polynomial regression on Riemannian manifolds. In *European conference on computer vision*
  (pp. 1-14). Springer, Berlin, Heidelberg.
 - [ ] Kim, Kwang-Rae, Ian L. Dryden, Huiling Le, and Katie E. Severn (Dec. 2020). “Smoothing Splines on Riemannian Manifolds, with Applications to 3D Shape Space”. en. In: Journal of the Royal Statistical Society: Series B (Statistical Methodology).
 - [x] **Assigned to Jax Burd.** Gousenbourger, P. Y., Massart, E., & Absil, P. A. (2019). Data fitting on manifolds with composite Bézier-like curves and blended cubic splines. *Journal of Mathematical Imaging and Vision*, *61*(5), 645-671.
@@ -123,7 +123,7 @@ Abhijith Atreya.** Goh, A., Vidal, R.: Clustering and dimensionality reduction o
 
 ### Deep Learning (*)
 
-- [ ] Masci, J., Boscaini, D., Bronstein, M., & Vandergheynst, P. (2015). Geodesic convolutional neural networks on riemannian manifolds. In *Proceedings of the IEEE international conferenc*
+- [x] **Assigned to Ian Wu.** Masci, J., Boscaini, D., Bronstein, M., & Vandergheynst, P. (2015). Geodesic convolutional neural networks on riemannian manifolds. In *Proceedings of the IEEE international conferenc*
 - [x] **Assigned to zheng xu.** Cohen, T., Weiler, M., Kicanaoglu, B., & Welling, M. (2019, May). Gauge equivariant convolutional networks and the icosahedral CNN. In *International conference on Machine learning*(pp. 1321-1330). PMLR.
 - [x] **Assigned to Zhiyuan Ren.** Cohen, T. S., Geiger, M., Köhler, J., & Welling, M. (2018). Spherical cnns. *arXiv preprint arXiv:1801.10130.*
 - [x] **Assigned to Xinling Yu.** Thomas, N., Smidt, T., Kearnes, S., Yang, L., Li, L., Kohlhoff, K., & Riley, P. (2018). Tensor field networks: Rotation-and translation-equivariant neural networks for 3d point clouds. *arXiv preprint arXiv:1802.08219*
