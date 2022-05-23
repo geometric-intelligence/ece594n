@@ -22,5 +22,5 @@ Goal: Try to reproduce the findings of a research paper on biomedical shape anal
 
 # Grading Criteria
 
-- You will not be graded on whether you can reproduce the results or not.
-- You will be graded on your assessment of whether it is easy or hard to reproduce the results of a research paper.
+- You will not be graded on whether you reproduce the results or not.
+- You will be graded on your assessment of whether it is easy or hard to reproduce the results.
