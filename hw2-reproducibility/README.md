@@ -1,6 +1,6 @@
 # Reproducibility
 
-Goal: Determine if it is easy to reproduce the findings of a research paper on biomedical shape analysis.
+Goal: Try to reproduce the findings of a research paper on biomedical shape analysis.
 
 - Deadline: Tuesday 05/03/2022.
 - Teams of 2-3 students.
