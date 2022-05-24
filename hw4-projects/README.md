@@ -15,19 +15,14 @@ Send the title of your project, and names of its team members, through slack to 
 
 - TBD
 - TBD
-- TBD
-- TBD
-- TBD
-- TBD
+
 
 ### Presentations on 06/02:
 
-- TBD
-- TBD
-- TBD
-- TBD
-- TBD
-- TBD
+- Xinling Yu, Zheng Xu and Zhiyuan Ren.
+- Abhijith Atreya, Christos Zangos and Jax Burd.
+- Gabriela Villalpando Torres, Rebecca Martin, Sam Rosen and Breanna Takacs.
+- Ryan Guajardo, Swetha Pillai.
 
 # Guidelines
 
