@@ -34,7 +34,7 @@ III. Conclusion
 
 - [x] **Assigned to Rebecca Martin.** “Proteins representations - protein sequences or protein shapes”
     - What are meaningful representations of proteins that can best answer questions in biology using Machine Learning?
-- [ ] “Cells representations - cell genetics or cell morphologies”
+- [x] **Assigned to Sam Rosen.** “Cells representations - cell genetics or cell morphologies”
     - What are meaningful representations of cells that can best answer questions in biology using Machine Learning?
 - [ ] "Shapes of cancer"
     - "What can cancer cell shapes, and their nuclei shapes, tell us about cancer?"
