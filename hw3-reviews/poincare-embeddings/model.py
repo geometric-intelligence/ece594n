@@ -16,6 +16,8 @@ class PoincareBallModel(torch.nn.Module):
     def forward(self, inputs):
         e = self.embeding(inputs)
         o = e.narrow(dim=1, start=1, length = e.size(1) - 1)
+        #narrow-reduces the tensor 
+        #expand_as
         s = e.narrow(dim=1, start=0, length=1).expand_as(o)
         
         return self.dist(s,o)
