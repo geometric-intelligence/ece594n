@@ -6,6 +6,8 @@
 #https://lars76.github.io/2020/07/24/implementing-poincare-embedding.html
 # https://lars76.github.io/2020/07/23/rsgd-in-pytorch.html
 
+#Gensim poincare embeddings
+# https://radimrehurek.com/gensim/models/poincare.html
 import torch
 
 

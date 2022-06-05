@@ -11,13 +11,18 @@ class PoincareBallModel(torch.nn.Module):
         self.poincareBallManifold = PoincareBall(embedding_dim)
 
     def dist(self, u, v):
-        return -1
+        sqdist = torch.sum((u - v) ** 2, dim=-1)
+        squnorm = torch.sum(u ** 2, dim=-1)
+        sqvnorm = torch.sum(v ** 2, dim=-1)
+        x = 1 + 2 * sqdist / ((1 - squnorm) * (1 - sqvnorm)) + self.epsilon
+        z = torch.sqrt(x ** 2 - 1)
+        return torch.log(x + z)
 
     def forward(self, inputs):
-        e = self.embeding(inputs)
-        o = e.narrow(dim=1, start=1, length = e.size(1) - 1)
+        embeds = self.embeding(inputs)
+        o = embeds.narrow(dim=1, start=1, length = embeds.size(1) - 1)
         #narrow-reduces the tensor 
         #expand_as
-        s = e.narrow(dim=1, start=0, length=1).expand_as(o)
+        s = embeds.narrow(dim=1, start=0, length=1).expand_as(o)
         
         return self.dist(s,o)
