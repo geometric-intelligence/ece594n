@@ -85,7 +85,7 @@ Abhijith Atreya.** Goh, A., Vidal, R.: Clustering and dimensionality reduction o
 - [x] **Assigned to Steven Lin** Hauberg, S. (2015). Principal curves on Riemannian manifolds. *IEEE transactions on pattern analysis and machine intelligence*, *38*(9), 1915-1921.
 - [ ] Lin, T., & Zha, H. (2008). Riemannian manifold learning. *IEEE Transactions on Pattern Analysis and Machine Intelligence*, *30*(5), 796-809.
 - [ ] Huckemann, Stephan, Thomas Hotz, and Axel Munk (2010). “Intrinsic Shape Analysis: Geodesic PCA for Riemannian Manifolds modulo Isometric Lie Group Actions”. In: Statistica Sinica 20.1, pp. 1–58.
-- [ ] Zhang, M., Fletcher, P.T.: Probabilistic principal geodesic analysis. In: Advances in Neural Information Processing Systems. pp. 1178–1186 (2013)
+- [x] **Assigned to Yiliang Chen.** Zhang, M., Fletcher, P.T.: Probabilistic principal geodesic analysis. In: Advances in Neural Information Processing Systems. pp. 1178–1186 (2013)
 - [ ] Zhang, Y., Xing, J., & Zhang, M. (2019). Mixture probabilistic principal geodesic analysis. In *Multimodal Brain Image Analysis and Mathematical Foundations of Computational Anatomy* (pp. 196-208). Springer, Cham.
 - [ ] Sommer, S., Lauze, F., & Nielsen, M. (2014). Optimization over geodesics for exact principal geodesic analysis. *Advances in Computational Mathematics*, *40*(2), 283-313.
 - [ ] Pennec, X. (2018). Barycentric subspace analysis on manifolds. *The Annals of Statistics*, *46*(6A), 2711-2746.
