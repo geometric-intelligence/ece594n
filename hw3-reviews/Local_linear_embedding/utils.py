@@ -1,3 +1,12 @@
+
+"""
+
+The following functions implement :
+[A. Goh and R. Vidal, "Clustering and dimensionality reduction on Riemannian manifolds," 2008 IEEE Conference on Computer Vision and Pattern Recognition, 2008, pp. 1-7, doi: 10.1109/CVPR.2008.4587422.](https://ieeexplore.ieee.org/document/)
+Author : Abhijith Atreya
+
+"""
+
 import numpy as np
 from scipy.linalg import eigh, svd, qr, solve
 from scipy.sparse import eye, csr_matrix
@@ -12,7 +21,18 @@ from matplotlib import ticker
 np.random.seed(10)
 
 def Compute_neighbours(data, labels, metric, n_neighbors):
-
+    """
+    Compute nearest k-nearest neighbours according to the distance metric specified 
+    Parameters
+    ----------
+    data : array-like, shape (n_samples, n_dim)
+    labels : array-like, shape (n_samples, )
+    metric : distance metric to be used
+    n_neighbors : number of nearest neighbours to compute
+    Returns
+    -------
+    k_nearest_vals : array-like, shape (n_samples, n_neighbors)
+    """
     knn = KNearestNeighborsClassifier(n_neighbors= n_neighbors, distance=metric.dist)
     knn.fit(data,labels)
     k_nearest_vals = knn.kneighbors(data, return_distance=False)
@@ -21,7 +41,8 @@ def Compute_neighbours(data, labels, metric, n_neighbors):
     return k_nearest_vals
 
 def barycenter_weights(metric, X, Y, indices, reg=1e-3):
-    """Compute barycenter weights of X from Y along the first axis
+    """
+    Compute barycenter weights of X from Y along the first axis
     We estimate the weights to assign to each point in Y[indices] to recover
     the point X[i]. The barycenter weights sum to 1.
     Parameters
@@ -38,7 +59,8 @@ def barycenter_weights(metric, X, Y, indices, reg=1e-3):
     B : array-like, shape (n_samples, n_neighbors)
     Notes
     -----
-    See developers note for more information.
+    This code implements the manifold version of 
+    "https://github.com/scikit-learn/scikit-learn/blob/80598905e517759b4696c74ecc35c6e2eb508cff/sklearn/manifold/_locally_linear.py#L122"
     """
 
     n_samples, n_neighbors = indices.shape
@@ -64,6 +86,19 @@ def barycenter_weights(metric, X, Y, indices, reg=1e-3):
     return B
 
 def Compute_W(data, metric ,k_nearest_vals, n_samples, n_neighbors ):
+    """
+    Compute the weight matrix : W (2) in "Clustering and Dimensionality Reduction on Riemannian Manifolds"
+    Parameters
+    ----------
+    data : array-like, shape (n_samples, n_dim)
+    metric : distance metric to be used
+    k_nearest_vals : array-like, shape (n_samples, n_neighbors)
+    n_samples : int
+    n_neighbors : number of nearest neighbours to compute
+    Returns
+    -------
+    M,W : array-like, shape (n_samples, n_samples)
+    """
     B= barycenter_weights(metric, data,data,k_nearest_vals);
     indptr = np.arange(0, n_samples * n_neighbors + 1, n_neighbors)
     W = csr_matrix((B.ravel(), k_nearest_vals.ravel(), indptr), shape=(n_samples, n_samples))
@@ -73,42 +108,58 @@ def Compute_W(data, metric ,k_nearest_vals, n_samples, n_neighbors ):
     return M , W
 
 def Validate_W(data, W, k_nearest_vals):
-    # Validate the values of the weight matrix
+    """
+    Validate the weight matrix : W (2) in "Clustering and Dimensionality Reduction on Riemannian Manifolds"
+    Plots the reconstructed data (in 2D) from the weighted neighbours against the actual values.
+
+    Parameters
+    ----------
+    data : array-like, shape (n_samples, n_dim)
+    W : array-like, shape (n_samples, n_samples)
+    k_nearest_vals : array-like, shape (n_samples, n_neighbors)
+    """
     linear_combos = []
     neighborhood_weights = []
     for i in range(len(data)):
         weights = W.toarray()[i][k_nearest_vals[i]]
         neighborhood = data[k_nearest_vals[i]]
         weighted_neighbors = weights.reshape(-1,1)*neighborhood
-        lin_x1 = np.sum(weighted_neighbors[:,0])
-        lin_x2 = np.sum(weighted_neighbors[:,1])
-        lin_x3 = np.sum(weighted_neighbors[:,2])
-        linear_combos.append([lin_x1, lin_x2, lin_x3])
+        x1 = np.sum(weighted_neighbors[:,0])
+        x2 = np.sum(weighted_neighbors[:,1])
+        x3 = np.sum(weighted_neighbors[:,2])
+        linear_combos.append([x1, x2, x3])
         neighborhood_weights.append(weights)
-    linear_X = np.array(linear_combos)
+    reconstructed = np.array(linear_combos)
 
     fig = plt.figure(figsize=(16, 8))
     ax = fig.add_subplot(121)
-    ax.scatter(linear_X[:,0], linear_X[:,2], c='red', s=50, label='Linear Reconstruction')
+    ax.scatter(reconstructed[:,0], reconstructed[:,2], c='red', s=50, label='Linear Reconstruction')
     ax.scatter(data[:,0], data[:,2], c='blue', s=10, label='Original Data')
     ax.set_title('Local Linear Combinations')
     ax.set_xlabel("Dimension 0")
     ax.set_ylabel("Dimension 2")
-    ax.legend(loc='upper left');
-
+    ax.legend();
     ax2 = fig.add_subplot(122)
-    ax2.scatter(linear_X[:,0], linear_X[:,1], c='red', s=50, label='Linear Reconstruction')
+    ax2.scatter(reconstructed[:,0], reconstructed[:,1], c='red', s=50, label='Linear Reconstruction')
     ax2.scatter(data[:,0], data[:,1], c='blue', s=10, label='Original Data')
     ax2.set_title('Local Linear Combinations')
     ax2.set_xlabel("Dimension 0")
     ax2.set_ylabel("Dimension 1")
-    ax2.legend(loc='upper left');
+    ax2.legend();
     return
 
 class Optimize_y():
-    def __init__(self, M, n_samples,n_components) :
-        pass
+    """
+    This class computes the objective functio: 'y' (3) in 
+    "Clustering and Dimensionality Reduction on Riemannian Manifolds"
     
+    Parameters
+    ----------
+    M : array-like, shape (n_samples, n_samples)
+    n_samples : int
+    n_components : int
+    """
+    def __init__(self, M, n_samples,n_components) :
         self.n_dimensions = n_components
         self.n_samples = n_samples
         self.Y0 = np.random.rand(n_samples, self.n_dimensions)
@@ -138,12 +189,22 @@ class Optimize_y():
         cons = ({'type': 'eq', 'fun': self.cons1},
                 {'type': 'eq', 'fun': self.cons2}
                 )
-            
         a = self.objective_function(self.Y0)
         obj = minimize( self.objective_function , self.Y0 , constraints=cons)
         return obj
 
 def null_space(M, k):
+    """
+    Compute the null space of M : (Sparse eigenvalue problem) in 
+    "Clustering and Dimensionality Reduction on Riemannian Manifolds"
+    Parameters
+    ----------
+    M : array-like, shape (n_samples, n_samples)
+    k : int
+    Returns
+    -------
+    eigen_vectors, eigen_values_sum
+    """
     k_skip = 1
     tol = 1e-6
     max_iter = 100
