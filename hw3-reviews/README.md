@@ -38,7 +38,7 @@ III. Conclusion
     - What are meaningful representations of cells that can best answer questions in biology using Machine Learning?
 - [ ] "Shapes of cancer"
     - "What can cancer cell shapes, and their nuclei shapes, tell us about cancer?"
-- [ ] “Brain representations with brain shapes”
+- [ ] **Assigned to Brenna Takacs.** “Brain representations with brain shapes”
     - Which conditions or pathologies are the most correlated with brain shapes?
 - [x] **Assigned to Gabriela Villalpando Torres.** “Heart representations with heart shapes”
     - Which conditions or pathologies are the most correlated with heart shapes?
@@ -110,7 +110,7 @@ Abhijith Atreya.** Goh, A., Vidal, R.: Clustering and dimensionality reduction o
 ### Kernel Methods (*)
 
 - [ ] Jayasumana, S., Hartley, R., Salzmann, M., Li, H., & Harandi, M. (2015). Kernel methods on Riemannian manifolds with Gaussian RBF kernels. *IEEE transactions on pattern analysis and machine intelligence*, *37*(12), 2464-2477.
-- [ ] Jayasumana, S., Hartley, R., Salzmann, M., Li, H., & Harandi, M. (2013). Kernel methods on the Riemannian manifold of symmetric positive definite matrices. In *proceedings of the IEEE Conference on Computer Vision and Pattern Recognition* (pp. 73-80).
+- [ ] **Assigned to Ryan Guajardo.** Jayasumana, S., Hartley, R., Salzmann, M., Li, H., & Harandi, M. (2013). Kernel methods on the Riemannian manifold of symmetric positive definite matrices. In *proceedings of the IEEE Conference on Computer Vision and Pattern Recognition* (pp. 73-80).
 
 ### Time-Series Analysis (*)
 
