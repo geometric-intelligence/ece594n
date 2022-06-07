@@ -3,6 +3,7 @@ from torch.distributions import Categorical
 from model import PoincareBallModel
 from rsgd import RiemannianSGD
 from torch.nn import CrossEntropyLoss
+import tqdm
 
 DIMENSIONS = 5
 NEG_SAMPLES = 10
@@ -24,7 +25,8 @@ epoch = 0
 while True:
     if epoch < NUM_BURNIN_EPOCHS:
         lr =LEARNING_RATE_BURNIN
-        sampler = cat_dist
+        # sampler = cat_dist
+        sampler = unif_dist
     else:
         lr = LEARNING_RATE
         sampler = unif_dist

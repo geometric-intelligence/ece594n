@@ -9,8 +9,15 @@
 #Gensim poincare embeddings
 # https://radimrehurek.com/gensim/models/poincare.html
 import torch
+from torch.distributions import Categorical
+from rsgd import RiemannianSGD
+from torch.nn import CrossEntropyLoss, Embedding
+import tqdm
+import pandas as pd
+import os
 
-
+DIMENSIONS = 2
+NEG_SAMPLES = 10
 # def dist(self, u, v):
 
 
@@ -25,10 +32,14 @@ import torch
 # def soft_ranking_loss(output, target):
 
 def main():
-    cat_dist = Categorical(probs=torch.from_numpy(weights))
-    unif_dist = Categorical(probs=torch.ones(len(names),) / len(names))
+    epoch = 0
+    neighbors = []
+    dataset, names = getDataset()
+    # cat_dist = Categorical(probs=torch.from_numpy(weights))
+    # unif_dist = Categorical(probs=torch.ones(len(names),) / len(names))
+    unif_dist = Categorical(probs=torch.ones(names.shape[0],) / names.shape[0])
 
-    model = Model(dim=DIMENSIONS, size=len(names))
+    model = Model(dim=DIMENSIONS, size=names.shape[0])
     optimizer = RiemannianSGD(model.parameters())
 
     loss_func = CrossEntropyLoss()
@@ -38,14 +49,19 @@ def main():
     while True:
         if epoch < 20:
             lr = 0.003
-            sampler = cat_dist
-        else:
+            # sampler = cat_dist
+            sampler = unif_dist
+        elif epoch < 30:
             lr = 0.3
             sampler = unif_dist
-
-        perm = torch.randperm(dataset.size(0))
+        else: 
+            print("done\n")
+            return
+        print(dataset.shape[0])
+        perm = torch.randperm(dataset.shape[0])
+        print(perm)
         dataset_rnd = dataset[perm]
-        for i in tqdm(range(0, dataset.size(0) - dataset.size(0) % 10, 10)):
+        for i in tqdm(range(0, dataset.shape[0] - dataset.shape[0] % 10, 10)):
             batch_X[:,:2] = dataset_rnd[i : i + 10]
 
             for j in range(10):
@@ -59,6 +75,17 @@ def main():
             loss = loss_func(preds.neg(), batch_y)
             loss.backward()
             optimizer.step(lr=lr)
+        epoch += 1 
+
+def getDataset():
+    results = pd.read_csv(os.getcwd()+"/wordnet/mammal_closure_noweights.csv")
+    npArray = results.to_numpy()
+    print(npArray)
+    names = results.stack()
+    names = names.unique()
+    print(names.shape)
+    return torch.from_numpy(npArray), names
+
 
 class Model(torch.nn.Module):
     def __init__(self, dim, size, init_weights=1e-3, epsilon=1e-7):
