@@ -249,3 +249,28 @@ def add_2d_scatter(ax, points, points_color, title=None):
     ax.set_ylabel('Dimension 2')   
     ax.xaxis.set_major_formatter(ticker.NullFormatter())
     ax.yaxis.set_major_formatter(ticker.NullFormatter())
+
+def emp_probability(K,k_labels_out,labels_act):
+    """
+    Calculate the empirical probabilities of classification
+    Parameters
+    ----------
+    K : int , number of classes
+    k_labels_out : list() , predicted labels
+    labels_act : list() , actual labels
+    """
+    emp_prob = np.zeros((2,K))
+    p_a_1 = np.argwhere(labels_act==0)
+    p_a_2 = np.argwhere(labels_act==1)  
+    
+    p_z1 = k_labels_out[p_a_1[:]]
+    p_z2 = k_labels_out[p_a_2[:]]
+
+    for i in range(K):
+        emp_prob[0,i] = np.count_nonzero(p_z1==i)/(p_z1.shape)[0]
+        emp_prob[1,i] = np.count_nonzero(p_z2==i)/(p_z2.shape)[0]
+    print("------------------------------")
+    print('Classes = ' + str(K))
+    print(emp_prob)
+    print("------------------------------")
+    return 
