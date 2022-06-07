@@ -77,7 +77,7 @@ class PGA_Curve():
 
             # t_min[i] stores the index of the point along the curve that has the minimal distance to the i-th data point
             t_min = np.argmin(dist, axis = 1)
-            print(t_min)
+            # print(t_min)
     
 
             # Find the weights for each pair of data point and curve point
@@ -96,7 +96,6 @@ class PGA_Curve():
             # print(points)
             for i in range(len_curve):
                 mean_estimator = FrechetMean(self.metric)
-                # print(torch.tensor(w[i]).float())
                 # mean_estimator.fit(points, weights = torch.tensor(w[i]).float())
                 mean_estimator.fit(points, weights = gs.array(w[i]))
 
