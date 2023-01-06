@@ -2,8 +2,12 @@ name: ece594n
 channels:
   - conda-forge
 dependencies:
-  - jupyter_contrib_nbextensions
-  - jupyter_nbextensions_configurator
   - numpy
   - pip
-  - rise
+  - pip:
+    - git+https://github.com/geomstats/geomstats.git
+    - jupyter
+    - jupyter_contrib_nbextensions
+    - jupyter_nbextensions_configurator
+    - jupyterlab-code-formatter
+    - RISE
