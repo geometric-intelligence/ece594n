@@ -48,8 +48,4 @@ In this class you will learn how to perform geometric machine learning on biomed
   
 The lecture notes are available in the `lectures` folder.
 
-You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bioshape-lab/ece594n/main?filepath=lectures)
-
 # Thank you and best wishes for the Winter quarter! ☺
