@@ -2,34 +2,29 @@
 
 Goal: Get intuition on Differential Geometry by visualizing manifolds.
 
-- Deadline: Thursday 04/21/2022: Presentation in class (5 min per team).
+- Deadline: Monday 01/30/2023
 - Team of 2-4 students.
 
 ## Register your team
 
 First come, first serve. Send a message on slack to register your team.
 
-- [X] Stiefel manifold: Xinling Yu, Zheng Xu and Zhiyuan Ren.
-- [X] Grassmanian manifold: Gabriella Torres, Breanna Takacs, Becky Martin and Sam Rosen.
-- [X] Manifold of symmetric positive definite (SPD) matrices: Christos Zangos and Vincent Benenati.
-- [ ] Hyberbolic spaces: Alireza Parsay.
-- [X] Special Euclidean group: Swetha Pillai and Ryan Guajardo.
+- [ ] Stiefel manifold: TBD.
+- [ ] Grassmanian manifold:  TBD.
+- [ ] Manifold of symmetric positive definite (SPD) matrices:  TBD.
+- [ ] Hyberbolic spaces:  TBD.
+- [ ] Special Euclidean group:  TBD.
 - [ ] Heisenberg group: TBD.
-- [X] Discrete curves: Jax Burd and Abhijith Atreya.
-- [X] Manifold of beta distributions: Yiliang chen and Sunpeng Duan.
-- [X] Manifold of categorical distributions: Ian Wu, Steven Lin, Haoming Chen 
+- [ ] Discrete curves:  TBD.
+- [ ] Manifold of beta distributions:  TBD.
+- [ ] Manifold of categorical distributions: TBD.
 
 ## Guidelines
 
-- [Git clone](https://github.com/git-guides/git-clone) this GitHub repository.
-- Create a new folder in this folder with the name of your manifold.
-- In this new folder:
-  - Add a python file named `[your-manifold].py`, e.g. `grassmanian.py`
-    - This file will have the core functions for your project (details below).
-  - Add a Jupyter notebook named `[your-manifold].ipynb` that represents the bulk of your project.
-- Make sure to indicate which teammate did which part of the work.
-- Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to this GitHub repository.
-- You can submit code to this repository anytime until the deadline.
+More to come.
+
+- Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to this Geomstats GitHub repository.
+- You can submit code to your PR anytime until the deadline.
 
 ## Important Remarks
 
@@ -81,12 +76,4 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
 
 ## Grading Criteria
 
-- The notebook respects the guidelines in this Readme, and in particular: the code is clean and documented. 10%
-- The notebook gives the correct mathematical definition of the manifold. 10%
-- The notebook gives 5+ interesting real-world uses of the manifold, with references. 10%
-- The notebook uses existing `geomstats` operations (log, exp, geodesics, parallel transport) on the manifold. 20%
-- The notebook uses existing `geomstats` [visualization tools](https://github.com/geomstats/geomstats/blob/master/geomstats/visualization.py) to show the results of the elementary operations. 20% 
-  - If there are no tools in [visualization tools](https://github.com/geomstats/geomstats/blob/master/geomstats/visualization.py) for your manifold, mention it and this criterion is not taken into account.
-- The notebook implements custom visualization tools to show the results of the elementary operations. 20%
-- The presentation in class is clear and helps give intuition about the manifold. 10%
-
+TBD.
