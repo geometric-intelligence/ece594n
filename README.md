@@ -7,11 +7,7 @@ This is the GitHub repository for the course:
 ECE 594N: Geometric Machine Learning for Biomedical Imaging and Shape Analysis at UC Santa Barbara, Spring 2022.
 
 - Instructor: [Prof. Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [BioShape Lab](https://bioshape.ece.ucsb.edu/), UC Santa Barbara.
-- Lectures: Tuesdays, Thursdays 4 PM - 5.30 PM in Phelps 1431.
-
-You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bioshape-lab/ece594n/main?filepath=lectures)
+- Lectures: Mondays, Wednesdays 12:00 - 1:50 PM in PHELP 1431
 
 # Communicating
 
@@ -30,5 +26,30 @@ Advances in biomedical imaging techniques have enabled us to access the shapes o
 Machine learning is poised to play a major role in analyzing this new wealth of imaging information and testing novel biomedical hypotheses.
 In this class you will learn how to perform geometric machine learning on biomedical images and shapes. The course will cover basics of geometric machine learning and delve into specific methods for shape analysis of proteins, cells and organs. This course will feature guest lectures from invited speakers.
 
+# Outline
 
-# Thank you and best wishes for the Spring quarter! ☺
+- Unit 1 (Geometry - Math!): Differential Geometry for Engineers
+  - A) Manifolds
+  - B) Lie groups
+  - C) Riemannian metrics
+
+- Unit 2 (Shapes): Computational Representations of Biomedical Shapes
+  - A) Shapes of landmarks
+  - B) Shapes of curves
+  - C) Shapes of surfaces
+  - D) Deformations
+
+- Unit 3 (Machine Learning): Geometric Machine Learning for Shape Analysis
+  - A) Statistics on manifolds
+  - B) Classification
+  - C) Regression
+  - D) Clustering
+  - E) Dimension reduction
+  
+The lecture notes are available in the `lectures` folder.
+
+You can access and run the lecture slides and lab notebooks by clicking on the Binder link below.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bioshape-lab/ece594n/main?filepath=lectures)
+
+# Thank you and best wishes for the Winter quarter! ☺
