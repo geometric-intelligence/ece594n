@@ -11,3 +11,12 @@ dependencies:
     - jupyter_nbextensions_configurator
     - jupyterlab-code-formatter
     - RISE
+    - black
+    - black[jupyter]
+    - flake8
+    - flake8-docstrings
+    - isort
+    - pytest
+    - pytest-cov
+# Enable splitcell extension via the jupyter_nbextensions_configurator server extension
+# https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/README.md
