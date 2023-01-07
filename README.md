@@ -48,4 +48,11 @@ In this class you will learn how to perform geometric machine learning on biomed
   
 The lecture notes are available in the `lectures` folder.
 
+# HW and Lab-HW Schedule
+
+- Monday 01/16/2023 (11:59 PM PST): Intermediate Python - Datacamp. <4 hours. 
+- Monday 01/30/2023 (11:59 PM PST): [Geomviz HW](https://github.com/bioshape-lab/ece594n/tree/main/hw-geomviz).
+- Monday 02/20/2023 (11:59 PM PST): [Shape HW](https://github.com/bioshape-lab/ece594n/tree/main/hw-shapes).
+- Monday 03/13/2023 and Wednesday 03/15/2023: Presentations of [final projects](https://github.com/bioshape-lab/ece594n/tree/main/hw-project).
+
 # Thank you and best wishes for the Winter quarter! ☺
