@@ -11,3 +11,5 @@ dependencies:
     - jupyter_nbextensions_configurator
     - jupyterlab-code-formatter
     - RISE
+# Enable splitcell extension via the jupyter_nbextensions_configurator server extension
+# https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/README.md
