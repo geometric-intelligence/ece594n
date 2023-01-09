@@ -3,7 +3,7 @@
 Goal: Put your skills in practice to tackle a project of your choice: perform geometric machine learning analysis on a biomedical dataset.
 
 - Deadline for project reports and for presentations in class: Monday 03/13/2023 and Wednesday 03/15/2023.
-- Teams of 2-3 students (5min per student during presentation).
+- Teams of 1-4 students (5min per student during presentation).
 
 **Examples**: You can find [here](https://github.com/geomstats/geomstats/tree/master/notebooks), within the "real world applications" notebooks, examples of potential projects.
 
