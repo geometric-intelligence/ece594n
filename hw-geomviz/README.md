@@ -3,7 +3,7 @@
 Goal: Get intuition on Differential Geometry by visualizing manifolds.
 
 - Deadline: Monday 01/30/2023
-- Team of 2-5 students.
+- Team of 1-4 students.
 
 ## Register your team
 
