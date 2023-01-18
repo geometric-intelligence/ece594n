@@ -21,6 +21,11 @@ First come, first serve. Send a message on slack to register your team.
 
 Note: Stand-alone projects possibles.
 
+- [ ] [Klein bottle](https://github.com/geomstats/geomstats/pull/1707/files): TBD. 
+- [ ] Architecture of the visualization module: TBD (Amil?).
+- [ ] Creating lecture notes for the class: TBD.
+- [ ] Continuing a stall PR from Geomstats: TBD.
+
 ## Guidelines
 
 1. Set-up
@@ -50,6 +55,7 @@ Note: Stand-alone projects possibles.
 - Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to the Geomstats GitHub repository.
 - You can submit code to your PR (i.e., modify your PR) anytime until the deadline.
 - Your code should pass the GitHub Action tests: it will automatically verify that your code runs.
+- Your code will receive a code review. Address the review, and resubmit.
 
 ## Information about Code Structure 
 
@@ -71,7 +77,9 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
 
 ## Grading Criteria
 
-- The code style is clean: it passes the GitHub Actions Linting Tests.
-- There is one test function per visualization function.
-- The code runs: it passes the GitHub Actions Testing.
-- The visualizations are clean and will be merged into Geomstats.
+- The code style is clean: it passes the GitHub Actions **Linting** Tests (10%).
+- The code is properly documented following the documentation guidelines (10%).
+- The code runs: it passes the GitHub Actions Testing (20%).
+- There is one test function per visualization function (20%).
+- You have made substantial improvements compared to the current version of the code (20%).
+- You have addressed the comments in the code review and merged into Geomstats (20%).
