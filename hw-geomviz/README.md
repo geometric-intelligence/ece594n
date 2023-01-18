@@ -19,12 +19,16 @@ First come, first serve. Send a message on slack to register your team.
 - [ ] Manifold of beta distributions:  TBD.
 - [ ] Manifold of categorical distributions: TBD.
 
-Note: Stand-alone projects possibles.
+"Expert" projects: GitHub and Python experience recommended.
 
-- [ ] [Klein bottle](https://github.com/geomstats/geomstats/pull/1707/files): TBD. 
-- [ ] Architecture of the visualization module: TBD (Amil?).
+- [ ] [Klein bottle](https://github.com/geomstats/geomstats/pull/1707/files): TBD.
+- [ ] [Special linear group](https://github.com/geomstats/geomstats/pull/1365/files): TBD.
+- [ ] [Correlation matrices](https://github.com/geomstats/geomstats/pull/1695): TBD.
+- [ ] [Architecture of the visualization module](https://github.com/geomstats/geomstats/pulls?q=is%3Apr+is%3Aopen+visualization): TBD (Amil?).
+- [ ] [Polynomial regression](https://github.com/geomstats/geomstats/pull/1605/files): TBD (Adele?).
+- [ ] [Discrete surfaces](https://github.com/geomstats/geomstats/pull/1711): TBD (Adele?).
 - [ ] Creating lecture notes for the class: TBD.
-- [ ] Continuing a stall PR from Geomstats: TBD.
+- [ ] Continuing a stalled PR from Geomstats: TBD.
 
 ## Guidelines
 
@@ -77,9 +81,9 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
 
 ## Grading Criteria
 
-- The code style is clean: it passes the GitHub Actions **Linting** Tests (10%).
+- The code style is clean: it passes the GitHub Actions' **Linting** (10%).
 - The code is properly documented following the documentation guidelines (10%).
-- The code runs: it passes the GitHub Actions Testing (20%).
+- The code runs: it passes the GitHub Actions' **Testing** (20%).
 - There is one test function per visualization function (20%).
-- You have made substantial improvements compared to the current version of the code (20%).
+- You have made substantial improvements compared to the current version of the code, or you chose an expert project (20%).
 - You have addressed the comments in the code review and merged into Geomstats (20%).
