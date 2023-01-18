@@ -5,6 +5,8 @@ Goal: Get intuition on Differential Geometry by visualizing manifolds.
 - Deadline: Monday 01/30/2023
 - Team of 1-4 students.
 
+You will continue the work done by last year's ECE 594n to integrate their contributions into the open-source Python package Geomstats.
+
 ## Register your team
 
 First come, first serve. Send a message on slack to register your team.
@@ -17,21 +19,37 @@ First come, first serve. Send a message on slack to register your team.
 - [ ] Manifold of beta distributions:  TBD.
 - [ ] Manifold of categorical distributions: TBD.
 
+Note: Stand-alone projects possibles.
+
 ## Guidelines
 
-- Clone the GitHub repository of the class with [git clone](https://github.com/git-guides/git-clone).
+1. Set-up
+- Clone the GitHub repository **of the class** with [git clone](https://github.com/git-guides/git-clone).
 - Create a conda environment with `conda env create -f environment.yml`.
 - Create a new GitHub branch on your computer with [git checkout -b](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
 - Run the code in the folder associated to the manifold you chose (the "manifold folder").
-- Create tests that verify that the code runs correctly:
-  - In your manifold folder, create a file name `test_visualization_[name of your manifold].py`
-  - In that .py file, copy-paste the content of this [file](https://github.com/geomstats/geomstats/blob/master/tests/tests_geomstats/test_visualization.py).
-  - Adapt the code so that it tests the functions of your manifold: you should have one test function per function in your manifold.
-  - Test that your tests run using `pytest test_visualization_[name of your manifold].py`.
+
+2. Create tests that verify that the code runs correctly:
+- In your manifold folder, create a file name `test_visualization_[name of your manifold].py`
+- In that .py file, copy-paste the content of this [file](https://github.com/geomstats/geomstats/blob/master/tests/tests_geomstats/test_visualization.py).
+- Adapt the code so that it tests the functions of your manifold: you should have one test function per function in your manifold.
+- Test that your tests run using `pytest test_visualization_[name of your manifold].py`.
 - Verify that the code follows the Code Structure given in the next section.
-- Put the code to international coding style standards using `black [name-of-python-file.py]` and `isort [name-of-python-file.py]` and `flake8 [name-of-python-file.py]`.
+- Put your code to international coding style standards using `black [name-of-python-file.py]` and `isort [name-of-python-file.py]` and `flake8 [name-of-python-file.py]`.
+- Document your code with docstrings, see [here for docstring guidelines](https://github.com/geomstats/geomstats/blob/master/docs/contributing.rst#writing-docstrings).
+
+3. Prepare the notebook for submission to Geomstats
+- In your manifold folder, edit the .ipynb to change everything that you do not understand.
+- If there exists a notebook on geomstats on a similar topic, create one notebook that merges the two.
+
+4. Submit your Pull Request.
+- Clone the GitHub repository **[of Geomstats](https://github.com/geomstats/geomstats)** with [git clone](https://github.com/git-guides/git-clone).
+- Create a new GitHub branch **[of Geomstats]** on your computer with [git checkout -b](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
+- On your branch, in the Geomstats' folder [visualization](https://github.com/geomstats/geomstats/tree/master/geomstats/visualization): add your `name-of-python-file.py`.
+- On your branch, in the Geomstats' folder [tests_geomstats](https://github.com/geomstats/geomstats/tree/master/tests/tests_geomstats): add your `test_visualization_[name of your manifold].py`
 - Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to the Geomstats GitHub repository.
-- You can submit code to your PR anytime until the deadline.
+- You can submit code to your PR (i.e., modify your PR) anytime until the deadline.
+- Your code should pass the GitHub Action tests: it will automatically verify that your code runs.
 
 ## Information about Code Structure 
 
@@ -49,13 +67,6 @@ Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Ge
     - `plot_geodesic` allows to visualise a (discretised) geodesic. Takes either point and tangent vec as parameters, or initial point and end point as parameters.
     
     − `plot_vector_field` allows to visualise vectors fields. Takes points and tangent vecs as parameters.
-
-
-## Additional remarks
-
-- Your code should be documented with docstrings, see [here for docstring guidelines](https://github.com/geomstats/geomstats/blob/master/docs/contributing.rst#writing-docstrings).
-- Your visualization functions should work with only matplotlib.
-- Your code should pass the GitHub Action tests when you push your PR to Geomstats GitHub.
 
 
 ## Grading Criteria
