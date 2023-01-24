@@ -11,22 +11,22 @@ You will continue the work done by last year's ECE 594n to integrate their contr
 
 First come, first serve. Send a message on slack to register your team.
 
-- [ ] Stiefel manifold: TBD.
-- [ ] Grassmanian manifold:  TBD.
-- [ ] Manifold of symmetric positive definite (SPD) matrices:  TBD.
-- [ ] Special Euclidean group:  TBD.
-- [ ] Discrete curves:  TBD.
-- [ ] Manifold of beta distributions:  TBD.
-- [ ] Manifold of categorical distributions: TBD.
+- [X] Stiefel manifold: Nick Godzik, Jose Nunez, Yequan Zhao and Situo Song.
+- [X] Grassmanian manifold: Joshua Kim and Christine Wan
+- [X] Manifold of symmetric positive definite (SPD) matrices: Shaun Chen and Qing Yao.
+- [X] Special Euclidean group: Karthik Suryanarayana, Zeyu Deng, Monsij Biswal, and Mahmoud Namazi
+- [X] Discrete curves: Parsa Madinei & Alireza Parsay.
+- [X] Manifold of beta distributions: Ryan Stofer Allen Wang and Marianne Arriola.
+- [X] Manifold of categorical distributions: Benedict Lee and Ricky Lee
 
 "Expert" projects: GitHub and Python experience recommended.
 
-- [ ] [Klein bottle](https://github.com/geomstats/geomstats/pull/1707/files): TBD.
-- [ ] [Special linear group](https://github.com/geomstats/geomstats/pull/1365/files): TBD.
-- [ ] [Correlation matrices](https://github.com/geomstats/geomstats/pull/1695): TBD.
-- [ ] [Architecture of the visualization module](https://github.com/geomstats/geomstats/pulls?q=is%3Apr+is%3Aopen+visualization): TBD (Amil?).
-- [ ] [Polynomial regression](https://github.com/geomstats/geomstats/pull/1605/files): TBD (Adele?).
-- [ ] [Discrete surfaces](https://github.com/geomstats/geomstats/pull/1711): TBD (Adele?).
+- [X] [Klein bottle](https://github.com/geomstats/geomstats/pull/1707/files): Rami Dabit and Terry Wang.
+- [X] [Special linear group](https://github.com/geomstats/geomstats/pull/1365/files): Pieter Derksen, Rimika Jaiswal, and Molly Kaplan.
+- [X] [Correlation matrices](https://github.com/geomstats/geomstats/pull/1695): Jake Bentley and James McNeice
+- [X] [Architecture of the visualization module](https://github.com/geomstats/geomstats/pulls?q=is%3Apr+is%3Aopen+visualization): Amil Khan, Lauren Washington, Sam Feinstein.
+- [X] [Polynomial regression](https://github.com/geomstats/geomstats/pull/1605/files): Sean Anderson and Murat Kaan Erdal
+- [X] [Discrete surfaces](https://github.com/geomstats/geomstats/pull/1711): Adele Myers.
 - [ ] Creating lecture notes for the class: TBD.
 - [ ] Continuing a stalled PR from Geomstats: TBD.
 
