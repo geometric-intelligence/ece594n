@@ -1,6 +1,6 @@
 # Geomviz: Visualizing Differential Geometry
 
-Goal: Get intuition on Differential Geometry by visualizing manifolds.
+Goal: Get intuition on Differential Geometry by visualizing manifolds, and learn collaborative coding with GitHub.
 
 - Deadline: Monday 01/30/2023
 - Team of 1-4 students.
