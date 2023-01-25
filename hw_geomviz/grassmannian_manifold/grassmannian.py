@@ -240,7 +240,7 @@ def _squared_dist(point_a, point_b, metric):
     return metric.private_squared_dist(point_a, point_b)
 
 
-class Grassmannian(LevelSet):
+class Grassmannian:
     """Class for Grassmann manifolds Gr(n, k).
 
     Parameters
@@ -262,17 +262,13 @@ class Grassmannian(LevelSet):
         self.n = n
         self.k = k
 
-        dim = int(k * (n - k))
-        super(Grassmannian, self).__init__(
-            dim=dim,
-            embedding_space=SymmetricMatrices(n),
-            submersion=lambda x: submersion(x, k),
-            value=gs.zeros((n, n)),
-            tangent_submersion=lambda v, x: 2
-            * Matrices.to_symmetric(Matrices.mul(x, v))
-            - v,
-            metric=GrassmannianCanonicalMetric(n, k),
-        )
+        self.dim = int(k * (n - k))
+        self.embedding_space = SymmetricMatrices(n)
+        #self.submersion = lambda x: submersion(x, k), value=gs.zeros((n, n))
+#         self.tangent_submersion = lambda v, x: 2 \
+#             * Matrices.to_symmetric(Matrices.mul(x, v)) \
+#             - v
+        self.metric=GrassmannianCanonicalMetric(n, k)
 
     def random_uniform(self, n_samples=1):
         """Sample random points from a uniform distribution.
