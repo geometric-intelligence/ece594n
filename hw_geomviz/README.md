@@ -61,6 +61,8 @@ First come, first serve. Send a message on slack to register your team.
 - Your code should pass the GitHub Action tests: it will automatically verify that your code runs.
 - Your code will receive a code review. Address the review, and resubmit.
 
+![Using GitHub.](/lectures/figs/github.png)
+
 ## Information about Code Structure 
 
 Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Geomstats.
