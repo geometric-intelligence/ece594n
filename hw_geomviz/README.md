@@ -32,17 +32,33 @@ First come, first serve. Send a message on slack to register your team.
 
 ## Guidelines
 
-1. Set-up
-- Clone the GitHub repository **of the class** with [git clone](https://github.com/git-guides/git-clone).
-- Create a conda environment with `conda env create -f environment.yml`.
-- Create a new GitHub branch on your computer with [git checkout -b](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
-- Run the code in the folder associated to the manifold you chose (the "manifold folder").
+- [Create a GitHub account](https://github.com/).
+- [Download and install Anaconda](https://docs.anaconda.com/anaconda/install/index.html).
+- Join the slack channel hw_geomviz: this will be where you can easily ask questions to Nina and to the class.
 
-2. Create tests that verify that the code runs correctly:
+1. Set-up
+
+From a terminal in your computer:
+
+- Clone the GitHub repository **of the class ece594n** with [git clone](https://github.com/git-guides/git-clone).
+- In the cloned folder `ece594n`, create a conda environment `conda env create -f environment.yml`.
+- Activate the conda environemnt with `conda activate ece594n`.
+- Create a new GitHub branch  with [git checkout -b](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
+- Run the code in the folder associated to the manifold you chose (the "manifold folder").
+  - The code might not run anymore due to package/module not found: 
+    - in this case, use: `import sys; sys.path.append("path/to/folder/with/file")`
+  - The code might not run anymore due to (ii) geomstats changes since last year: 
+    - in this case, check the names of Python files, classes and functions.
+
+2. Create tests that verify that the code runs correctly.
+
+From the GitHub branch on your computer:
+
 - In your manifold folder, create a file name `test_visualization_[name of your manifold].py`
 - In that .py file, copy-paste the content of this [file](https://github.com/geomstats/geomstats/blob/master/tests/tests_geomstats/test_visualization.py).
-- Adapt the code so that it tests the functions of your manifold: you should have one test function per function in your manifold.
+- Adapt the code so that it tests the **visualization functions of your manifold**: you should have one test function per function in your manifold.
 - Test that your tests run using `pytest test_visualization_[name of your manifold].py`.
+- Remove portions of code that are not visualization-related and are duplicated from existing code in the geomstats repository.
 - Verify that the code follows the Code Structure given in the next section.
 - Put your code to international coding style standards using `black [name-of-python-file.py]` and `isort [name-of-python-file.py]` and `flake8 [name-of-python-file.py]`.
 - Document your code with docstrings, see [here for docstring guidelines](https://github.com/geomstats/geomstats/blob/master/docs/contributing.rst#writing-docstrings).
