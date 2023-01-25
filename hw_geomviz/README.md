@@ -54,13 +54,13 @@ From a terminal in your computer:
 
 From the GitHub branch on your computer:
 
-- In your manifold folder, create a file name `test_visualization_[name of your manifold].py`
+- In your manifold folder, create a file name `test_visualization_[name-of-your-manifold].py`
 - In that .py file, copy-paste the content of this [file](https://github.com/geomstats/geomstats/blob/master/tests/tests_geomstats/test_visualization.py).
 - Adapt the code so that it tests the **visualization functions of your manifold**: you should have one test function per function in your manifold.
-- Test that your tests run using `pytest test_visualization_[name of your manifold].py`.
+- Test that your tests run using `pytest test_visualization_[name-of-your-manifold].py`.
 - Remove portions of code that are not visualization-related and are duplicated from existing code in the geomstats repository.
 - Verify that the code follows the Code Structure given in the next section.
-- Put your code to international coding style standards using `black [name-of-python-file.py]` and `isort [name-of-python-file.py]` and `flake8 [name-of-python-file.py]`.
+- Put your code to international coding style standards using `black [name-of-your-manifold].py` and `isort [name-of-your-manifold].py` and `flake8 [name-of-your-manifold].py`, and similarly for the test file `test_visualization_[name-of-your-manifold].py`.
 - Document your code with docstrings, see [here for docstring guidelines](https://github.com/geomstats/geomstats/blob/master/docs/contributing.rst#writing-docstrings).
 
 3. Prepare the notebook for submission to Geomstats
@@ -70,8 +70,11 @@ From the GitHub branch on your computer:
 4. Submit your Pull Request.
 - Clone the GitHub repository **[of Geomstats](https://github.com/geomstats/geomstats)** with [git clone](https://github.com/git-guides/git-clone).
 - Create a new GitHub branch **[of Geomstats]** on your computer with [git checkout -b](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
-- On your branch, in the Geomstats' folder [visualization](https://github.com/geomstats/geomstats/tree/master/geomstats/visualization): add your `name-of-python-file.py`.
-- On your branch, in the Geomstats' folder [tests_geomstats](https://github.com/geomstats/geomstats/tree/master/tests/tests_geomstats): add your `test_visualization_[name of your manifold].py`
+- **Expert project only:** you might need to pull an existing branch into your new GitHub branch:
+  - Add the remote repository (different from origin): `git remote add ninamiolane git@github.com:ninamiolane/geomstats.git`
+  - From your local branch: `git pull ninamiolane the-existing-branch`.
+- On your branch, in the Geomstats' folder [visualization](https://github.com/geomstats/geomstats/tree/master/geomstats/visualization): add your `[name-of-your-manifold].py`.
+- On your branch, in the Geomstats' folder [tests_geomstats](https://github.com/geomstats/geomstats/tree/master/tests/tests_geomstats): add your `test_visualization_[name-of-your-manifold].py`
 - Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to the Geomstats GitHub repository.
 - You can submit code to your PR (i.e., modify your PR) anytime until the deadline.
 - Your code should pass the GitHub Action tests: it will automatically verify that your code runs.
@@ -83,7 +86,7 @@ From the GitHub branch on your computer:
 
 Design from Elodie Maignant, PhD student at INRIA (France) and contributor to Geomstats.
 
-− In your manifold folder, you should see a file `[your-manifold].py`:
+− In your manifold folder, you should see a file `[name-of-your-manifold].py`:
   - With a python class named after your manifold `class YourManifold`.
   - With visualization utils as methods from this class, such as:
     - `plot`: draws the manifold (e.g. cone for SPD matrices)
