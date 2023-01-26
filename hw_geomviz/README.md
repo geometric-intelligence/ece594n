@@ -24,7 +24,7 @@ First come, first serve. Send a message on slack to register your team.
 - [X] [Klein bottle](https://github.com/geomstats/geomstats/pull/1707/files): Rami Dabit and Terry Wang.
 - [X] [Special linear group](https://github.com/geomstats/geomstats/pull/1365/files): Pieter Derksen, Rimika Jaiswal, and Molly Kaplan.
 - [X] [Correlation matrices](https://github.com/geomstats/geomstats/pull/1695): Jake Bentley and James McNeice
-- [X] [Architecture of the visualization module](https://github.com/geomstats/geomstats/pulls?q=is%3Apr+is%3Aopen+visualization): Amil Khan, Lauren Washington, Sam Feinstein.
+- [X] [Architecture of the visualization module](https://github.com/geomstats/geomstats/pulls?q=is%3Apr+is%3Aopen+visualization): Amil Khan, Lauren Washington, Sam Feinstein, Alice Mo.
 - [X] [Polynomial regression](https://github.com/geomstats/geomstats/pull/1605/files): Sean Anderson and Murat Kaan Erdal
 - [X] [Discrete surfaces](https://github.com/geomstats/geomstats/pull/1711): Adele Myers.
 - [ ] Creating lecture notes for the class: TBD.
