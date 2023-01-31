@@ -1,6 +1,6 @@
 # Charles Kulick
 ## Contributions
-* Merged git successfully, resolving several conflicts
+* Merged git successfully, resolving several conflicts in spd_matrices.py, pullback_metric.py, lower_triangular_matrices.py
 * Performed literature review
 * Wrote supporting mathematical exposition in ipynb file
 
