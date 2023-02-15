@@ -2,7 +2,7 @@
 
 Goal: Define the question of your final project, find a dataset, and visualize it.
 
-- Deadline for project reports: Monday 02/20/2023.
+- Deadline for project reports: Monday 02/27/2023.
 
 **Examples**: You can find [here](https://github.com/geomstats/geomstats/tree/master/notebooks), within the "real world applications" notebooks, examples of potential projects.
 
