@@ -22,8 +22,6 @@ Send the title of your project, and names of its team members, through slack to 
 
 # Presentations on Monday 03/13/2023
 
-- Brain tumor diagnosis & classification via shape analysis
-Joshua Kim, Yequan Zhao, Allen Wang and Situo Song.
 - Learning distributions of healthy & schizophrenic brain shapes via denoising diffusion on manifolds. Marianne Arriola and Ryan Stofer.
 - Human Action Recognition by Representing 3D Skeletons as Points in a Lie Group. Alireza Parsay and Parsa Madinei.
 - Propagation of Gaussian or Shot noise during Shape Analysis. Pieter Derksen, Rimika Jaiswal, and Molly Kaplan.
