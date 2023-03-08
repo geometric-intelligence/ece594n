@@ -30,6 +30,7 @@ Joshua Kim, Yequan Zhao, Allen Wang and Situo Song.
 - Classifying Blood Cell by Shape. Jake Bentley, Charles Kulick, James McNeice.
 - fMRI encoding and decoding with manifold learning
 Joshua Kim, Yequan Zhao, Allen Wang and Situo Song
+- Graph embedding in Siegel Space. Ricky Lee and Benedict Lee.
 
 # Presentations on Wednesday 03/15/2023
 
