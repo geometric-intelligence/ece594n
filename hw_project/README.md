@@ -22,13 +22,25 @@ Send the title of your project, and names of its team members, through slack to 
 
 # Presentations on Monday 03/13/2023
 
-- TBD
-- TBD
+- Brain tumor diagnosis & classification via shape analysis
+Joshua Kim, Yequan Zhao, Allen Wang and Situo Song.
+- Learning distributions of healthy & schizophrenic brain shapes via denoising diffusion on manifolds. Marianne Arriola and Ryan Stofer.
+- Human Action Recognition by Representing 3D Skeletons as Points in a Lie Group. Alireza Parsay and Parsa Madinei.
+- Propagation of Gaussian or Shot noise during Shape Analysis. Pieter Derksen, Rimika Jaiswal, and Molly Kaplan.
+- Classifying Blood Cell by Shape. Jake Bentley, Charles Kulick, James McNeice.
+- fMRI encoding and decoding with manifold learning
+Joshua Kim, Yequan Zhao, Allen Wang and Situo Song
 
 # Presentations on Wednesday 03/15/2023
 
-- TBD
-- TBD
+- Characterizing Brain Shape Changes During the Female Menstrual Cycle. Adele Myers.
+- Predicting Cell Behavior from Cell Morphology During Cell-Cell Shear. Lauren Washington, Amil Khan, Alice Mo, Sam Feinstein.
+- Classifying Blood Cell by Shape. Jake Bentley, Charles Kulick, James McNeice.
+- Classifying cell cycle stage from plasma and nuclear membrane shape. Nick Godzik and Jose Nunez.
+- Heart Diagnosis Using Electrocardiogram Measurements. Monsij Biswal and Nima Namazi.
+- Identification of Age-related Macular Degeneration among Retinal Images obtained via Optical Coherence Tomography. Rami Dabit and Terry Wang.
+- Visualization of the Brain Structure in Schizophrenia using Dimension Reduction Analysis
+Shaun Chen.
 
 # Grading Criteria
 
