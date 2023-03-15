@@ -38,8 +38,6 @@ WFDB_dict = {"426177001":"SB Sinus Bradycardia ", #  <--
             "164931005":"STTU ST tilt up"
             }
 
-#----------------- Functions for new dataset - prefixed by "dn" -----------------------#
-
 dn_base_path = './ECGDataDenoisedMat/'
 diagnostics_path = './Diagnostics.xlsx'
 labels_dict = {}    # {patient_id : rhythm_acr}
@@ -64,10 +62,10 @@ exception_patient_ids = ['MUSE_20181222_204118_08000', 'MUSE_20181222_204121_420
                          'MUSE_20181222_204310_31000', 'MUSE_20181222_204312_58000', 
                          'MUSE_20181222_204314_78000', 'MUSE_20181222_204132_64000']
 
-
 def get_all_file_paths():
     """
     Returns list of all patient_ids : MUSE_{}_{}_{}
+    Warning : List is randomized with every run
     """
     patient_ids = []
     mat_files = glob.glob(dn_base_path + '*.mat')
@@ -78,8 +76,7 @@ def get_all_file_paths():
 
 def init_labels():
     """
-    Creates global dictionary for labels of each patient. Call once
-    changes the globally defined labels_dict
+    Creates global dictionary for labels of each patient. 
     """
     diag_xlsx = pd.read_excel(diagnostics_path)
     global labels_dict
@@ -87,13 +84,13 @@ def init_labels():
 
 def get_rhythm_acr(patient_id : str):
     """
-    Returns rhythm acr for a given patient id
+    Returns rhythm acr (AFIB/SB/SR/ST) for a given patient id
     """
     return labels_dict[patient_id]
 
 def get_random_patient_id():
     """
-    Returns a random patient_id from the basepath
+    Returns a random patient_id from the dn_base_path
     """
     csv_files = glob.glob(dn_base_path + '*.mat')
     idx = np.random.randint(0, len(csv_files))
@@ -109,7 +106,6 @@ def check_on_manifold(cov_mat : np.array):
 def get_single_data(patient_id : str = None):
     """
     Returns ECG data (12 x 5000) array for a patient
-
     If no patient_id is given, it returns for a  random patient in list
     """
     if patient_id==None:
@@ -123,9 +119,7 @@ def get_single_data(patient_id : str = None):
 def plot_ecg(patient_id: str = None, lead:int = -1):
     """
     Plots time series ECG data (5000 samples) at given lead and patient id
-
     If no patient_id is given, it plots for a random patient in list
-    
     lead : 0-based indexing, by default plots all leads
     """
     if patient_id==None:
@@ -147,6 +141,10 @@ def plot_ecg(patient_id: str = None, lead:int = -1):
     plt.show()
 
 def compute_corr_mat(patient_id : str, plot_corr : bool = False):
+    """
+    Returns correlation matrix for the patient_id
+    Plots if plot_corr = True
+    """
     if patient_id==None:
         patient_id = get_random_patient_id()
     ecg_data = get_single_data(patient_id)
@@ -183,11 +181,10 @@ def load_fulldataset():
     archive_file.extractall('')
     process = subprocess.Popen(['rm', d_file])
 
-
-
 def load_Chapman_ECG(balanced : bool = False, load_sample : bool = False):
     """
-    balanced: only works if load_sample = False
+    balanced : only works if load_sample = False
+    load_sample : Does not download the entire dataset if True 
 
     """
     if load_sample:
