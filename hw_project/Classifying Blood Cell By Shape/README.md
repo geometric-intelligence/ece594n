@@ -8,13 +8,14 @@
 ## James McNiece
 - Shape Project: Wrote final visualization methods and began geomstats implementation for future work
 - Presentation: Finalized image processing, helped complete both other parts
-- Made File:
+- Made File: Project_Presentation_Outline
 
 ## Charles Kulick
 - Shape Project: Wrote image processing methods for converting raw data into ordered lists of pixels
 - Presentation: Implemented geomstats methods on the dataset and explored results
 - Made File: Final Project - Report and Presentation - Geomstats Results
 
+Presentation preparation was a collaborative affair.
 
 To run the notebook, data should be downloaded from [here](https://zenodo.org/record/6496656/files/bloodmnist.npz?download=1) but the file size is too large for a direct upload.
 
