@@ -9,3 +9,14 @@ Brain decoding, also known as neural decoding or brain reading, is a field of ne
 - Yequan Zhao: functional connectivity 
 - Situo Song: dataset and visuailization
 
+## Reference:
+Maex, R., Mahmoudi, A., Takerkart, S., Regragui, F., Boussaoud, D., & Brovelli, A. (2012). Multivoxel Pattern Analysis for fMRI Data: A Review. Computational and Mathematical Methods in Medicine, 2012, 961257. doi: 10.1155/2012/961257.
+
+Zhang, Yu, and Pierre Bellec. "Functional Decoding using Convolutional Networks on Brain Graphs." 2019 Conference on Cognitive Computational Neuroscience, Berlin, Germany
+
+Nilearn. (n.d.). Nilearn Quickstart. Retrieved March 16, 2023, from https://nilearn.github.io/stable/quickstart.html
+
+Rué-Queralt, J., Stevner, A., Tagliazucchi, E. et al. Decoding brain states on the intrinsic manifold of human brain dynamics across wakefulness and sleep. Commun Biol 4, 854 (2021). https://doi.org/10.1038/s42003-021-02369-7
+
+
+
