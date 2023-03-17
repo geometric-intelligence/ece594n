@@ -15,7 +15,6 @@ As a side note, our first initials are one letter away from SALAD.
 
 📸 Images from Liam Dow
 
----
 
 ## Data Source
 
