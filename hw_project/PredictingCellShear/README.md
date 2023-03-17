@@ -2,7 +2,7 @@
 
 ![](figs/Graphical_Abstract_V1@4x.png)
 
-### ECE594N HW Shapes 
+### ECE594N HW Project 
 
 __Samuel Feinstein, Amil Khan, Lauren Washington, Alice Mo__
 
