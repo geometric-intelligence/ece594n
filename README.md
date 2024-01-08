@@ -1,13 +1,14 @@
-# UCSB ECE 594N Geometric Machine Learning for Biomedical Imaging and Shape Analysis
+# UCSB ECE 594N
+# Equivariant, Geometric & Topological Deep Learning
 
 Welcome!
 
 This is the GitHub repository for the course:
 
-ECE 594N: Geometric Machine Learning for Biomedical Imaging and Shape Analysis at UC Santa Barbara.
+ECE 594N: Equivariant, Geometric & Topological Deep Learning at UC Santa Barbara.
 
-- Instructor: [Prof. Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [BioShape Lab](https://bioshape.ece.ucsb.edu/), UC Santa Barbara.
-- Lectures: Mondays, Wednesdays 12:00 - 1:50 PM in PHELP 1437
+- Instructor: [Prof. Nina Miolane](https://www.ece.ucsb.edu/people/faculty/nina-miolane), [Geometric Intelligence Lab](https://gi.ece.ucsb.edu/), UC Santa Barbara.
+- Lectures: Mondays, Wednesdays 12:00 - 1:50 PM in PHELP 1431
 
 # Communicating
 
@@ -19,34 +20,17 @@ ECE 594N: Geometric Machine Learning for Biomedical Imaging and Shape Analysis a
 
 # Scope
 
-Advances in biomedical imaging techniques have enabled us to access the shapes of a variety of structures: organs, cells, proteins. Since biological shapes are related to physiological functions, shape data may hold the key to unlock outstanding mysteries in biomedicine — specifically when combined with genomics and transcriptomics data.
+Deep learning has been remarkably successful at solving a massive set of problems on data types including images and text documents. This success drove the extension of this approach to more complex geometric data types, such as graphs, meshes, shape deformations, and more, that arise in real-world data. 
 
 <img src="https://raw.githubusercontent.com/bioshape-lab/ece594n/master/fig_readme.png" align="left">
 
-Machine learning is poised to play a major role in analyzing this new wealth of imaging information and testing novel biomedical hypotheses.
-In this class you will learn how to perform geometric machine learning on biomedical images and shapes. The course will cover basics of geometric machine learning and delve into specific methods for shape analysis of proteins, cells and organs. This course will feature guest lectures from invited speakers.
+The goal of this course is to introduce you to the extensions of deep learning that cover these cases - equivariant, geometric, and topological deep learning - and uncover the geometric principles of intelligence.
 
 # Outline
 
-- Unit 1 (Geometry - Math!): Differential Geometry for Engineers
-  - A) Manifolds
-  - B) Lie groups
-  - C) Riemannian metrics
-
-- Unit 2 (Shapes): Computational Representations of Biomedical Shapes
-  - A) Shapes of landmarks
-  - B) Shapes of curves
-  - C) Shapes of surfaces
-  - D) Deformations
-
-- Unit 3 (Machine Learning): Geometric Machine Learning for Shape Analysis
-  - A) Statistics on manifolds
-  - B) Classification
-  - C) Regression
-  - D) Clustering
-  - E) Dimension reduction
-  
-The lecture notes are available in the `lectures` folder.
+- Unit 1: Equivariant Deep Learning
+- Unit 2: Geometric Deep Learning
+- Unit 3: Topological Deep Learning
 
 # HW and Lab-HW Schedule
 
