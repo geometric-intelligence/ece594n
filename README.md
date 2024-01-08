@@ -22,7 +22,7 @@ ECE 594N: Equivariant, Geometric & Topological Deep Learning at UC Santa Barbara
 
 Deep learning has been remarkably successful at solving a massive set of problems on data types including images and text documents. This success drove the extension of this approach to more complex geometric data types, such as graphs, meshes, shape deformations, and more, that arise in real-world data. 
 
-<img src="https://raw.githubusercontent.com/geometric-intelligence/ece594n/main/ece594n_readme.jpg" align="left">
+<img src="https://raw.githubusercontent.com/geometric-intelligence/ece594n/main/ece594n_readme.jpeg" align="left">
 
 The goal of this course is to introduce you to the extensions of deep learning that cover these cases - equivariant, geometric, and topological deep learning - and uncover the geometric principles of intelligence.
 
