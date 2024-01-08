@@ -110,7 +110,7 @@ Use the figures of the paper as much as possible. You can show YouTube videos.
 
 ## Grading Criteria
 
-- The presentation of the equivariant, geometric or topological concepts is precise and intuitive (30%).
-- The presentation in class is clear, the slides are clean, the paper has been understood. (50%)
-- The code style is clean: it passes the GitHub Actions' **Linting** and it is properly documented (10%).
-- The code runs: it passes the GitHub Actions' **Testing** (10%).
+- The presentation of the equivariant, geometric or topological concepts is precise and intuitive.
+- The presentation in class is clear, the slides are clean, the paper has been understood. 
+- The code style is clean: it passes the GitHub Actions' **Linting** and it is properly documented.
+- The code runs.
