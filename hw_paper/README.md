@@ -1,4 +1,4 @@
-# Literature Review
+# Papers
 
 Goal: Get proficiency in cutting-edge equivariant, geometric and topological deep learning.
 
@@ -8,20 +8,20 @@ First come, first serve. Send a message on slack to register your team.
 
 ### Equivariant Deep Learning.
 
-- [ ] 01/22/2024  Monday. Lecun: Backpropagation applied to handwritten zip code recognition (1989). Lecun. Gradient-based learning applied to document recognition (1998).
-- [ ] 01/24/2024  Wednesday. Cohen and Welling. Group Equivariant neural networks (2016). 
-- [ ] 01/29/2024  Monday. Cohen. Steerable CNNs (2017).
-- [ ] 01/31/2024  Wednesday. Cohen. Spherical CNNs (2018).
-- [ ] 02/05/2024	Monday. Gauge CNNs.
-- [ ] 02/07/2024	Wednesday.
-- [ ] 02/12/2024	Monday.
+- [ ] 01/22/2024  Monday. CNNs. Lecun: Backpropagation applied to handwritten zip code recognition (1989). Lecun. Gradient-based learning applied to document recognition (1998).
+- [ ] 01/24/2024  Wednesday. Cohen and Welling. Group Equivariant neural networks (2016). AND: Marcos et al. Rotation equivariant vector field networks (2017).
+- [ ] 01/29/2024  Monday. Cohen and Welling. Steerable CNNs (2017). AND Weiler et al. 3d steerable cnns: Learning rotationally equivariant features in volumetric data. (2018)
+- [ ] 01/31/2024  Wednesday. Cohen et al. Spherical CNNs (2018). AND Esteves et al. Learning so (3) equivariant representations with spherical CNNs. (2018).
+- [ ] 02/05/2024	Monday. Cohen et al. Gauge equivariant convolutional networks and the icosahedral CNN (2019).
+- [ ] 02/07/2024	Wednesday. Davidson et al. Hyperspherical Variational Auto-Encoders. (2018). AND Falorsi et al: Explorations in Homeomorphic Variational Auto-Encoding (2018).
+- [ ] 02/12/2024	Monday. Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3d point clouds. (2018).
 - [ ] 02/14/2024	Wednesday.
 - [X] 02/19/2024	Monday - President's Day. No class.
-- [ ] 02/21/2024	Wednesday.
-- [ ] 02/26/2024	Monday. Kipf Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
-- [ ] 02/28/2024	Wednesday. 
-- [ ] 03/04/2024	Monday. 
-- [ ] 03/06/2024	Wednesday.
+- [ ] 02/21/2024	Wednesday. Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017).
+- [ ] 02/26/2024	Monday. Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
+- [ ] 02/28/2024	Wednesday. Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
+- [ ] 03/04/2024	Monday. Feng et al. Hypergraph Neural Networks (2019).
+- [ ] 03/06/2024	Wednesday. Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021). 
 
 
 
