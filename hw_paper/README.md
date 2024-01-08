@@ -4,69 +4,76 @@ Goal: Get proficiency in cutting-edge equivariant, geometric and topological dee
 
 ## Register to present one research paper
 
-First come, first serve. Send a message on slack to register your team.
+First come, first serve. Send a message on slack to register.
 
-### Equivariant Deep Learning.
+### Symmetries
 
 01/22/2024 Wednesday.
 - [ ] Cohen and Welling. Group Equivariant neural networks. (2016).
 - [ ] Marcos et al. Rotation equivariant vector field networks. (2017).
 
 01/24/2024 Monday.
-- [ ] Hinton et al. Matrix capsules with EM routing. (2018).
-- [ ] Cohen and Welling. Steerable CNNs. (2017). AND. Weiler et al. 3D Steerable cnns: Learning rotationally equivariant features in volumetric data. (2018).
+- [ ] Cohen and Welling. Steerable CNNs. (2017).
+- [ ] Lenssen et al. Group Equivariant Capsule Networks (2018).
 
 01/29/2024 Wednesday. 
-- [ ] Cohen et al. Spherical CNNs (2018). AEsteves et al. Learning SO(3) equivariant representations with spherical CNNs. (2018).
-    
-01/31/2024 Monday. 
-- [ ] Cohen et al. Gauge equivariant convolutional networks and the icosahedral CNN (2019).
+- [ ] Cohen et al. Spherical CNNs (2018).
 - [ ] Finzi et al. A practical method for constructing equivariant multilayer perceptrons for arbitrary matrix groups (2021).
 
+01/31/2024 Monday. 
+- [ ] Cohen et al. Gauge Equivariant convolutional networks and the icosahedral CNN (2019).
+- [ ] De Haan et al. Gauge Equivariant Mesh CNNs: Anisotropic convolutions on geometric graphs. (2021).
+
+### Point Clouds and Meshes
+
 02/05/2024 Wednesday. 
-- [ ] Davidson et al. Hyperspherical Variational Auto-Encoders. (2018).
-- [ ] Ganea et al. Hyperbolic Neural Networks. (2018)
+- [ ] Masci et al. Geodesic convolutional neural networks on Riemannian manifolds. (2015).
+- [ ] Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
 
 02/07/2024 
 - [ ] Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017).
 - [ ] Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018).
 
-02/12/2024	Monday. 
-- [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
-- [ ] Brehmer et al. Geometric Algebra Transformers (2023).
+## Graphs and Topological Domains.
+
+02/12/2024	Monday.
+- [ ] Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
+- [ ] Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
 
 02/14/2024	Wednesday.
-- [ ] Dosovitski et al. An Image is Worth 16x16 Words: Transformers Image Recognition at Scale. (2021).
-- [ ] Liu et al. Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. (2021).
+- [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
+- [ ] Ganea et al. Hyperbolic Neural Networks. (2018).
 
 02/19/2024 Monday - President's Day. No class.
 
-02/21/2024	Wednesday. 
-- [ ] Masci et al. Geodesic convolutional neural networks on Riemannian manifolds. (2015).
-- [ ] Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
-
-02/26/2024	Monday. 
-- [ ] Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
-- [ ] Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
-    
-02/28/2024	Wednesday. 
-- [ ] De Haan et al. Gauge Equivariant Mesh CNNs: Anisotropic convolutions on geometric graphs. (2021).
-- [ ] Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
-
-03/04/2024	Monday. 
+02/21/2024	Wednesday.
 - [ ] Feng et al. Hypergraph Neural Networks (2019).
 - [ ] Bodnar et al. Weisfeiler and lehman go cellular: CW networks (2021).
 
-03/06/2024	Wednesday. 
+## Transforners / Attention-based
+
+02/26/2024	Monday. 
+- [ ] Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
+- [ ] Dwivedi et al. A Generalization of Transformer Networks to Graphs. (2019).
+
+02/28/2024	Wednesday. 
+- [ ] Dosovitski et al. An Image is Worth 16x16 Words: Transformers Image Recognition at Scale. (2021).
+- [ ] Liu et al. Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. (2021).
+
+03/04/2024	Monday.
+- [ ] Tai et al. Equivariant Transformer Networks. (2019).
 - [ ] Fuchs et al. SE(3)-Transformers: 3D Roto-Translation Equivariant Attention Networks. (2020).
-- [ ] Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021). 
+
+03/06/2024	Wednesday. 
+- [ ] Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021).
+- [ ] Brehmer et al. Geometric Algebra Transformers (2023).
 
 
 ## Guidelines
 
 - [Create a GitHub account](https://github.com/).
 - [Download and install Anaconda](https://docs.anaconda.com/anaconda/install/index.html).
-- Join the slack channel hw_geomviz: this will be where you can easily ask questions to Nina and to the class.
+- Join the slack channel hw_papers: this will be where you can easily ask questions to Nina and to the class.
 
 1. Set-up
 
