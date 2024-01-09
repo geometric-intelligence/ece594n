@@ -4,7 +4,7 @@ Goal: Get proficiency in cutting-edge equivariant, geometric and topological dee
 
 ## Register to present one research paper
 
-First come, first serve. Send a message on slack to register.
+First come, first serve. Send a message on the #general channel on slack to register.
 
 ### Symmetries
 
@@ -80,8 +80,6 @@ First come, first serve. Send a message on slack to register.
 From a terminal in your computer:
 
 - Clone the GitHub repository **of the class ece594n** with [git clone](https://github.com/git-guides/git-clone).
-- In the cloned folder `ece594n`, create a conda environment `conda env create -f environment.yml`.
-- Activate the conda environemnt with `conda activate ece594n`.
 - Create a new GitHub branch  with [git checkout -b](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
 
 2. Create a jupyter notebook that shows your deep learning pipeline in action.
@@ -90,21 +88,24 @@ From the GitHub branch on your computer:
 
 - Create a new folder inside `hw_papers` called [first-author-title-year].
 - Inside this folder:
-  - Add a environment.yml with the Python packages required to run your code. Note that you ca
+  - Add a environment.yml with the Python packages required to run your code.
   - Add Python files as needed.
-  - Add a Jupyter notebook called `main.ipynb` that showcases the technique from your paper. Needs to run in class.
+  - Add a Jupyter notebook, or a Google Colab, called `main.ipynb` that showcases the technique from your paper. Needs to run in class.
   - Add a PDF with the slides from your presentation in class (30 minutes).
 
 3. Submit your Pull Request.
 - Submit your work as a [Pull Request (PR)](https://opensource.com/article/19/7/create-pull-request-github) to this GitHub repository.
-- Your code should pass the GitHub Action tests: it will automatically verify that your code runs, and that your code is clean.
 - You can submit code to your PR (i.e., modify your PR) anytime until the day of your presentation.
 
-4. Prepare your presentation, using the following structure:
+4. Prepare your presentation (30 min), using the following structure:
+
 - Introduction
 - Related Works
+- Background
 - Methods
 - Results
+- Demonstration of the code.
+  
 Use the figures of the paper as much as possible. You can show YouTube videos.
 
 
