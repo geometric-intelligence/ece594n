@@ -8,14 +8,14 @@ Goal: Put your skills in practice to tackle a project of your choice: perform ge
 
 # Register
 
-Send the title of your project, and names of its team members, through slack to be registered.
+Send the title of your project, and names of its team members, through the #general channel on slack to be registered.
 
 # Guidelines
 
 - Create a new folder in this folder with the name of your project.
 - In this new folder:
   - Add python files.
-  - Add the Jupyter notebook that represents your project's report.
+  - Add the Jupyter notebook, or Google Colab, that represents your project's report.
   - Make sure to indicate which teammate did which part of the work.
 - You can submit code to this repository anytime until the day of your presentation.
 
@@ -39,7 +39,7 @@ Send the title of your project, and names of its team members, through slack to 
 - Tools: does the project rely on tools seen in this class?
 - Experiments: does the project run enough experiments to address the question at hand?
 - Software: does the code run?
-- Report: is the report (jupyter notebook) well-written and explanatory?
+- Report: is the report (Jupyter Notebook or Google Colab) well-written and explanatory?
 - Presentation: is the presentation clear?
 
 # Remarks
