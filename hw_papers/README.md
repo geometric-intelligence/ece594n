@@ -32,7 +32,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/07/2024 
 - [X] Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017). Ana Cardenas.
-- [ ] Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018).
+- [X] Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018). Jacob Lyons.
 
 ### Graphs and Topological Domains.
 
