@@ -31,7 +31,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [ ] Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
 
 02/07/2024 
-- [ ] Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017).
+- [X] Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017). Ana Cardenas.
 - [ ] Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018).
 
 ### Graphs and Topological Domains.
