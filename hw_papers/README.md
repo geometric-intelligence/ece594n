@@ -22,7 +22,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 01/31/2024 Wednesday.
 - [ ] Cohen et al. Gauge Equivariant convolutional networks and the icosahedral CNN (2019).
-- [ ] De Haan et al. Gauge Equivariant Mesh CNNs: Anisotropic convolutions on geometric graphs. (2021).
+- [X] Yuyan Che -- De Haan et al. Gauge Equivariant Mesh CNNs: Anisotropic convolutions on geometric graphs. (2021).
 
 ### Point Clouds and Meshes
 
