@@ -38,7 +38,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/12/2024	Monday.
 - [X] Caitlyn Linehan -- Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
-- [ ] Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
+- [X] Sofia Gonzalez Garcia -- Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
 
 02/14/2024	Wednesday.
 - [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
