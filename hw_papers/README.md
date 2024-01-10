@@ -58,7 +58,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/28/2024	Wednesday. 
 - [X] Jiahua Chen -- Dosovitski et al. An Image is Worth 16x16 Words: Transformers Image Recognition at Scale. (2021).
-- [ ] Liu et al. Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. (2021).
+- [X] Shih-Cheng Hsiao -- Liu et al. Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. (2021).
 
 03/04/2024	Monday.
 - [X] Zhiyu Xue -- Tai et al. Equivariant Transformer Networks. (2019).
