@@ -54,7 +54,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/26/2024	Monday. 
 - [X] Alan Raydan -- Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
-- [ ] Dwivedi et al. A Generalization of Transformer Networks to Graphs. (2019).
+- [X] Alexander Davydov -- Dwivedi et al. A Generalization of Transformer Networks to Graphs. (2019).
 
 02/28/2024	Wednesday. 
 - [X] Jiahua Chen -- Dosovitski et al. An Image is Worth 16x16 Words: Transformers Image Recognition at Scale. (2021).
