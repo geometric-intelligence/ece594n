@@ -42,7 +42,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/14/2024	Wednesday.
 - [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
-- [ ] Ganea et al. Hyperbolic Neural Networks. (2018).
+- [X] Tyler Hattori -- Ganea et al. Hyperbolic Neural Networks. (2018).
 
 02/19/2024 Monday - President's Day. No class.
 
