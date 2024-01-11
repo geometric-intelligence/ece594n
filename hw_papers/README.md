@@ -28,7 +28,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/05/2024 Monday.
 - [X] Abhijit Brahme -- Masci et al. Geodesic convolutional neural networks on Riemannian manifolds. (2015).
-- [ ] Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
+- [X] Louisa Cornelis -- Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
 
 02/07/2024 Wednesday.
 - [X] Ana Cardenas -- Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017). 
