@@ -1,0 +1,27 @@
+name: ece594n_cohen2016 
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - matplotlib
+  - scipy
+  - nose
+  - python=3.8
+  - pip
+  - pip:
+    - jupyter
+    - jupyter_contrib_nbextensions
+    - jupyter_nbextensions_configurator
+    - jupyterlab-code-formatter
+    - RISE
+    - black
+    - black[jupyter]
+    - flake8
+    - flake8-docstrings
+    - isort
+    - pytest
+    - pytest-cov
+    - torch 
+    - groupy
+
+

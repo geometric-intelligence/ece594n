@@ -1,0 +1,178 @@
+\documentclass{beamer}
+
+\usetheme{default} 
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+
+\title{Group Equivariant Convolutional Networks}
+\author{Daniel Ralston}
+\date{1/22/2024}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Agenda}
+    \begin{itemize}
+        \item Introduction and Motivation
+        \item Related Works
+        \item Background: Groups, Group Actions, and Equivariance
+        \item Methods
+        \item Results
+        \item Demonstration of the Code
+        \item Conclusion
+    \end{itemize}
+\end{frame}
+
+% Introduction
+\section{Introduction}
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item Purpose of the research/study
+        \item Importance and implications
+        \item Brief overview of the approach
+    \end{itemize}
+\end{frame}
+
+% Related Works
+\section{Related Works}
+\begin{frame}{Related Works}
+    \begin{itemize}
+        \item Overview of existing research in the area
+        \item Comparative analysis with previous studies
+    \end{itemize}
+\end{frame}
+
+% Background
+\section{Background}
+\begin{frame}{Groups}
+    \begin{itemize}
+        \item A \emph{group} is a set $G$ with a binary operation $\cdot$ such that:
+        \begin{enumerate}
+            \item $G$ is closed under $\cdot$
+            \item $\cdot$ is associative
+            \item There exists an identity element $e \in G$ such that $e \cdot g = g \cdot e = g$ for all $g \in G$
+            \item For each $g \in G$, there exists an inverse $g^{-1} \in G$ such that $g \cdot g^{-1} = g^{-1} \cdot g = e$
+        \end{enumerate}
+        \item In this paper, the authors focus on groups of rigid transformations of the plane (e.g. subgroups of $SE(2)$, the 2-dimensional special Euclidean group)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{$p4$ and $p4m$}
+    \begin{itemize}
+        \item $p4$ -- all 2-dimensional integer translations and rotations by multiples of $\frac{\pi}{2}$
+        \begin{itemize}
+            \item The underlying set can be described as a set of matrices where $r \in \{0, 1, 2, 3\}$ and $u, v \in \mathbb{Z}$
+            $$g(r, u, v) = \begin{bmatrix}
+                \cos(\frac{\pi}{2}r) & -\sin(\frac{\pi}{2}r) & u \\
+                \sin(\frac{\pi}{2}r) & \cos(\frac{\pi}{2}r) & v \\
+                0 & 0 & 1
+            \end{bmatrix}$$
+        \end{itemize}
+        \item $p4m$ -- all 2-dimensional integer translations, rotations by multiples of $\frac{\pi}{2}$, and mirror reflections
+        \begin{itemize}
+            \item For $r \in \{0, 1, 2, 3\}$, $u, v \in \mathbb{Z}$, and $m \in \{0, 1\}$
+            $$g(m, r, u, v) = \begin{bmatrix}
+                (-1)^m\cos(\frac{\pi}{2}r) & (-1)^{m+1}\sin(\frac{\pi}{2}r) & u \\
+                \sin(\frac{\pi}{2}r) & \cos(\frac{\pi}{2}r) & v \\
+                0 & 0 & 1
+            \end{bmatrix}$$
+        \end{itemize}
+        \item In both cases, the binary operation is matrix multiplication
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Group Actions}
+    %mention how a group (R, +) acts on a vector space by scalar multiplication
+    \begin{itemize}
+        \item Critical to this paper, the authors use the fact that these groups act on the set of images.
+        \item A group $G$ is said to act on a set $X$ if there exists a function $\gamma: G\times X \to X$ such that 
+        $$\gamma(e, x) = x \text{ ($e$ is the identity element of $G$)}$$
+        $$\gamma(g_1, \gamma(g_2, x)) = \gamma(g_1g_2, x)$$
+        \item $p4$ and $p4m$ act on $\Z^2$ (specifically $\Z^2 \times \{1\} \subset \R^3$) by matrix-vector multiplication:
+        \begin{itemize}
+            \item Ex: For $A\in p4$ and $[u, v, 1]^T \in \Z^2 \times \{1\}$, $$A[u, v, 1]^T = [u', v', 1]^T \in \Z^2 \times \{1\}$$
+        \end{itemize} 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Acting on the set of images}
+    \begin{itemize}
+        \item The authors describe the set of images as the collection of functions $f: \Z^2 \to \R^K$ (where $f$ has compact (rectangular) support)
+        \item $p4$ and $p4m$ act on the the set of images $\{f\}$ with the function $L$:
+        $$L_g(f)(x) = f(g^{-1}x)$$
+        where $g^{-1}x$ denotes matrix-vector multiplication
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Equivariance}
+    \begin{itemize}
+        \item A function $f: X \to Y$ is said to be equivariant with respect to the action of $G$ on $X$ and $Y$ if
+        $$f(\gamma(g, x)) = \gamma(g, f(x))$$
+        \item In this paper, the authors are interested in functions $f: \{f\} \to \{f\}$ that are equivariant with respect to the action of $p4$ and $p4m$ on $\{f\}$
+        \item The authors define a convolutional layer to be equivariant if the function $f$ is equivariant with respect to the action of $p4$ and $p4m$ on $\{f\}$
+    \end{itemize}
+\end{frame}
+% Methods
+\section{Methods}
+\begin{frame}{Methods}
+    \begin{itemize}
+        \item Detailed description of the methodology used
+        \item Explain the algorithms, models, and tools
+    \end{itemize}
+\end{frame}
+
+% Results
+\section{Results}
+\begin{frame}{Results}
+    \begin{itemize}
+        \item Presentation of the key findings and outcomes
+        \item Statistical analysis and data interpretation
+        \item Discuss the figures and tables from the paper that showcase the results
+    \end{itemize}
+\end{frame}
+
+% Demonstration of the code
+\section{Demonstration of the Code}
+\begin{frame}{Demonstration of the Code}
+    \begin{itemize}
+        \item Walkthrough of the main segments of the code
+        \item Execution of the code and presentation of results in real-time (if possible)
+    \end{itemize}
+\end{frame}
+
+% Conclusion
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Summarize the main points from the presentation
+        \item Implications of the results 
+        \item Possible directions for future work
+    \end{itemize}
+\end{frame}
+
+% References
+\begin{frame}{References}
+
+\end{frame}
+
+
+\end{document}
