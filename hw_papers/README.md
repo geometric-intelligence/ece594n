@@ -41,7 +41,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [X] Sofia Gonzalez Garcia -- Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
 
 02/14/2024	Wednesday.
-- [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
+- [X] Paige Hillen -- Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
 - [X] Tyler Hattori -- Ganea et al. Hyperbolic Neural Networks. (2018).
 
 02/19/2024 Monday - President's Day. No class.
@@ -65,7 +65,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [ ] Fuchs et al. SE(3)-Transformers: 3D Roto-Translation Equivariant Attention Networks. (2020).
 
 03/06/2024	Wednesday. 
-- [ ] Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021).
+- [X] George Hulsey -- Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021).
 - [ ] Brehmer et al. Geometric Algebra Transformers (2023).
 
 ## Guidelines
