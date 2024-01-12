@@ -5,19 +5,18 @@ Goal: Put your skills in practice to tackle a project of your choice: perform ge
 - Deadline for project reports and for presentations in class: Monday 03/11/2024 and Wednesday 03/13/2024.
 - Teams of 1-4 students (5min per student during presentation).
 
-
 # Register
 
 Send the title of your project, and names of its team members, through the #general channel on slack to be registered.
 
 # Guidelines
 
-- Create a new folder in this folder with the name of your project.
-- In this new folder:
+- Create a _new github repository_ with the name of your project.
   - Add python files.
   - Add the Jupyter notebook, or Google Colab, that represents your project's report.
   - Make sure to indicate which teammate did which part of the work.
-- You can submit code to this repository anytime until the day of your presentation.
+  - You can submit code to this repository anytime until the day of your presentation.
+- In the folder `hw_projects` of _this github repository_ add a .md file with the link to the github repository of your project.
 
 # Presentations on Monday 03/11/2024
 
