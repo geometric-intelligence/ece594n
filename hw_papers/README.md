@@ -13,7 +13,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [ ] Marcos et al. Rotation equivariant vector field networks. (2017).
 
 01/24/2024 Wednesday.
-- [ ] Cohen and Welling. Steerable CNNs. (2017).
+- [X] Seoyeon. Cohen and Welling. Steerable CNNs. (2017).
 - [ ] Lenssen et al. Group Equivariant Capsule Networks (2018).
 
 01/29/2024 Monday. 
