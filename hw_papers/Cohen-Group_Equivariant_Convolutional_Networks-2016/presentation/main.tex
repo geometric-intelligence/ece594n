@@ -29,13 +29,15 @@
   \titlepage
 \end{frame}
 
+%It seems as though these networks aren't used as much now, why is this?
+
 % Table of Contents
 \begin{frame}{Agenda}
     \begin{itemize}
         \item Introduction and Motivation
         \item Related Works
         \item Background: Groups, Group Actions, and Equivariance
-        \item Methods
+        \item Methods: $G$ Equivariant Convolution
         \item Results
         \item Demonstration of the Code
         \item Conclusion
@@ -45,20 +47,22 @@
 % Introduction
 \section{Introduction}
 \begin{frame}{Introduction}
-    \begin{itemize}
-        \item Purpose of the research/study
-        \item Importance and implications
-        \item Brief overview of the approach
-    \end{itemize}
+    % \begin{itemize}
+    %     \item Purpose of the research/study
+    %     \item Importance and implications
+    %     \item Brief overview of the approach
+    % \end{itemize}
 \end{frame}
 
 % Related Works
 \section{Related Works}
 \begin{frame}{Related Works}
     \begin{itemize}
-        \item Overview of existing research in the area
-        \item Comparative analysis with previous studies
-    \end{itemize}
+        \item Invariant representations improve image analysis, achieved by pose normalization and group averaging (Lowe, 2004; Reisert, 2008; Kondor, 2007) and extended by scattering convolution networks (Bruna and Mallat, 2013).
+        \item Scattering networks, which use wavelet convolutions and nonlinearities, have been adapted for stable invariants in object and texture recognition (Sifre and Mallat, 2013; Oyallon and Mallat, 2015).
+        \item Equivariant representations have been advanced through architectures like transforming autoencoders (Hinton et al., 2011) and convolutional architectures (Gens and Domingos, 2014) with unconventional learning applications (Agrawal et al., 2015).
+        \item High-dimensional transformations and symmetry exploitation in convolutional networks have been utilized for tasks like galaxy morphology prediction, enhancing vision-related models (Dieleman et al., 2015; 2016; Cohen and Welling, 2014; 2015).
+      \end{itemize}
 \end{frame}
 
 % Background
@@ -123,50 +127,151 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Results -- Comparison}
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.41 AM.png} % replace with your first image file
+        % \caption{Caption for image1}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.51 AM.png} % replace with your second image file
+        % \caption{Caption for image2}
+    \end{minipage}
+\end{frame}
+
 \begin{frame}{Equivariance}
     \begin{itemize}
-        \item A function $f: X \to Y$ is said to be equivariant with respect to the action of $G$ on $X$ and $Y$ if
-        $$f(\gamma(g, x)) = \gamma(g, f(x))$$
-        \item In this paper, the authors are interested in functions $f: \{f\} \to \{f\}$ that are equivariant with respect to the action of $p4$ and $p4m$ on $\{f\}$
-        \item The authors define a convolutional layer to be equivariant if the function $f$ is equivariant with respect to the action of $p4$ and $p4m$ on $\{f\}$
+        \item Let $G$ be a group acting on $X$ and $Y$.  A function $f:X \to Y$ is called \emph{equivariant} if 
+        $$f(gx) = gf(x) \text{ for all $g$ in $G$ and $x$ in $X$}$$
+        \item Fix a kernel $\Psi$ and denote $*$ as the convolution operator.  Suppose $G$ is the group of integer translations acting by $T$ on the set of images. 
+         $$T(g,f)(x)= f(-g + x)$$ 
+        \item For any image $f\in \{f\}$, the convolution operator $(\cdot)*\Psi: \{f\} \to \{f\}$ is equivariant with respect to translation:
+        $$ (T(g, f) * \Psi)(x) = T(g, (f * \Psi))(x)$$
+        (i.e. you can translate an image and then convolve it or you can first convolve the image and then translate the output)
     \end{itemize}
 \end{frame}
-% Methods
-\section{Methods}
-\begin{frame}{Methods}
+
+\begin{frame}{Translation Equivariance}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth, height=0.5\textheight]{Screenshot 2024-01-13 at 11.31.21 AM.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Key Idea}
     \begin{itemize}
-        \item Detailed description of the methodology used
-        \item Explain the algorithms, models, and tools
+        \item The authors want a convolution operator that is equivariant with respect to the group action of $p4$ or $p4m$
+        \item We want a convolution where inputting a rotated image is the same as inputting a non-rotated image, convolving, and then rotating the output
+    \end{itemize}
+\end{frame}
+
+\section{Methods}
+
+\begin{frame}{Group Equivariant Convolution}
+    \begin{itemize}
+        \item Let $f: \Z^2 \to \R^K$ be an image.  
+        \item Let $G$ be either $p4$ or $p4m$ and let $\Psi$ be a kernel.  Then the \emph{group equivariant convolution} $*_G$ is defined as 
+        $$[f *_G \Psi](g) = \sum_{y \in \Z^2}\sum_{k \in \{1, \dots, K\}} f_k(y)\Psi_k(g^{-1}y)$$
+        $$\left(= \sum_{y \in \Z^2}\sum_{k \in \{1, \dots, K\}} f_k(gy)\Psi_k(y)\right)$$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Group Equivariant Convolution}
+    \begin{itemize}
+        \item Equivariance property -- denoting $L_g$ be the action of $g\in G$ on the set of images, 
+        $$L_h(f *_G \Psi)(g) = L_h\left(\sum_{y \in \Z^2}\sum_{k \in \{1, \dots, K\}} f_k(y)\Psi_k(g^{-1}y)\right)$$
+        $$= \sum_{y \in \Z^2}\sum_{k \in \{1, \dots, K\}} f_k(hy)\Psi_k(g^{-1}y)$$
+        $$ = [L_h(f) *_G \Psi](g) \qquad \text{(note equivariance)}$$
+        $$= \sum_{y \in \Z^2}\sum_{k \in \{1, \dots, K\}} f_k(y)\Psi_k(h^{-1}g^{-1}y) \text{ }$$
+        $$= [f *_G L_{h^{-1}}(\Psi)](g)$$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{A Subtlety}
+    \begin{itemize}
+        \item After the first layer of a $*_G$ convolution on an image $f$:
+         $$[f *_G \Psi](g) $$
+         letting $g$ vary, our output is a set of images $\{[f *_G \Psi](g)\}_{g\in G}$ that now also depends on $G$
+         \item Thus, our filter needs to take as inputs not elements in $\Z^2$ (translations), but also elements in $G$ (translations, rotations, reflections)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Inner G-CNN Convolutions}
+    \begin{itemize}
+        \item For inner layers the convolutional operator $*_G$ is defined as 
+        $$[f *_G \Psi](g) = \sum_{h \in G} \sum_{k \in \{1, \dots, K\}} f_k(h)\Psi_k(g^{-1}h)$$
+        \item Equivariance property follows similarly as before:
+        $$L_{u}([f *_G \Psi])(g) = L_{u}\left(\sum_{h \in G} \sum_{k \in \{1, \dots, K\}} f_k(h)\Psi_k(g^{-1}h)\right)$$
+        $$= \sum_{h \in G} \sum_{k \in \{1, \dots, K\}} f_k(uh)\Psi_k(g^{-1}h)$$
+        $$ = [L_{u}(f) *_G \Psi](g) $$
+        $$ = [f *_G L_{u^{-1}}(\Psi)](g)$$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{$G$-CNN Visualization}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Screenshot 2024-01-15 at 12.20.40 PM.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Activations and Pooling}
+    \begin{itemize}
+        \item Activations commute with the group action $L$ on $\{f\}$: 
+        $$L_g(\sigma(f(x))) = \sigma(f(g^{-1}x)) = \sigma(L_g(f)(x))$$
+        \item Suppose $P$ is a pooling operator over a region, ex max pooling over a sub region of $G$ say $H$, $$P(f)(g) = \max_{h \in H} f(hg)$$
+        \item The authors show pooling commutes with the group action on an image, i.e. $L_g(P(f)) = P(L_g(f))$
+        \item The authors propose $H$ be a subgroup of $G$ so that pooling partitions the set of images $\{[f *_G \Psi](g)\}_{g\in G}$ into cosets (equivalence classes)
+        \item Ex if $G = p4$ and $H$ is the subgroup of rotations, then pooling on $\{[f *_G \Psi](g)\}_{g\in G}$ reduces the output to be a function on $p4 / H \cong \Z^2$  
     \end{itemize}
 \end{frame}
 
 % Results
 \section{Results}
-\begin{frame}{Results}
+
+\begin{frame}{Results -- Rotated MNIST}
     \begin{itemize}
-        \item Presentation of the key findings and outcomes
-        \item Statistical analysis and data interpretation
-        \item Discuss the figures and tables from the paper that showcase the results
-    \end{itemize}
+        \item Rotated MNIST dataset -- 62,000 randomly rotated handwritten digits
+        \item Model selection on the validation set led to a CNN architecture (Z2CNN) with 7 layers, relu activation, batch normalization, and dropout, optimized with Adam, outperforming early models but not state of the art.
+        \item However the introduction of p4-convolutions and pooling over rotations in the final layer, paired with a parameter-adjusted architecture (P4CNN), nearly halved the state-of-the-art error rate (2.28\% vs 3.98\% error).
+        \item A modified Z2CNN with p4-convolutions and coset max-pooling (P4CNNRotationPooling) showed improved performance over the baseline, though it was less effective than P4CNN without intermediate rotation pooling.
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Results -- CIFAR-10 and CIFAR-10+}
+    \begin{itemize}
+        \item CIFAR-10 dataset -- 60k 32x32 images across 10 classes, with 40k for training, 10k for validation, and 10k for testing.
+        \item CIFAR-10+ dataset -- CIFAR-10 augmented with flips and translations
+        \item Authors tested architectures  All-CNN-C  (Springenberg et al, 2015) and ResNet44 (He et al, 2016), with adaptations using p4 and p4m convolutions to maintain parameter counts while expanding internal representations.
+        \item The p4m-CNN outperformed all published results on unmodified CIFAR10, although direct comparisons are challenging due to architectural differences 
+      \end{itemize}
+\end{frame} 
+
+\begin{frame}{Results -- Comparison}
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.16 AM.png} % replace with your first image file
+        % \caption{Caption for image1}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.27 AM.png} % replace with your second image file
+        % \caption{Caption for image2}
+    \end{minipage}
 \end{frame}
 
 % Demonstration of the code
 \section{Demonstration of the Code}
-\begin{frame}{Demonstration of the Code}
-    \begin{itemize}
-        \item Walkthrough of the main segments of the code
-        \item Execution of the code and presentation of results in real-time (if possible)
-    \end{itemize}
+\begin{frame}{Implementation}
+    
 \end{frame}
 
 % Conclusion
 \section{Conclusion}
 \begin{frame}{Conclusion}
     \begin{itemize}
-        \item Summarize the main points from the presentation
-        \item Implications of the results 
-        \item Possible directions for future work
-    \end{itemize}
+        \item $p4$ and $p4m$ convolution layers act as effective replacements for traditional convolutions, consistently improving network performance.
+        \item Future work includes extending $G$-CNNs to hexagonal lattices and 3D space groups, expanding symmetries and potentially improving pattern recognition capabilities.
+        \item Challenges remain in extending the method to continuous groups and managing the computational load for large transformation groups.
+        \item This work exemplifies the "structured representations” philosophy, suggesting that adding mathematical structure to neural network representations could reveal deeper similarities between concepts.
+      \end{itemize}
 \end{frame}
 
 % References
