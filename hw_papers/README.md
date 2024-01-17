@@ -62,7 +62,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 03/04/2024	Monday.
 - [X] Zhiyu Xue -- Tai et al. Equivariant Transformer Networks. (2019).
-- [ ] Fuchs et al. SE(3)-Transformers: 3D Roto-Translation Equivariant Attention Networks. (2020).
+- [ ] Beckers et al. Fast, Expressive SE(n) Equivariant Networks through Weight-Sharing in Position-Orientation Space. (2024).
 
 03/06/2024	Wednesday. 
 - [X] George Hulsey -- Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021).
