@@ -4,10 +4,10 @@ channels:
 dependencies:
   - numpy
   - matplotlib
-  - python=3.8
+  - python=3.11
   - pip
   - pip:
-    - git+https://github.com/geomstats/geomstats.git
+    - git+https://github.com/mfinzi/equivariant-MLP.git
     - jupyter
     - jupyter_contrib_nbextensions
     - jupyter_nbextensions_configurator
@@ -20,5 +20,6 @@ dependencies:
     - isort
     - pytest
     - pytest-cov
+    - torch
 # Enable splitcell extension via the jupyter_nbextensions_configurator server extension
 # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/README.md
