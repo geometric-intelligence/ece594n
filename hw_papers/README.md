@@ -17,8 +17,8 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [ ] Lenssen et al. Group Equivariant Capsule Networks (2018).
 
 01/29/2024 Monday. 
-- [ ] Cohen et al. Spherical CNNs (2018).
 - [X] Ozgur Guldogan -- Finzi et al. A practical method for constructing equivariant multilayer perceptrons for arbitrary matrix groups (2021).
+- [ ] Ruhe et al. Clifford Group Equivariant Neural Networks (2024).
 
 01/31/2024 Wednesday.
 - [ ] Cohen et al. Gauge Equivariant convolutional networks and the icosahedral CNN (2019).
