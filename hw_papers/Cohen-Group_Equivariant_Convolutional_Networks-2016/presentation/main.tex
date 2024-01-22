@@ -47,11 +47,13 @@
 % Introduction
 \section{Introduction}
 \begin{frame}{Introduction}
-    % \begin{itemize}
-    %     \item Purpose of the research/study
-    %     \item Importance and implications
-    %     \item Brief overview of the approach
-    % \end{itemize}
+    \begin{itemize}
+        \item $G$-CNNs extend traditional CNNs by exploiting symmetries in the feature space, increasing model efficiency and robustness.
+        \item Introduced to improve parameter efficiency and reduce computational complexity while maintaining performance.
+        \item Group convolutions factorize convolutions based on group theory, enabling weight sharing across different transformations.
+        \item Key for advancing deep learning in scenarios with limited data, improving generalization across transformed inputs.
+        \item Pioneered new approaches to invariant and equivariant feature learning, laying foundations for subsequent architectural innovations.
+    \end{itemize}
 \end{frame}
 
 % Related Works
@@ -127,17 +129,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Results -- Comparison}
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.41 AM.png} % replace with your first image file
-        % \caption{Caption for image1}
-    \end{minipage}%
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.51 AM.png} % replace with your second image file
-        % \caption{Caption for image2}
-    \end{minipage}
-\end{frame}
-
 \begin{frame}{Equivariance}
     \begin{itemize}
         \item Let $G$ be a group acting on $X$ and $Y$.  A function $f:X \to Y$ is called \emph{equivariant} if 
@@ -191,7 +182,7 @@
         \item After the first layer of a $*_G$ convolution on an image $f$:
          $$[f *_G \Psi](g) $$
          letting $g$ vary, our output is a set of images $\{[f *_G \Psi](g)\}_{g\in G}$ that now also depends on $G$
-         \item Thus, our filter needs to take as inputs not elements in $\Z^2$ (translations), but also elements in $G$ (translations, rotations, reflections)
+         \item Thus, our filter needs to take elements of $G$ (translations, rotations, reflections) as inputs
     \end{itemize}
 \end{frame}
 
@@ -212,6 +203,17 @@
         \centering
         \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Screenshot 2024-01-15 at 12.20.40 PM.png}
     \end{figure}
+\end{frame}
+
+\begin{frame}{Feature Maps}
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.41 AM.png} % replace with your first image file
+        % \caption{Caption for image1}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{Screenshot 2024-01-13 at 11.28.51 AM.png} % replace with your second image file
+        % \caption{Caption for image2}
+    \end{minipage}
 \end{frame}
 
 \begin{frame}{Activations and Pooling}
@@ -260,7 +262,7 @@
 % Demonstration of the code
 \section{Demonstration of the Code}
 \begin{frame}{Implementation}
-    
+    \href{run:jupyter-notebook Users/danielralston/Desktop/ece594n/hw_papers/Cohen-Group_Equivariant_Convolutional_Networks-2016/main.ipynb}{Open main.ipynb}
 \end{frame}
 
 % Conclusion
@@ -276,7 +278,10 @@
 
 % References
 \begin{frame}{References}
-
+    \begin{itemize}
+        \item Taco S. Cohen and Max Welling. \textit{Group Equivariant Convolutional Networks}, 2016, arXiv:1602.07576 [cs.LG].
+        \item Erik Bekkers. \textit{Group Equivariant Deep Learning (UvA - 2022)}. YouTube, Mar 26, 2022, \url{https://www.youtube.com/watch?v=z2OEyUgSH2c}.
+    \end{itemize}
 \end{frame}
 
 

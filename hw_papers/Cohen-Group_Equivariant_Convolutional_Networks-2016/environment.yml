@@ -9,6 +9,8 @@ dependencies:
   - python=3.8
   - pip
   - pip:
+    - git+https://github.com/adambielski/GrouPy.git
+    - groupy
     - jupyter
     - jupyter_contrib_nbextensions
     - jupyter_nbextensions_configurator
@@ -22,6 +24,3 @@ dependencies:
     - pytest
     - pytest-cov
     - torch 
-    - groupy
-
-
