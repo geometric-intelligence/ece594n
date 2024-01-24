@@ -1,0 +1,35 @@
+name: ece594n_steerableCNNs
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - matplotlib
+  - scipy
+  - nose
+  - python=3.8
+  - pip
+  - torch
+  - sympy
+  - pymanopt
+  - autograd
+  - torchvision
+  - escnn
+  - wget
+  - unzip
+  - git+https://github.com/AMLab-Amsterdam/lie_learn
+  - pip:
+      - git+https://github.com/adambielski/GrouPy.git
+      - groupy
+      - jupyter
+      - jupyter_contrib_nbextensions
+      - jupyter_nbextensions_configurator
+      - jupyterlab-code-formatter
+      - RISE
+      - black
+      - black[jupyter]
+      - flake8
+      - flake8-docstrings
+      - isort
+      - pytest
+      - pytest-cov
+      - torch
