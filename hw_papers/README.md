@@ -41,7 +41,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [X] Sofia Gonzalez Garcia -- Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
 
 02/14/2024	Wednesday.
-- [X] Paige Hillen -- Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
+- [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
 - [X] Tyler Hattori -- Ganea et al. Hyperbolic Neural Networks. (2018).
 
 02/19/2024 Monday - President's Day. No class.
