@@ -1,6 +1,6 @@
 # Projects
 
-Goal: Put your skills in practice to tackle a project of your choice: perform geometric machine learning analysis on a biomedical dataset.
+Goal: Put your skills in practice to tackle a project of your choice: perform geometric machine learning analysis.
 
 - Deadline for project reports and for presentations in class: Monday 03/11/2024 and Wednesday 03/13/2024.
 - Teams of 1-4 students (5min per student during presentation).
