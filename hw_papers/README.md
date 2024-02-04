@@ -26,43 +26,41 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 ### Point Clouds and Meshes
 
-02/05/2024 Monday.
-- [X] Abhijit Brahme -- Masci et al. Geodesic convolutional neural networks on Riemannian manifolds. (2015).
-- [X] Louisa Cornelis -- Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
+02/05/2024 Monday. Cancelled because of winter storm.
 
 02/07/2024 Wednesday.
-- [X] Ana Cardenas -- Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017). 
-- [X] Jacob Lyons -- Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018).
+- [X] Abhijit Brahme -- Masci et al. Geodesic convolutional neural networks on Riemannian manifolds. (2015).
+- [X] Louisa Cornelis -- Boscaini et al. Learning shape correspondence with anisotropic convolutional neural networks (2016). 
 
 ### Graphs and Topological Domains.
 
 02/12/2024	Monday.
-- [X] Caitlyn Linehan -- Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
-- [X] Sofia Gonzalez Garcia -- Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
+- [X] Ana Cardenas -- Qi et al. Pointnet: Deep learning on point sets for 3d classification and segmentation. (2017). Qi et al. PointNet++: Pointnet++: Deep hierarchical feature learning on point sets in a metric space (2017). 
+- [X] Jacob Lyons -- Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018).
 
 02/14/2024	Wednesday.
-- [ ] Chami et al. Hyperbolic Graph Convolutional Neural Networks. (2019) AND Liu et al. Hyperbolic Graph Neural Networks. (2019).
-- [X] Tyler Hattori -- Ganea et al. Hyperbolic Neural Networks. (2018).
+- [X] Caitlyn Linehan -- Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
+- [X] Sofia Gonzalez Garcia -- Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
 
 02/19/2024 Monday - President's Day. No class.
 
 02/21/2024	Wednesday.
+- [X] Tyler Hattori -- Ganea et al. Hyperbolic Neural Networks. (2018).
 - [X] Shawn Catudal -- Feng et al. Hypergraph Neural Networks (2019).
+
+02/26/2024	Monday. 
 - [X] Liyan Tan -- Bodnar et al. Weisfeiler and lehman go cellular: CW networks (2021).
+- [X] Alan Raydan -- Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
 
 ### Transforners / Attention-based
 
-02/26/2024	Monday. 
-- [X] Alan Raydan -- Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
+02/28/2024	Wednesday.
 - [X] Alexander Davydov -- Dwivedi et al. A Generalization of Transformer Networks to Graphs. (2019).
-
-02/28/2024	Wednesday. 
 - [X] Jiahua Chen -- Dosovitski et al. An Image is Worth 16x16 Words: Transformers Image Recognition at Scale. (2021).
-- [X] Shih-Cheng Hsiao -- Liu et al. Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. (2021).
 
-03/04/2024	Monday.
+ 03/04/2024	Monday.
+- [X] Shih-Cheng Hsiao -- Liu et al. Swin Transformer: Hierarchical Vision Transformer using Shifted Windows. (2021).
 - [X] Zhiyu Xue -- Tai et al. Equivariant Transformer Networks. (2019).
-- [ ] Beckers et al. Fast, Expressive SE(n) Equivariant Networks through Weight-Sharing in Position-Orientation Space. (2024).
 
 03/06/2024	Wednesday. 
 - [X] George Hulsey -- Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021).
