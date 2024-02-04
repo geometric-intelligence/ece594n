@@ -207,3 +207,5 @@ Three tasks:
 ![](images/shape_retrieval.png){height=90%}
 
 # Code Demo
+
+<https://github.com/jonathanmasci/EG16_tutorial/blob/master/deep_learning_for_3D_shape_analysis.ipynb>
