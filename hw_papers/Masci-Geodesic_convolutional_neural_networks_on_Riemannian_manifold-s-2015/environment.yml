@@ -1,0 +1,20 @@
+name: ece594n_geodesic_convolutional_networks
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.11
+  - pip
+  - pip:
+      - -r requirements.txt
+      - jupyter
+      - jupyter_contrib_nbextensions
+      - jupyter_nbextensions_configurator
+      - jupyterlab-code-formatter
+      - RISE
+      - black
+      - black[jupyter]
+      - flake8
+      - flake8-docstrings
+      - isort
+      - pytest
+      - pytest-cov
