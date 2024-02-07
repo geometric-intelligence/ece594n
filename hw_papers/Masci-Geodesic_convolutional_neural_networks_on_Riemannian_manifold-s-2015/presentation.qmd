@@ -163,7 +163,7 @@ Similarity in the radial direction is just given by the geodesic distance.
 Similarity in angular direction is given by smallest distance to geodesic emanating out in theta direction. (Draw picture if necessary)
 :::
 
-# Defining a Patch Operator (Discrete's Version)
+# Creating Local Geodesic Coordinates ($\Omega(x)$)
  
 ![](images/patch_construction.png){width=50%}
 
