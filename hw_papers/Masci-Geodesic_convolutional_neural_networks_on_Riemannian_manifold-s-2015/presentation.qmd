@@ -153,8 +153,8 @@ Patch operator interpolates a function $f$ in local coordinates
  v_{\rho, \theta}(x, y)  = v_{\rho}(x,y) v_\theta(x,y)
 \end{equation}
 
-1. $v_{\rho}(x,y) \approx$ geodesic distance between x, y 
-2. $v_{\theta}(x,y) \approx$ geodesic distance between the point y and the geodesic generated at x, in the direction $\theta$
+1. $v_{\rho}(x,y) \propto e^{\frac{-(d_X(x,y) - \rho)^2}{\sigma^2_\rho}}$ 
+2. $v_{\theta}(x,y) \propto  e^{\frac{-d_X(\Gamma(x,\theta),y)^2}{\sigma^2_\theta}}$
 
 
 ::: {.notes}
