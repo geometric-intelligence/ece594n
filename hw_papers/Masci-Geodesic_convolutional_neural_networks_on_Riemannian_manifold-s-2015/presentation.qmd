@@ -12,9 +12,10 @@ execute:
 
 - Introduction & Motivation
 - Background 
-    i. Point Clouds & Meshes
-    ii. Laplace Beltrami Operator & Heat Diffusion
-    iii. Spectral Shape Descriptors (Related Work)
+    i. Manifolds and Metrics 
+    ii. Point Clouds & Meshes
+    iii. Laplace Beltrami Operator & Heat Diffusion (optional)
+    iv. Spectral Shape Descriptors (optional)
 - Methods
 - Results
 - Demonstration
@@ -28,8 +29,34 @@ Aim to generalize the idea of a convolutional "filter" to process patches of mes
 
 
 
-# Background 
-## Formal Definition of a 3D Shape
+# Manifolds 
+
+Each point has a neighborhood which is homeomorphic to an open subset of Euclidean space.
+
+Can cover the manifold with **charts** that accomplish this mapping, and together they form an **atlas**
+
+Example:
+![](images/480px-Circle_with_overlapping_manifold_charts.png){width=50%}
+
+# Riemannian Metric
+
+A Riemannian metric assigns to each point $p$ in our manifold, a positive definite inner product $g_p: T_pM \times T_pM \rightarrow \mathbb{R}$
+
+The metric $g$ is smooth (infinitely differentiable). 
+
+
+
+# Distance on a Riemannian Manifold
+The length of a differentiable curve $L(\gamma)$ on a Riemannian manifold with metric $g$ can be given by 
+\begin{equation}
+L(\gamma) = \int_a^b \sqrt{g_{\gamma(t)}(\dot{\gamma(t)}, \dot{\gamma(t)})} dt
+\end{equation}
+
+Consequently, the distance $d(p,q)$ on a Riemannian manifold is $L(\gamma^{*})$, where $\gamma^{*}$ is the infimum of all differentiable curves which satisfy $\gamma(a) = p$, $\gamma(b) = q$
+
+Finding the geodesic distance on a mesh can be done numerically using any Boundary Value Problem solver (fast marching algorithm, etc)
+
+# Formal Definition of a 3D Shape
 
 1. Connected, smooth compact two-dimensional manifold $X$
 
@@ -95,27 +122,11 @@ where $\tau(\cdot)$ is some transfer function, and $\lambda_k$ and $\phi_k(\cdot
 Why are these used as shape descriptors? Well, basically the value of the heat function on points on the shape is related to the curvature at that point. Can say something about shape dissimilarity if the heat flows through the shape in the same fashion. 
 :::
 
-# Distance on a Riemannian Manifold
-The length of a differentiable curve $L(\gamma)$ on a Riemannian manifold with metric $g$ can be given by 
-\begin{equation}
-L(\gamma) = \int_a^b \sqrt{g_{\gamma(t)}(\dot{\gamma(t)}, \dot{\gamma(t)})} dt
-\end{equation}
 
-Consequently, the distance $d(p,q)$ on a Riemannian manifold is $L(\gamma^{*})$, where $\gamma^{*}$ is the infimum of all differentiable curves which satisfy $\gamma(a) = p$, $\gamma(b) = q$
-
-Finding the geodesic distance on a mesh can be done numerically using any Boundary Value Problem solver (fast marching algorithm, etc)
-
-# Methods 
 # Geodesic Convolution
 
 1. Defining a patch operator
 2. Defining a convolution 
-
-
-
-
-
-
 
 
 # Defining a Patch Operator
@@ -191,22 +202,36 @@ The spectral shape descriptors can be recovered from some specific parametrizati
 # Results 
 Three tasks:
 
-1. Shape Retrieval
-    - discriminate between classes of shapes
+1. Invariant descriptors
+    - produces a local descriptor of $x$
 2. Shape Correspondence
     - vertext labeling problem
-3. Invariant descriptors
-    - produces a local descriptor of $x$
+3. Shape Retrieval
+    - discriminate between classes of shapes
+
+
 
 # Invariant Descriptors
 
 ![](images/invariant_descriptor.png)
 
+::: notes
+We want our shape description to be invariant of pose and how the object is deformed. We can see that the model does well compared to other shape descriptors. 
+:::
+
+
 # Shape Correspondence
 ![](images/shape_correspondence.png){height=90%}
 
+
+::: notes
+Want to compare how little our colors change between poses.
+:::
+
 # Shape Retrieval
 ![](images/shape_retrieval.png){height=90%}
+
+
 
 # Code Demo
 
