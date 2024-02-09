@@ -64,7 +64,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 03/06/2024	Wednesday. 
 - [X] George Hulsey -- Hutchinson et al. Lietransformer: Equivariant self-attention for lie groups. (2021).
-- [ ] Brehmer et al. Geometric Algebra Transformers (2023).
+- [X] Akshay Sawhney -- Brehmer et al. Geometric Algebra Transformers (2023).
 
 ## Guidelines
 
