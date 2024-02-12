@@ -50,7 +50,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 
 02/26/2024	Monday. 
 - [X] Liyan Tan -- Bodnar et al. Weisfeiler and lehman go cellular: CW networks (2021).
-- [X] Alan Raydan -- Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
+- [ ] Veličković et al. Graph Attention Networks. (2018). AND: Brody et al. How Attentive Are Graph Attention Networks? (2022)
 
 ### Transforners / Attention-based
 
