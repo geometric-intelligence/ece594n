@@ -1,0 +1,249 @@
+---
+title: "Geodesic Convolutional Neural Networks"
+bibliography: references.bib
+format: 
+    beamer:
+        incremental: false
+execute: 
+  eval: false
+---
+
+# Outline
+
+- Introduction & Motivation
+- Background 
+    i. Manifolds and Metrics 
+    ii. Point Clouds & Meshes
+    iii. Laplace Beltrami Operator & Heat Diffusion (optional)
+    iv. Spectral Shape Descriptors (optional)
+- Methods
+- Results
+- Demonstration
+
+
+# Introduction & Motivation
+Aim to generalize the idea of a convolutional "filter" to process patches of mesh objects instead of patches of images. 
+
+![Geodesic patches on a shape](images/goedesic_conv_shape.png){width=300}
+
+
+
+
+# Manifolds 
+
+Each point has a neighborhood which is homeomorphic to an open subset of Euclidean space.
+
+Can cover the manifold with **charts** that accomplish this mapping, and together they form an **atlas**
+
+Example:
+![](images/480px-Circle_with_overlapping_manifold_charts.png){width=50%}
+
+# Riemannian Metric
+
+A Riemannian metric assigns to each point $p$ in our manifold, a positive definite inner product $g_p: T_pM \times T_pM \rightarrow \mathbb{R}$
+
+The metric $g$ is smooth (infinitely differentiable). 
+
+
+
+# Distance on a Riemannian Manifold
+The length of a differentiable curve $L(\gamma)$ on a Riemannian manifold with metric $g$ can be given by 
+\begin{equation}
+L(\gamma) = \int_a^b \sqrt{g_{\gamma(t)}(\dot{\gamma(t)}, \dot{\gamma(t)})} dt
+\end{equation}
+
+Consequently, the distance $d(p,q)$ on a Riemannian manifold is $L(\gamma^{*})$, where $\gamma^{*}$ is the infimum of all differentiable curves which satisfy $\gamma(a) = p$, $\gamma(b) = q$
+
+Finding the geodesic distance on a mesh can be done numerically using any Boundary Value Problem solver (fast marching algorithm, etc)
+
+# Formal Definition of a 3D Shape
+
+1. Connected, smooth compact two-dimensional manifold $X$
+
+2. Locally, each point $x$ is homeomorphic to a 2-D Euclidean space (tangent plane, $T_x X$)
+
+# Discretization of a 3D Shape from Point Clouds
+Given a realized point cloud $\{x_1, x_2, \dots x_N\} \in X$, we can define a \textbf{triangular mesh} $(V, E, F)$
+
+::: {layout-ncol=2}
+![](images/pointcloud.png){width=50%}
+![](images/mesh.png){width=50%}
+:::
+
+# Discretization of a 3D Shape from Point Clouds (contd.)
+1. Each \textit{interior} edge $ij \in E$ is only shared by 2 triangular faces  $ikj, jhi \in F$ while \textit{boundary} edges only have 1 associated triangular face
+2. Vertices are located at $\{x_1, x_2, \dots x_N\}$ 
+3. A function $f: X \to \mathbb{R}$ is sampled on $V$ and can be defined by $\textbf{f}  = (f(x_1), f(x_2), \dots f(x_N))^T$, a $N$ dimensional vector
+4. The set of vertices directly connected to $i$ is called the \textit{1-ring} of $i$
+
+
+![](images/1ring.png){width=50%}
+
+# Laplace Beltrami Operator
+Generalization of the Laplacian to non-Euclidean space
+
+1. Intrinsic (dependent only on the Riemannian metric)
+2. Isometric (invariant to distance preserving deformations of a manifold)
+3. Yields an eigen-decomposotion with real non-negative  eigenvalues $\lambda_i$, and an orthonormal basis of eigenfunctions $\phi_i(x)$. 
+
+# Laplace Beltrami Operator (on a mesh!)
+Since we can't work in the function space (we only have points on the manifold), we work on the discretizated version defined by
+$$ L = A^{-1}W $$
+where $L$ is a $N \times N$ matrix. 
+
+- We can define its eigenvalues and orthonormal basis with the traditional matrix eigen-decomposition of $L$.
+
+\textbf{The main takeaway is that you can construct a mesh, and define an operator on it.}
+
+
+# Spectral Shape Descriptors
+Most take the form of 
+\begin{equation}
+f(x) = \sum_{k \geq 1} \tau(\lambda_k)\phi^2_k(x) \approx \sum_k^K \tau(\lambda_k)\phi^2_k(x)
+\end{equation}
+
+where $\tau(\cdot)$ is some transfer function, and $\lambda_k$ and $\phi_k(\cdot)$ are the respective eigenvalues and eigenvectors of the LBO. 
+
+
+
+1. Heat Kernel Signature
+    a) $\tau_t(\lambda) = e^{-\lambda t}$
+    b) Poor localization
+2. Wave Kernel Signature
+
+    a) $\tau_{\nu}(\lambda) = e^{\frac{log \nu - log \lambda}{2 \sigma^2}}$
+    b) Poor globalization
+3. Optimal Spectral Descriptors
+
+    a) $\tau_q(\lambda) = \sum_{m = 1}^M a_{qm}\beta_m(\lambda)$
+    b) Have to learn the spline parameters
+
+::: notes
+Why are these used as shape descriptors? Well, basically the value of the heat function on points on the shape is related to the curvature at that point. Can say something about shape dissimilarity if the heat flows through the shape in the same fashion. 
+:::
+
+
+# Geodesic Convolution
+
+1. Defining a patch operator
+2. Defining a convolution 
+
+
+# Defining a Patch Operator
+
+Let $B_{\rho_0}(x)$ be a geodesic ball of size $\rho_0$.
+
+$\Omega(x): B_{\rho_0}(x) \rightarrow [0, \rho_0] \times [0, 2\pi]$
+
+
+::: {.notes}
+That is, each point $x^{'}$ in $B_{\rho_0}(x)$ gets mapped to its geodesic distance $\rho$ from $x$, and an angle $\theta$ which is represented by the direction a geodesic must be sent from $x$ to pass through $x^{'}$.
+:::
+
+Patch operator interpolates a function $f$ in local coordinates
+
+\begin{equation}
+(Df(x))(\rho, \theta) = (f \circ \Omega^{-1}(x)) (\rho ,\theta) 
+\end{equation}
+\begin{equation}
+(Df(x))(\rho, \theta) = \int_X v_{\rho, \theta}(x, y) f(y)dy
+\end{equation}
+
+\begin{equation}
+ v_{\rho, \theta}(x, y)  = v_{\rho}(x,y) v_\theta(x,y)
+\end{equation}
+
+1. $v_{\rho}(x,y) \propto e^{\frac{-(d_X(x,y) - \rho)^2}{\sigma^2_\rho}}$ 
+2. $v_{\theta}(x,y) \propto  e^{\frac{-d_X(\Gamma(x,\theta),y)^2}{\sigma^2_\theta}}$
+
+
+::: {.notes}
+Kernel is non-negative, can be thought of as a measure of similarity. Here, its the product of two independent kernels, still a valid kernel. 
+Similarity in the radial direction is just given by the geodesic distance.
+Similarity in angular direction is given by smallest distance to geodesic emanating out in theta direction. (Draw picture if necessary)
+:::
+
+# Creating Local Geodesic Coordinates ($\Omega(x)$)
+ 
+![](images/patch_construction.png){width=50%}
+
+# Defining A Convolution 
+
+\begin{equation}
+(f \star a)(x) = \sum_{\rho, \theta}a(\theta + \Delta \theta, \rho) (Df(x))(\rho, \theta)
+\end{equation}
+
+where $a(\cdot, \cdot)$ is a filter. 
+
+Effectively, we are projecting $x$ onto local angular coordinates, and performing a convolution on those coordinates. 
+
+# Convolutional Layers
+
+1. Linear Layer (standard)
+2. Geodesic Convolution (GC) 
+    - $\sum_{p=1}^P (f_p \star a_{\Delta \theta, qp})(x)$
+    - is computed for all $N_\theta$ (similar to other GCNN paper)
+3. Angular Max Pooling (AMP)
+    - $\underset{\Delta \theta}{\mathrm{max}} f^{in}_{\Delta \theta, p} (x)$
+    - follows GC layer
+4. Fourier Transform Magnitude
+    - $f^{out}_{p} (\rho, w) =  | \sum_{\theta} e ^{-i w \theta} (Df(x))(\rho, \theta)|$
+    - removes rotational ambiguity
+5. Covariance (COV)
+    - $f^{out} = \int_{X}(f^{in}(x) -\mu)(^{in}(x) -\mu)^T dx$
+    - produces a global descriptor
+
+The spectral shape descriptors can be recovered from some specific parametrization of the above. 
+
+# Example Architecture 
+
+![](images/gcnn.png)
+
+# Results 
+Three tasks:
+
+1. Invariant descriptors
+    - produces a local descriptor of $x$
+2. Shape Correspondence
+    - vertext labeling problem
+3. Shape Retrieval
+    - discriminate between classes of shapes
+
+
+
+# Invariant Descriptors
+
+![](images/invariant_descriptor.png)
+
+::: notes
+We want our shape description to be invariant of pose and how the object is deformed. We can see that the model does well compared to other shape descriptors. 
+:::
+
+
+# Shape Correspondence
+![](images/shape_correspondence.png){height=90%}
+
+
+::: notes
+Want to compare how little our colors change between poses.
+:::
+
+# Shape Retrieval
+![](images/shape_retrieval.png){height=90%}
+
+
+
+# Code Demo
+
+Some notes:
+
+1. Code lives at <https://github.com/andreasMazur/geoconv>
+2. The `environment.yml` file contains the necessary python dependencies from (1)
+3. Use the following 
+```{bash}
+conda env create -f environment.yml
+conda activate ece594n_geodesic_convolutional_networks
+git clone https://github.com/andreasMazur/geoconv.git
+cd ./geoconv
+pip install .
+```
