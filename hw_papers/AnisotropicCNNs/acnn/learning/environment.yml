@@ -1,0 +1,21 @@
+name: acnn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+  - pip
+  - pandas
+  - matplotlib
+  - numpy=1.23.1
+  - scikit-learn
+  - jupyter
+  - jupyterlab
+  - statsmodels
+  - theano
+  - h5py
+  - seaborn
+  - lasagne
+  - pip:
+    - black
+    - isort
+    - pre-commit
