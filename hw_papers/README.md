@@ -55,7 +55,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 ### Transforners / Attention-based
 
 02/28/2024	Wednesday.
-- [X] Alexander Davydov -- Dwivedi et al. A Generalization of Transformer Networks to Graphs. (2019).
+- [ ] Alexander Davydov -- Dwivedi et al. A Generalization of Transformer Networks to Graphs. (2019).
 - [X] Jiahua Chen -- Dosovitski et al. An Image is Worth 16x16 Words: Transformers Image Recognition at Scale. (2021).
 
  03/04/2024	Monday.
