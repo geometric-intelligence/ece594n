@@ -39,7 +39,7 @@ First come, first serve. Send a message on the #general channel on slack to regi
 - [X] Jacob Lyons -- Thomas et al. Tensor field networks: Rotation-and translation-equivariant neural networks for 3D point clouds. (2018).
 
 02/14/2024	Wednesday.
-- [X] Caitlyn Linehan -- Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
+- []  Kipf and Welling. GCNs: Semi-Supervised Classification with Graph Convolutional Networks. (2016).
 - [X] Sofia Gonzalez Garcia -- Gilmer et al. Neural Message Passing for Quantum Chemistry. (2017).
 
 02/19/2024 Monday - President's Day. No class.
