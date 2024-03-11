@@ -23,7 +23,6 @@ Send the title of your project, and names of its team members, through the #gene
 - Tyler Hattori
 - Zhiyu Xue
 - Ozgur Guldogan
-- Caitlyn Linehan
 - Liyan Tan
 - Shih-Cheng Hsiao
 - Akshay Sawhney
