@@ -18,14 +18,13 @@ Send the title of your project, and names of its team members, through the #gene
   - You can submit code to this repository anytime until the day of your presentation.
 - In the folder `hw_projects` of _this github repository_ add a .md file with the link to the github repository of your project.
 
-# Presentations on Monday 03/11/2024 (8 total)
+# Presentations on Monday 03/11/2024 6 total)
 
 - Tyler Hattori
 - Zhiyu Xue
 - Ozgur Guldogan
 - Liyan Tan
 - Shih-Cheng Hsiao
-- Akshay Sawhney
 - Daniel Ralston
  
 # Presentations on Wednesday 03/13/2024 (9 total)
